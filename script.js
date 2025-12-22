@@ -26,48 +26,78 @@ if (phoneInput) {
 // ==================== College Carousel ====================
 $(document).ready(function () {
   const $carousel = $(".college-carousel");
+  
+  // Check if carousel exists before proceeding
+  if ($carousel.length === 0) return;
+  
   const allCards = $(".college-card").clone();
+  let carouselInitialized = false;
 
   function initCarousel() {
+    // Prevent re-initialization
+    if ($carousel.hasClass("slick-initialized")) {
+      $carousel.slick("unslick");
+    }
+    
     $carousel.slick({
       slidesToShow: 4,
-      centeredSlides: true,
+      centeredSlides: false,
       slidesToScroll: 1,
       infinite: true,
       arrows: false,
-      autoplay: true,
-      autoplaySpeed: 3000,
+      autoplay: false,
       speed: 600,
       cssEase: "ease-in-out",
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: { slidesToShow: 2 }
+        }
+      ]
     });
+    carouselInitialized = true;
   }
 
-  // Init
-  initCarousel();
+  // Init carousel only once
+  if (allCards.length > 0) {
+    initCarousel();
+  }
 
   // Custom Arrows
-  $(".slick-prev-btn").click(() => $carousel.slick("slickPrev"));
-  $(".slick-next-btn").click(() => $carousel.slick("slickNext"));
+  $(".slick-prev-btn").off("click").on("click", function() {
+    if ($carousel.hasClass("slick-initialized")) {
+      $carousel.slick("slickPrev");
+    }
+  });
+  
+  $(".slick-next-btn").off("click").on("click", function() {
+    if ($carousel.hasClass("slick-initialized")) {
+      $carousel.slick("slickNext");
+    }
+  });
 
   // Filter functionality
-  $(".filter-btn").click(function () {
+  $(".filter-btn").off("click").on("click", function () {
     const city = $(this).data("city");
-
+    
     // Active state
     $(".filter-btn").removeClass("active");
     $(this).addClass("active");
 
-    // Destroy current slick and clear
-    $carousel.slick("unslick").empty();
+    // Destroy and recreate
+    if ($carousel.hasClass("slick-initialized")) {
+      $carousel.slick("unslick");
+    }
+    
+    $carousel.empty();
 
-    // Filter cards
-    let filteredCards =
-      city === "all"
-        ? allCards.clone()
-        : allCards.filter(`[data-city="${city}"]`).clone();
+    // Filter cards (limit duplication)
+    let filteredCards = city === "all"
+      ? allCards.clone()
+      : allCards.filter(`[data-city="${city}"]`).clone();
 
-    // Duplicate if less than 6 cards
-    while (filteredCards.length < 6) {
+    // Only duplicate if necessary (max 2x)
+    if (filteredCards.length < 4 && filteredCards.length > 0) {
       filteredCards = filteredCards.add(filteredCards.clone());
     }
 
@@ -199,28 +229,55 @@ toggleBtns.forEach((btn) => {
 
 
 const slides = document.querySelectorAll('.slide');
-let currentSlide = 0;
+if (slides.length > 0) {
+  let currentSlide = 0;
+  let autoPlayInterval = null;
 
-function showSlide(index) {
-  slides.forEach(slide => slide.classList.remove('active'));
-  slides[index].classList.add('active');
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    if (slides[index]) {
+      slides[index].classList.add('active');
+    }
+  }
+
+  const nextBtn = document.getElementById('nextBtn');
+  const prevBtn = document.getElementById('prevBtn');
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      clearInterval(autoPlayInterval);
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+      startAutoPlay();
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      clearInterval(autoPlayInterval);
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+      startAutoPlay();
+    });
+  }
+
+  // Auto Slide with proper cleanup
+  function startAutoPlay() {
+    autoPlayInterval = setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }, 7000);
+  }
+
+  // Initialize
+  showSlide(0);
+  startAutoPlay();
+
+  // Cleanup on page unload
+  window.addEventListener('beforeunload', () => {
+    clearInterval(autoPlayInterval);
+  });
 }
-
-document.getElementById('nextBtn').addEventListener('click', () => {
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
-});
-
-document.getElementById('prevBtn').addEventListener('click', () => {
-  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-  showSlide(currentSlide);
-});
-
-// Optional Auto Slide
-setInterval(() => {
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
-}, 7000);
 
 
 

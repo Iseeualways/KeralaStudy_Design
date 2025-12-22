@@ -1,0 +1,2409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main-college-page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+
+
+</head>
+<style>
+    .btn-blue {
+        position: relative;
+        padding: 6px 22px;
+        background: #003479;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition:
+            background 0.25s ease,
+            transform 0.2s ease,
+            box-shadow 0.3s ease;
+        box-shadow: 0 4px 14px rgba(26, 115, 232, 0.25);
+    }
+
+    /* Smooth professional hover */
+    .btn-blue:hover {
+        background: #1666cc;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(26, 115, 232, 0.35);
+        color: white;
+    }
+
+    /* Pressed effect */
+    .btn-blue:active {
+        transform: translateY(1px);
+        box-shadow: 0 2px 8px rgba(26, 115, 232, 0.25);
+    }
+
+    /* Optional subtle underline slide */
+    .btn-blue::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 8px;
+        width: 0;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.8);
+        transition: width 0.25s ease, left 0.25s ease;
+    }
+
+    .btn-blue:hover::after {
+        width: 60%;
+        left: 20%;
+    }
+
+
+
+    /* ---------- RESET ---------- */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins";
+    }
+
+    html,
+    body {
+        font-family: "Poppins" !important;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+        background-color: #f9f9f9;
+    }
+
+    h1 {
+        font-family: "Poppins" !important;
+        color: #001a4f;
+    }
+
+    .phone {
+        text-decoration: none;
+        font-size: 16px;
+        padding-left: 20px;
+    }
+
+    .phone i {
+        color: red;
+    }
+
+    .city-btn {
+        border: 1px solid blue;
+        padding: 5px 30px;
+
+    }
+
+    .city-btn {
+        display: inline-block;
+        padding: 3px 36px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 10px;
+        background: #0b2a66;
+        /* deep professional color */
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .city-btn::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 50%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.08);
+        transform: skewX(-25deg);
+        transition: all 0.5s ease;
+    }
+
+    .city-btn:hover {
+        background: linear-gradient(90deg, #0b2a66, #3370ea);
+        transform: translate(scale(1.4));
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+        color: #ffffff;
+    }
+
+    h2 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 32px;
+        font-weight: bold;
+        color: black;
+
+    }
+
+    p,
+    li {
+        font-size: 18px;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        position: relative;
+        min-height: 90vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+    }
+
+    .hero-section .carousel {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        overflow: hidden;
+    }
+
+    .hero-section .slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .hero-section .slide.active {
+        opacity: 1;
+    }
+
+    /* Navigation Buttons */
+    .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: #fff;
+        font-size: 2rem;
+        padding: 10px 18px;
+        cursor: pointer;
+        z-index: 5;
+        border-radius: 50%;
+        backdrop-filter: blur(4px);
+        transition: background 0.3s;
+    }
+
+    .carousel-btn:hover {
+        background: rgba(255, 255, 255, 0.4);
+    }
+
+    #prevBtn {
+        left: 20px;
+    }
+
+    #nextBtn {
+        right: 20px;
+    }
+
+    /* Overlay content */
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        padding: 50px 20px;
+        border-radius: 20px;
+    }
+
+    .hero-section h1 {
+        font-weight: 400;
+        font-size: 50px;
+        color: #0c2a45;
+        display: inline-block;
+        padding: 10px 30px;
+        background: rgba(255, 255, 255, 0.49);
+        /* semi-transparent white */
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        /* blur background behind it */
+        -webkit-backdrop-filter: blur(10px);
+        /* Safari support */
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+
+
+    .hero-section h4 {
+        font-weight: 500;
+        font-size: 28px;
+        color: #0c2a45;
+        display: inline-block;
+        padding: 2px 30px;
+        background: rgba(255, 255, 255, 0.511);
+        /* semi-transparent white */
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        /* blur background behind it */
+        -webkit-backdrop-filter: blur(10px);
+        /* Safari support */
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-info {
+        color: rgb(71, 184, 255) !important;
+    }
+
+    @media (max-width: 768px) {
+        .hero-section {
+            padding: 50px 15px;
+        }
+
+        .hero-section h1 {
+            font-size: 28px;
+        }
+
+        .hero-content {
+            padding: 30px 15px;
+        }
+    }
+
+
+    /* ---------------------------------------------------------------------blue button  */
+
+    .btn-lg {
+        display: inline-block;
+        padding: 14px 36px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 10px;
+        background: #0b2a66;
+        /* deep professional color */
+
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-lg::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 50%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.08);
+        transform: skewX(-25deg);
+        transition: all 0.5s ease;
+    }
+
+    .btn-lg:hover::after {
+        left: 100%;
+    }
+
+    .btn-lg:hover {
+        background: linear-gradient(90deg, #0b2a66, #3370ea);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+        color: #ffffff;
+    }
+
+
+    /* ---------------------------------------------------------------home search bar */
+    .search {
+        width: 70%;
+        margin-left: 30px;
+    }
+
+    .search__input {
+        font-family: "Open Sans", sans-serif;
+        font-size: 17px;
+        color: #333333;
+        background-color: #f4f2f2ba;
+        border: none;
+        padding: 14px 72px 14px 42px;
+        border-radius: 1000px;
+        width: 94%;
+        margin-left: -55px;
+        margin-right: -66px;
+        transition: all 0.2s;
+    }
+
+    .search__input:focus {
+        outline: none;
+        width: 100%;
+        background-color: #f0eeee;
+    }
+
+    .search__input::-webkit-input-placeholder {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-weight: 500;
+        color: #373737;
+    }
+
+    .search__button {
+        border: none;
+        background-color: transparent;
+        z-index: 999;
+        cursor: pointer;
+    }
+
+    .search__button:focus {
+        outline: none;
+    }
+
+    .search__button:active {
+        transform: translateY(2px);
+    }
+
+    .search__icon {
+        height: 20px;
+        width: 20px;
+        fill: #999999;
+    }
+
+    .mic__button {
+        border: none;
+        background-color: transparent;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+
+    .mic__button:focus {
+        outline: none;
+    }
+
+    .mic__button:active {
+        transform: translateY(2px);
+    }
+
+    .mic__icon {
+        height: 28px;
+        width: 20px;
+        fill: #999999;
+    }
+
+    .mic__icon:hover {
+        fill: #dd5e89;
+    }
+
+    .picture__button {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .picture__button:focus {
+        outline: none;
+    }
+
+    .picture__button:active {
+        transform: translateY(2px);
+    }
+
+    .picture__icon {
+        height: 16px;
+        width: 20px;
+        fill: #999999;
+    }
+
+    .picture__icon:hover {
+        fill: #dd5e89;
+    }
+
+    .stats-section {
+        background: linear-gradient(to right, rgb(0, 106, 255), #78ddff, #d4f6ff);
+        padding: 60px 0;
+        text-align: center;
+        color: #000;
+    }
+
+    .stats-box {
+        margin-bottom: 30px;
+    }
+
+    .stats-box h2 {
+        font-size: 58px;
+        font-weight: 800;
+        margin-bottom: 10px;
+    }
+
+    .stats-box p {
+        font-size: 18px;
+        margin-top: 10px;
+        color: #000000;
+    }
+
+    .stats-box .divider {
+        width: 40px;
+        height: 2px;
+        background-color: #000;
+        margin: 0 auto;
+    }
+
+    /* college section */
+
+    /* Category Buttons */
+    .category-bar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 40px;
+    }
+
+    .category-btn {
+        padding: 10px 22px;
+        background: #e9f6ff;
+        border: 2px solid #00b7ff;
+        border-radius: 30px;
+        color: #0077b6;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .category-btn:hover,
+    .category-btn.active {
+        background: linear-gradient(to right, #00b7ff, #a6f0ff);
+        color: #000;
+        border-color: #00b7ff;
+        box-shadow: 0 4px 12px rgba(0, 183, 255, 0.2);
+    }
+
+    .btn-rect {
+        padding: 5px 20px;
+        border-radius: 8px;
+        border: none;
+        background: #0b2a66;
+        /* deep professional blue */
+        color: #ffffff;
+        font-weight: 500;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+
+    }
+
+    .btn-rect:hover {
+        background: #f4f8ff;
+        border: 1px solid #0b2a66;
+        /* subtle hover color */
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+        color: #0b2a66;
+    }
+
+    .btn-viewmore {
+        position: relative;
+        padding: 12px 28px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #0b2a66;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        transition: all 0.4s ease;
+
+    }
+
+    .btn-viewmore::after {
+        content: "";
+        position: absolute;
+        bottom: 6px;
+        left: 50%;
+        width: 0%;
+        height: 1.5px;
+        background: #0b2a66;
+        transition: all 0.4s ease;
+        transform: translateX(-50%);
+    }
+
+    .btn-viewmore:hover {
+        transform: translateY(-2px);
+        color: #0b2a66;
+    }
+
+    .btn-viewmore:hover::after {
+        width: 80%;
+    }
+
+
+    .btn-round {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: none;
+        background: #ffffff;
+        color: #000000;
+        font-size: 0.9rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s ease;
+        border: 1px solid black;
+    }
+
+    .btn-round:hover {
+        background: #3388ff;
+        transform: rotate(90deg) scale(1.1);
+    }
+
+    .card {
+        width: fit-content;
+        height: fit-content;
+        background-color: rgba(238, 238, 238, 0);
+        display: inline;
+        align-items: center;
+        justify-content: center;
+        padding: 25px 25px;
+        gap: 20px;
+
+    }
+
+    /* --------------------------------------------------------------for all social containers*/
+    .socialContainer {
+        width: 52px;
+        height: 52px;
+        background-color: rgb(44, 44, 44);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition-duration: .3s;
+    }
+
+    /* instagram*/
+    .containerOne:hover {
+        background-color: #d62976;
+        transition-duration: .3s;
+    }
+
+    /* twitter*/
+    .containerTwo:hover {
+        background-color: #00acee;
+        transition-duration: .3s;
+    }
+
+    /* linkdin*/
+    .containerThree:hover {
+        background-color: #0072b1;
+        transition-duration: .3s;
+    }
+
+    /* Whatsapp*/
+    .containerFour:hover {
+        background-color: #128C7E;
+        transition-duration: .3s;
+    }
+
+    .socialContainer:active {
+        transform: scale(0.9);
+        transition-duration: .3s;
+    }
+
+    .socialSvg {
+        width: 17px;
+    }
+
+    .socialSvg path {
+        fill: rgb(255, 255, 255);
+    }
+
+    .socialContainer:hover .socialSvg {
+        animation: slide-in-top 0.3s both;
+    }
+
+    @keyframes slide-in-top {
+        0% {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .social {
+        display: inline-flex;
+    }
+
+    .newsletter-form .form-control {
+
+
+        padding: 10px 25px;
+    }
+
+    .newsletter-form .btn {
+
+        padding: 10px 20px;
+    }
+
+    /* -------------------------------------------------------------------navbar new */
+
+    /* ===== NAVBAR 1 (TOP) ===== */
+    .navbar {
+        background-color: #0c2a45;
+        /* Solid color */
+        color: #ffffff;
+        padding: 10px 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navbar .logo img {
+        max-height: 50px;
+    }
+
+    .navbar .nav-links {
+        margin-left: 100px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    .btns {
+        margin-left: auto;
+        display: flex;
+        gap: 10px;
+        margin-right: 60px;
+    }
+
+    .btns button {
+        padding: 6px 14px;
+        border: none;
+        background: rgb(43, 167, 255);
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: background 0.3s ease;
+    }
+
+    .btns button:hover {
+        background: #1b8bd1;
+    }
+
+    /* ===== NAVBAR 2 (SECOND, TRANSPARENT WITH DROPDOWN) ===== */
+    .navbar-two {
+        width: 100%;
+        background: rgba(247, 251, 255, 0.771);
+        /* Transparent */
+        backdrop-filter: blur(8px);
+        position: relative;
+        z-index: 1000;
+        padding: 6px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+
+    }
+
+    .navbar-two .nav-links {
+        display: flex;
+        justify-content: end;
+        /* Center content */
+        align-items: center;
+        gap: 10px;
+        margin-inline: 10px;
+        font-size: 15px;
+        color: #000;
+    }
+
+    .navbar-two .nav-item {
+        position: relative;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 300;
+        padding: 6px 12px;
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+
+    .navbar-two .nav-item:hover {
+        color: #0077ff;
+    }
+
+    /* Dropdown */
+    .dropdown {
+        display: none;
+        position: fixed;
+        top: 99%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgb(255, 255, 255);
+        padding: 20px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        z-index: 1000;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        min-width: 1300px;
+        text-align: left;
+
+    }
+
+    .navbar-two .nav-item:hover .dropdown {
+        display: flex;
+    }
+
+
+    .dropdown-column {
+        min-width: 150px;
+        margin-right: 25px;
+    }
+
+    .dropdown-column li {
+        color: #000;
+    }
+
+    .dropdown-column h4 {
+        margin-bottom: 8px;
+        font-size: 14px;
+        font-weight: 700;
+        color: #123671;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 4px;
+    }
+
+    .dropdown ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .dropdown ul li {
+        padding: 5px 0;
+        font-size: 13px;
+        cursor: pointer;
+        transition: color 0.2s ease;
+    }
+
+    .dropdown ul li:hover {
+        color: #4d96ea;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 1000px) {
+        .navbar {
+            padding: 10px 20px;
+            flex-wrap: wrap;
+        }
+
+        .navbar-two .nav-links {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .dropdown {
+            min-width: 100%;
+            flex-direction: column;
+        }
+
+        .dropdown-column {
+            margin-bottom: 15px;
+        }
+    }
+
+    .nav-item {
+        position: relative;
+        display: inline-block;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    .navbar .nav-item:hover {
+        transform: translateY(-5px);
+        transition: .2s ease-in-out;
+    }
+
+    .nav-link-item {
+        position: relative;
+        display: inline-block;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    .mini-menu {
+        display: none;
+        /* hidden by default */
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        z-index: 1000;
+        min-width: 150px;
+    }
+
+    .mini-menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .mini-menu ul li {
+        font-size: 14px;
+        padding: 5px 0;
+        cursor: pointer;
+        transition: color 0.2s;
+    }
+
+    .mini-menu ul li:hover {
+        color: #0077cc;
+        /* blue on hover */
+    }
+
+    /* show only when hovered */
+    .nav-link-item:hover .mini-menu {
+        display: block;
+    }
+
+    /* mobile navbar */
+
+
+    /* Hide by default on desktop */
+    .mobile-navbar,
+    .mobile-menu {
+        display: none;
+    }
+
+    /* Mobile view */
+    @media (max-width: 768px) {
+        .mobile-navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: #0c2a45;
+            color: #fff;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .mobile-navbar .mobile-logo img {
+            max-height: 50px;
+        }
+
+        .hamburger {
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background: #0c2a45;
+            width: 100%;
+        }
+
+        .mobile-menu.show {
+            display: flex;
+        }
+
+        .mobile-item {
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .mobile-item:hover {
+            background: #1b8bd1;
+        }
+    }
+
+    /* Hide desktop navbars on mobile */
+    @media (max-width: 768px) {
+
+        .navbar,
+        .navbar-two {
+            display: none;
+        }
+    }
+
+    @media (max-width: 1000px) {
+        .mobile-navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: #0c2a45;
+            color: #fff;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .mobile-navbar .mobile-logo img {
+            max-height: 50px;
+        }
+
+        .hamburger {
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background: #0c2a45;
+            width: 100%;
+        }
+
+        .mobile-menu.show {
+            display: flex;
+        }
+
+        .mobile-item {
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .mobile-item:hover {
+            background: #1b8bd1;
+        }
+    }
+
+    /* Hide desktop navbars on mobile */
+    @media (max-width: 1000px) {
+
+        .navbar,
+        .navbar-two {
+            display: none;
+        }
+    }
+
+    /* the label below the search */
+    /* Container */
+    .button-container {
+        display: flex;
+        width: fit-content;
+        padding: 10px 18px;
+        border-radius: 50px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+        transition: all 0.4s ease;
+        margin: 12px auto;
+        gap: 10px;
+        background: #ffffffa4;
+    }
+
+    /* Buttons */
+    .button {
+        outline: none;
+        border: none;
+        padding: 8px 18px;
+        border-radius: 50px;
+        background: rgb(225, 225, 225);
+        color: #00304b;
+        font-size: 15px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        border: 1px solid rgb(0, 41, 65);
+    }
+
+    /* Hover effect */
+    .button:hover {
+        background: #173a58;
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(25, 136, 201, 0.35);
+    }
+
+    /* Active (clicked) effect */
+    .button:active {
+        transform: scale(0.96);
+    }
+
+    .contact-form {
+        background: #ffffff10;
+        padding: 30px;
+        border-radius: 12px;
+        width: 100%;
+        max-width: 450px;
+        border: 1px solid rgb(187, 230, 255);
+    }
+
+    .contact-form h4 {
+        margin-bottom: 20px;
+        font-weight: 600;
+        color: #000000;
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .contact-form input {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 14px;
+        outline: none;
+        transition: 0.3s;
+    }
+
+    .contact-form input:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+    }
+
+    .btn-submit {
+        width: 100%;
+        background: linear-gradient(135deg, #4679d7, );
+        color: #fff;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 15px;
+        transition: 0.3s;
+    }
+
+    .btn-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    /* -----------------------------------cta section */
+
+
+    /* CTA Section */
+    /* CTA Section */
+    .cta-section {
+        padding: 100px 20px;
+        background: #000e28;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .cta-content {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 60px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .cta-title {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    .cta-subtitle {
+        margin-bottom: 2rem;
+        color: #cbd5e1;
+        font-size: 1.1rem;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .category {
+        background: transparent;
+        border: 2px solid #001a4d14;
+        color: #000000;
+        padding: 8px 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    .category.active,
+    .category:hover {
+        background: #00143d;
+        color: #fff;
+        transform: translateY(-2px);
+    }
+</style>
+
+<body>
+
+    <div class="navbar px-5">
+        <div class="logo"><img src="https://www.keralastudy.com/images/logo.png" class="w-100" alt=""></div>
+        <div class="nav-links">
+            <div class="nav-item">Top Colleges</div>
+            <a href="courses.html">
+                <div class="nav-item">Top Courses</div>
+            </a>
+            <div class="nav-item">Entrance Exam</div>
+            <div class="nav-item">Boards</div>
+            <div class="nav-item">News</div>
+            <a href="tel:+919876543210" class="text-white phone"><i class="fa-solid fa-phone"></i> +91 98765 43210</a>
+
+
+        </div>
+        <div class="btns">
+            <button>Write a review</button>
+            <button><i class="fa-solid fa-user"></i> / Register</button>
+        </div>
+    </div>
+
+
+
+    <!-- navbar 2nd -->
+    <div class="navbar-two p-0">
+        <div class="nav-links" data-aos="fade-right">
+            <div class="nav-item">Home</div>
+            <div class="nav-item">Medical <i class="fa-solid fa-angle-down"></i>
+                <div class="dropdown">
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY COURSE</h4>
+                        <ul>
+                            <li>MBBS Colleges</li>
+                            <li>MS Colleges</li>
+                            <li>BAMS Colleges</li>
+                            <li>BPT Colleges</li>
+                            <li>M.F.Sc Colleges</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-column">
+                        <h4>POPULAR COLLEGES</h4>
+                        <ul>
+                            <li>AIIMS, New Delhi</li>
+                            <li>Kasturba Medical College, Mangalore</li>
+                            <li>Aligarh Muslim University, UP</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY CITY</h4>
+                        <ul>
+                            <li>Thiruvananthapuram</li>
+                            <li>Kozhikode</li>
+                            <li>Kochi</li>
+                            <li>Thrissur</li>
+                            <li>Kottayam</li>
+                            <li>Alappuzha</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+
+                    <!-- <div class="dropdown-column">
+                        <h4>COLLEGES BY SPECIALISATION</h4>
+                        <ul>
+                            <li>MS General Surgery Colleges</li>
+                            <li>MS Orthopaedics Colleges</li>
+                            <li>MS Anatomy Colleges</li>
+                            <li>MD Pathology Colleges</li>
+                            <li>MD Medicine Colleges</li>
+                            <li>MD Dermatology Colleges</li>
+                        </ul>
+                    </div> -->
+                    <div class="dropdown-column">
+                        <h4>EXAMS</h4>
+                        <ul>
+                            <li>JEE Main</li>
+                            <li>JEE Advanced</li>
+                            <li>UPESEAT</li>
+                            <li>WBJEE</li>
+                            <li>OUCET</li>
+                            <li>AP EAMCET</li>
+                            <li>LPUNEST</li>
+                            <li>All Engineering Exams >></li>
+                        </ul>
+                    </div>
+
+                    <!-- <div class="dropdown-column">
+                        <h4>COURSES</h4>
+                        <ul>
+                            <li>MBBS</li>
+                            <li>MS</li>
+                            <li>MD</li>
+                            <li>BAMS</li>
+                            <li>BPT</li>
+                            <li>MPT</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="nav-item">Engineering<i class="fa-solid fa-angle-down"></i>
+                <div class="dropdown">
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY COURSE</h4>
+                        <ul>
+                            <li>MBBS Colleges</li>
+                            <li>MS Colleges</li>
+                            <li>BAMS Colleges</li>
+                            <li>BPT Colleges</li>
+                            <li>M.F.Sc Colleges</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-column">
+                        <h4>POPULAR COLLEGES</h4>
+                        <ul>
+                            <li>AIIMS, New Delhi</li>
+                            <li>Kasturba Medical College, Mangalore</li>
+                            <li>Aligarh Muslim University, UP</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY CITY</h4>
+                        <ul>
+                            <li>Thiruvananthapuram</li>
+                            <li>Kozhikode</li>
+                            <li>Kochi</li>
+                            <li>Thrissur</li>
+                            <li>Kottayam</li>
+                            <li>Alappuzha</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+
+                    <!-- <div class="dropdown-column">
+                        <h4>COLLEGES BY SPECIALISATION</h4>
+                        <ul>
+                            <li>MS General Surgery Colleges</li>
+                            <li>MS Orthopaedics Colleges</li>
+                            <li>MS Anatomy Colleges</li>
+                            <li>MD Pathology Colleges</li>
+                            <li>MD Medicine Colleges</li>
+                            <li>MD Dermatology Colleges</li>
+                        </ul>
+                    </div> -->
+                    <div class="dropdown-column">
+                        <h4>EXAMS</h4>
+                        <ul>
+                            <li>JEE Main</li>
+                            <li>JEE Advanced</li>
+                            <li>UPESEAT</li>
+                            <li>WBJEE</li>
+                            <li>OUCET</li>
+                            <li>AP EAMCET</li>
+                            <li>LPUNEST</li>
+                            <li>All Engineering Exams >></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-item">Dental Colleges<i class="fa-solid fa-angle-down"></i>
+                <div class="dropdown">
+
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY COURSE</h4>
+                        <ul>
+                            <li>MBBS Colleges</li>
+                            <li>MS Colleges</li>
+                            <li>BAMS Colleges</li>
+                            <li>BPT Colleges</li>
+                            <li>M.F.Sc Colleges</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-column">
+                        <h4>POPULAR COLLEGES</h4>
+                        <ul>
+                            <li>AIIMS, New Delhi</li>
+                            <li>Kasturba Medical College, Mangalore</li>
+                            <li>Aligarh Muslim University, UP</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY CITY</h4>
+                        <ul>
+                            <li>Thiruvananthapuram</li>
+                            <li>Kozhikode</li>
+                            <li>Kochi</li>
+                            <li>Thrissur</li>
+                            <li>Kottayam</li>
+                            <li>Alappuzha</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+
+                    <!-- <div class="dropdown-column">
+                        <h4>COLLEGES BY SPECIALISATION</h4>
+                        <ul>
+                            <li>MS General Surgery Colleges</li>
+                            <li>MS Orthopaedics Colleges</li>
+                            <li>MS Anatomy Colleges</li>
+                            <li>MD Pathology Colleges</li>
+                            <li>MD Medicine Colleges</li>
+                            <li>MD Dermatology Colleges</li>
+                        </ul>
+                    </div> -->
+                    <div class="dropdown-column">
+                        <h4>EXAMS</h4>
+                        <ul>
+                            <li>JEE Main</li>
+                            <li>JEE Advanced</li>
+                            <li>UPESEAT</li>
+                            <li>WBJEE</li>
+                            <li>OUCET</li>
+                            <li>AP EAMCET</li>
+                            <li>LPUNEST</li>
+                            <li>All Engineering Exams >></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-item">Management <i class="fa-solid fa-angle-down"></i>
+                <div class="dropdown">
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY COURSE</h4>
+                        <ul>
+                            <li>MBBS Colleges</li>
+                            <li>MS Colleges</li>
+                            <li>BAMS Colleges</li>
+                            <li>BPT Colleges</li>
+                            <li>M.F.Sc Colleges</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-column">
+                        <h4>POPULAR COLLEGES</h4>
+                        <ul>
+                            <li>AIIMS, New Delhi</li>
+                            <li>Kasturba Medical College, Mangalore</li>
+                            <li>Aligarh Muslim University, UP</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY CITY</h4>
+                        <ul>
+                            <li>Thiruvananthapuram</li>
+                            <li>Kozhikode</li>
+                            <li>Kochi</li>
+                            <li>Thrissur</li>
+                            <li>Kottayam</li>
+                            <li>Alappuzha</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+
+                    <!-- <div class="dropdown-column">
+                        <h4>COLLEGES BY SPECIALISATION</h4>
+                        <ul>
+                            <li>MS General Surgery Colleges</li>
+                            <li>MS Orthopaedics Colleges</li>
+                            <li>MS Anatomy Colleges</li>
+                            <li>MD Pathology Colleges</li>
+                            <li>MD Medicine Colleges</li>
+                            <li>MD Dermatology Colleges</li>
+                        </ul>
+                    </div> -->
+                    <div class="dropdown-column">
+                        <h4>EXAMS</h4>
+                        <ul>
+                            <li>JEE Main</li>
+                            <li>JEE Advanced</li>
+                            <li>UPESEAT</li>
+                            <li>WBJEE</li>
+                            <li>OUCET</li>
+                            <li>AP EAMCET</li>
+                            <li>LPUNEST</li>
+                            <li>All Engineering Exams >></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-item">Commerce <i class="fa-solid fa-angle-down"></i>
+                <div class="dropdown">
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY COURSE</h4>
+                        <ul>
+                            <li>MBBS Colleges</li>
+                            <li>MS Colleges</li>
+                            <li>BAMS Colleges</li>
+                            <li>BPT Colleges</li>
+                            <li>M.F.Sc Colleges</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-column">
+                        <h4>POPULAR COLLEGES</h4>
+                        <ul>
+                            <li>AIIMS, New Delhi</li>
+                            <li>Kasturba Medical College, Mangalore</li>
+                            <li>Aligarh Muslim University, UP</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY CITY</h4>
+                        <ul>
+                            <li>Thiruvananthapuram</li>
+                            <li>Kozhikode</li>
+                            <li>Kochi</li>
+                            <li>Thrissur</li>
+                            <li>Kottayam</li>
+                            <li>Alappuzha</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+
+                    <!-- <div class="dropdown-column">
+                        <h4>COLLEGES BY SPECIALISATION</h4>
+                        <ul>
+                            <li>MS General Surgery Colleges</li>
+                            <li>MS Orthopaedics Colleges</li>
+                            <li>MS Anatomy Colleges</li>
+                            <li>MD Pathology Colleges</li>
+                            <li>MD Medicine Colleges</li>
+                            <li>MD Dermatology Colleges</li>
+                        </ul>
+                    </div> -->
+                    <div class="dropdown-column">
+                        <h4>EXAMS</h4>
+                        <ul>
+                            <li>JEE Main</li>
+                            <li>JEE Advanced</li>
+                            <li>UPESEAT</li>
+                            <li>WBJEE</li>
+                            <li>OUCET</li>
+                            <li>AP EAMCET</li>
+                            <li>LPUNEST</li>
+                            <li>All Engineering Exams >></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-item">Nursing <i class="fa-solid fa-angle-down"></i>
+                <div class="dropdown">
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY COURSE</h4>
+                        <ul>
+                            <li>MBBS Colleges</li>
+                            <li>MS Colleges</li>
+                            <li>BAMS Colleges</li>
+                            <li>BPT Colleges</li>
+                            <li>M.F.Sc Colleges</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-column">
+                        <h4>POPULAR COLLEGES</h4>
+                        <ul>
+                            <li>AIIMS, New Delhi</li>
+                            <li>Kasturba Medical College, Mangalore</li>
+                            <li>Aligarh Muslim University, UP</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY CITY</h4>
+                        <ul>
+                            <li>Thiruvananthapuram</li>
+                            <li>Kozhikode</li>
+                            <li>Kochi</li>
+                            <li>Thrissur</li>
+                            <li>Kottayam</li>
+                            <li>Alappuzha</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+
+                    <!-- <div class="dropdown-column">
+                        <h4>COLLEGES BY SPECIALISATION</h4>
+                        <ul>
+                            <li>MS General Surgery Colleges</li>
+                            <li>MS Orthopaedics Colleges</li>
+                            <li>MS Anatomy Colleges</li>
+                            <li>MD Pathology Colleges</li>
+                            <li>MD Medicine Colleges</li>
+                            <li>MD Dermatology Colleges</li>
+                        </ul>
+                    </div> -->
+                    <div class="dropdown-column">
+                        <h4>EXAMS</h4>
+                        <ul>
+                            <li>JEE Main</li>
+                            <li>JEE Advanced</li>
+                            <li>UPESEAT</li>
+                            <li>WBJEE</li>
+                            <li>OUCET</li>
+                            <li>AP EAMCET</li>
+                            <li>LPUNEST</li>
+                            <li>All Engineering Exams >></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="nav-item">Commerce</div>
+            <div class="nav-item">Nursing</div> -->
+            <div class="nav-link-item">
+                More
+                <div class="mini-menu">
+                    <ul>
+                        <a href="about-us.html">
+                            <li>About Us</li>
+                        </a>
+                        <li>Our Team</li>
+                        <li>Services</li>
+                        <li>Blogs</li>
+                        <li>Boards</li>
+                        <li>Schools</li>
+                    </ul>
+                </div>
+            </div>
+            <button class="btn city-btn">Admissions 2025</button>
+        </div>
+    </div>
+
+    <!-- Mobile Hamburger Menu -->
+    <div class="mobile-navbar">
+        <div class="mobile-logo">
+            <img src="https://www.keralastudy.com/images/logo.png" alt="Logo">
+        </div>
+        <div class="hamburger">&#9776;</div>
+    </div>
+
+    <!-- Mobile Menu Links -->
+    <div class="mobile-menu">
+        <div class="mobile-item">Home</div>
+        <div class="mobile-item">Medical</div>
+        <div class="mobile-item">Engineering</div>
+        <div class="mobile-item">Dental Colleges</div>
+        <div class="mobile-item">Management</div>
+        <div class="mobile-item">Commerce</div>
+        <div class="mobile-item">Nursing</div>
+        <div class="mobile-item">More</div>
+    </div>
+
+
+    <!-- ====================================================================================banner -->
+
+    <section class="hero-40vh">
+        <div class="hero-inner container text-start">
+            <h1>Best Courses to Study in India and Abroad</h1>
+            <form action="#" class="search-bar">
+                <input type="text" placeholder="Find Your Courses" class="search-input">
+                <button type="submit" class="search-btn">
+                    <img src="search_38dp_000000_FILL0_wght400_GRAD0_opsz40.svg" alt="search">
+                </button>
+            </form>
+            <h4 class="mb-2 text-start mt-5">Trending Courses</h4>
+            <div class="label-container text-start">
+                <div class="label">Marketing</div>
+                <div class="label">Finance</div>
+                <div class="label">Human Resource</div>
+                <div class="label">International Business</div>
+                <div class="label">Operations Management</div>
+                <div class="label">Information Technology</div>
+                <div class="label">Business Analytics</div>
+            </div>
+
+            <style>
+                .hero-inner h4{
+                    font-size: 28px;
+                    font-weight: 700;
+                }
+                .label-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 9px;
+                    justify-content: start;
+                    margin-top: 10px;
+                    margin-left: 0px;
+                }
+
+                .label {
+                    background: #6082a8f7;
+                    /* border: 1px solid #d9e2f1; */
+                    border-radius: 10px;
+                    padding: 5px 10px;
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: #ffffff;
+                    transition: 0.3s ease;
+                    cursor: pointer;
+                }
+
+                .label:hover {
+                    background: #2e6eb6f7;
+                    color: #fff;
+
+                    box-shadow: 0 4px 8px rgba(43, 92, 255, 0.2);
+                }
+
+                @media (max-width: 768px) {
+                    .label {
+                        flex: 1 1 45%;
+                        text-align: center;
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    .label {
+                        flex: 1 1 100%;
+                    }
+                }
+
+                .search-bar {
+                    position: relative;
+                    display: inline-flex;
+                    align-items: center;
+                    background: #fff;
+                    border-radius: 12px;
+                    padding: 6px 10px;
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+                }
+
+                .search-input {
+                    border: none;
+                    outline: none;
+                    padding: 8px 10px;
+                    font-size: 0.95rem;
+                    width: 400px;
+                }
+
+                .search-btn {
+                    background: #002e62;
+                    border: none;
+                    border-radius: 10px;
+                    padding: 7px 10px;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: 0.2s ease;
+                }
+
+                .search-btn img {
+                    width: 20px;
+                    height: 20px;
+                    filter: brightness(0) invert(1);
+                }
+
+                .hero-inner h1 {
+                    font-weight: 700;
+                }
+
+                .search-btn:hover {
+                    background: #005ecc;
+                }
+            </style>
+        </div>
+
+        <!-- SVG that uses CSS variables -->
+        <svg class="hero-svg" viewBox="0 0 1440 400" preserveAspectRatio="none">
+            <defs>
+                <!-- Background gradient controlled by CSS -->
+                <linearGradient id="bgMain" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="var(--bg1)" />
+                    <stop offset="100%" stop-color="var(--bg2)" />
+                </linearGradient>
+
+                <!-- Soft blur -->
+                <filter id="blurSoft">
+                    <feGaussianBlur stdDeviation="35" />
+                </filter>
+            </defs>
+
+            <!-- Background -->
+            <rect width="1440" height="400" fill="url(#bgMain)" />
+
+            <!-- Abstract highlight shape -->
+            <path d="M0,240 C300,150 600,350 900,260 C1200,180 1440,260 1440,260 L1440,400 L0,400 Z"
+                fill="rgba(255,255,255,0.30)" filter="url(#blurSoft)" />
+
+            <!-- Light line -->
+            <path d="M0,160 C400,90 900,200 1440,120" stroke="rgba(255,255,255,0.55)" stroke-width="3" fill="none" />
+        </svg>
+    </section>
+
+
+    <style>
+        /* 🎨 CHANGE COLORS HERE ONLY */
+        .hero-40vh {
+            --bg1: #dbeafe;
+            /* top-left */
+            --bg2: #93c5fd;
+            /* bottom-right */
+
+            position: relative;
+            height: 45vh;
+            min-height: 230px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            font-family: system-ui;
+            color: #0f2d4a;
+        }
+
+        /* content */
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        /* SVG background */
+        .hero-svg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+    </style>
+
+    <nav class="breadcrumb-nav text-dark mt-2">
+        <a href="#" class="breadcrumb-link home">Home <i class="fa-solid fa-chevron-right"></i>
+            <span>Main-Course-page</span></a>
+
+    </nav>
+
+
+    <style>
+        .breadcrumb-nav {
+            display: flex;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            color: #333;
+            justify-content: start;
+            margin-left: 116px;
+        }
+
+        .breadcrumb-link {
+            text-decoration: none;
+            color: #000;
+            transition: color 0.3s ease;
+            font-size: 18px;
+        }
+
+        .breadcrumb-link span:hover {
+            color: var(--orange, #ff7b00);
+        }
+
+        .breadcrumb-nav i {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .breadcrumb-current {
+            color: #888;
+        }
+    </style>
+
+    
+        <!-- ===============================================HERO-SECTION -->
+
+        <div class="container mt-5">
+            <h2 class="text-center text-primary-emphasis">List of Best <span class="text-info">MBA Specializations</span> Available in India</h2>
+
+            <p>Choosing the right MBA specialization is one of the most important decisions in shaping a successful
+                management career. Today, MBA programs in India are designed to match industry demands and evolving
+                global business trends, ensuring that students are well-prepared for leadership roles in diverse
+                sectors. The best MBA specializations in India offer opportunities in high-growth areas such as
+                Marketing, Finance, Human Resource Management, Business Analytics, International Business, and
+                Operations Management — each designed to equip students with the skills needed to thrive in a
+                competitive business world.<br>
+                <br>
+                For students looking to pursue their MBA in India, business schools and universities offer a wide range
+                of specialized programs tailored to meet individual career aspirations. Whether it’s a focus on
+                entrepreneurship and innovation, digital marketing, supply chain management, or healthcare
+                administration, these top MBA specializations in India are structured to align with current market needs
+                and emerging business opportunities. Students can choose a specialization that matches their interests,
+                strengths, and long-term career goals.<br>
+                <br>
+                In today’s dynamic corporate environment, selecting the right MBA specialization can offer a significant
+                competitive advantage. Some of the most in-demand MBA specializations in India include Business
+                Analytics, Financial Management, Information Technology, and International Business. These areas cater
+                to industries experiencing rapid growth and digital transformation, ensuring that graduates are prepared
+                for impactful careers with global organizations.<br>
+                <br>
+                Moreover, India’s leading business schools emphasize practical learning, case-based pedagogy, and
+                industry internships that provide real-world exposure across different management domains. Students
+                pursuing the best MBA specializations gain not only academic excellence but also the confidence and
+                strategic insight required to lead organizations effectively.<br>
+                <br>
+                Whether you’re aiming to become a marketing strategist, financial analyst, HR leader, or business
+                consultant, the list of top MBA specializations available in India offers endless opportunities to shape
+                your professional journey. With the right choice of specialization, students can unlock pathways to
+                leadership, innovation, and global success.
+            </p>
+        </div>
+        </div>
+        
+
+        
+        <!-- ============================================specialization cards -->
+
+        <div class="container py-5">
+            <div class="row g-4 justify-content-center">
+                <!-- Card 1 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="special-card text-center p-4">
+                        <img src="specializations-imgs/Marketing.svg" alt="Medical" width="130">
+                        <h5 class="mt-3 fw-bold">Medical</h5>
+
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="main-btn">Apply Now</button>
+                            <button class="outline-btn p-1">
+                                View More
+                                <svg class="arrow-icon" viewBox="0 0 16 19" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Card 2 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="special-card text-center p-4">
+                        <img src="specializations-imgs/Finance.svg" alt="Dental" width="120">
+                        <h5 class="mt-3 fw-bold">Finance</h5>
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="main-btn">Apply Now</button>
+                            <button class="outline-btn p-1">
+                                View More
+                                <svg class="arrow-icon" viewBox="0 0 16 19" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="special-card text-center p-4">
+                        <img src="specializations-imgs/Human Resource.svg" alt="Medical" width="120">
+                        <h5 class="mt-3 fw-bold">Human Resource</h5>
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="main-btn">Apply Now</button>
+                            <button class="outline-btn p-1">
+                                View More
+                                <svg class="arrow-icon" viewBox="0 0 16 19" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="special-card text-center p-4">
+                        <img src="specializations-imgs/International Business.svg" alt="Dental" width="120">
+                        <h5 class="mt-3 fw-bold">International Business</h5>
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="main-btn">Apply Now</button>
+                            <button class="outline-btn p-1">
+                                View More
+                                <svg class="arrow-icon" viewBox="0 0 16 19" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="special-card text-center p-4">
+                        <img src="specializations-imgs/Operations Management.svg" alt="Medical" width="100">
+                        <h5 class="mt-3 fw-bold">Operations Management</h5>
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="main-btn">Apply Now</button>
+                            <button class="outline-btn p-1">
+                                View More
+                                <svg class="arrow-icon" viewBox="0 0 16 19" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="special-card text-center p-4">
+                        <img src="specializations-imgs/Information Technology.svg" alt="Dental" width="100">
+                        <h5 class="mt-3 fw-bold">Information Technology</h5>
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="main-btn">Apply Now</button>
+                            <button class="outline-btn p-1">
+                                View More
+                                <svg class="arrow-icon" viewBox="0 0 16 19" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 1 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="special-card text-center p-4">
+                        <img src="specializations-imgs/Business Analytics.svg" alt="Medical" width="100">
+                        <h5 class="mt-3 fw-bold">Business Analytics</h5>
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="main-btn">Apply Now</button>
+                            <button class="outline-btn p-1">
+                                View More
+                                <svg class="arrow-icon" viewBox="0 0 16 19" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="special-card text-center p-4">
+                        <img src="specializations-imgs/Entrepreneurship.svg" alt="Dental" width="100">
+                        <h5 class="mt-3 fw-bold">Entrepreneurship</h5>
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="main-btn">Apply Now</button>
+                            <button class="outline-btn p-1">
+                                View More
+                                <svg class="arrow-icon" viewBox="0 0 16 19" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z" />
+                                </svg>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more cards similarly -->
+            </div>
+        </div>
+
+
+        <style>
+            :root {
+                --orange: #ff6600;
+            }
+
+            .outline-btn {
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 3px;
+                font-size: 14px;
+                font-weight: 600;
+                color: rgb(72, 72, 72) !important;
+                background: #fff;
+                border: 2px solid rgb(72, 72, 72) !important;
+                border-radius: 50px;
+                cursor: pointer;
+                overflow: hidden;
+                transition: all 0.4s ease;
+                isolation: isolate;
+            }
+
+            /* Animated background on hover */
+            .outline-btn::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: rgb(72, 72, 72);
+                border-radius: 50px;
+                transform: translateY(-50%) scale(1);
+                transition: all 0.6s ease;
+                z-index: -1;
+
+            }
+
+            .outline-btn:hover::before {
+                left: 0;
+                transform: translateY(-50%) scale(1.4);
+            }
+
+            .outline-btn:hover {
+                color: #ffffff !important;
+                border-style: solid;
+            }
+
+            /* Arrow icon animation */
+            .outline-btn .arrow-icon {
+                width: 20px;
+                height: 20px;
+                padding: 4px;
+                border-radius: 50%;
+                transform: rotate(45deg);
+                transition: all 0.4s ease;
+                fill: var(--orange);
+            }
+
+            .outline-btn:hover .arrow-icon {
+                background: #fff;
+                fill: var(--orange);
+                border: none;
+                transform: rotate(90deg);
+            }
+
+            .special-card h5 {
+                color: rgb(0, 0, 0);
+                font-weight: 400 !important;
+            }
+
+
+            /* When the card is hovered, also affect the h5 */
+            .special-card:hover h5 {
+                color: rgb(0, 0, 0);
+                font-weight: 400 !important;
+            }
+
+            .special-card {
+                background: #fff;
+                border: 1px solid #d9e2f1;
+                border-radius: 5px;
+                box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+                transition: 0.3s;
+            }
+
+            .special-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+                color: #000 !important;
+                border: 6px solid linear-gradient(90deg, #0036a4, #006aff, #00a2ff) !;
+            }
+
+
+            /* .special-card img {
+                filter: brightness(0) saturate(100%) invert(21%) sepia(87%) saturate(1860%) hue-rotate(203deg) brightness(92%) contrast(101%);
+            } */
+
+            .main-btn {
+                background: linear-gradient(90deg, rgb(20, 70, 128), rgb(15, 135, 209)) !important;
+                color: #fff;
+                border: none;
+                padding: 3px 5px;
+                border-radius: 8px;
+                margin: 8px 0;
+                font-weight: 600;
+                font-size: 14px;
+
+            }
+
+            .outline-btn {
+                background: #ffffff;
+                color: var(--orange);
+                border: none;
+                padding: 3px 2px !important;
+                border-radius: 8px;
+                margin: 8px 0;
+                font-weight: 600;
+                border: 2px dashed var(--orange);
+            }
+
+
+            @media (max-width: 768px) {
+                .special-card {
+                    margin-bottom: 20px;
+                }
+            }
+        </style>
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- Logo & Info -->
+                <div class="col-lg-4 col-md-6 mb-4 left-text">
+                    <div class="footer-logo mb-3">
+                        <img src="https://www.keralastudy.com/images/logo.png" class="img-fluid" alt="">
+                    </div>
+                    <p>Dream. Apply. Achieve.<br>
+                        Our Expert Admission Guidance is the Bridge that Connects You to a Brighter Future.</p>
+                    <p><i class="fa fa-phone me-2"></i>1800 120 8696</p>
+                    <p><i class="fa fa-envelope me-2"></i>info@learntechww.com</p>
+                    <p><i class="fa fa-map-marker-alt me-2"></i>#80 (4), 'D' Main Rd, East End, 9th Block,<br>Jayanagar,
+                        Bangalore, Karnataka - 560041</p>
+                </div>
+
+                <!-- Info -->
+                <div class="col-lg-2 col-md-6 mb-4 pt-5">
+                    <h6 class="footer-title">Info</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="about-us.html"><i class="fa-solid fa-angles-right"></i> About us</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Our Team</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Contact us</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Careers</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Site Map</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6 mb-4  pt-5">
+                    <h6 class="footer-title">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Blogs</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> NRI Quota</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Study Abroad</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Scholarships</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Student's Speak</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Education Loan</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal -->
+                <div class="col-lg-2 col-md-6 mb-4 pt-5">
+                    <h6 class="footer-title">Legal</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Feed</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Disclaimer</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Privacy Policy</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Terms & Conditions</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Advertise With Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Download App -->
+                <div class="col-lg-2 col-md-6 mb-4  pt-5">
+                    <h6 class="footer-title">Download Our App</h6>
+                    <div class="download-btn">
+                        <a href="#"><img
+                                src="https://www.learntechww.com/_next/image?url=%2Fimages%2Ficons%2Fapp-store.webp&w=384&q=75"
+                                alt="App Store"></a><br>
+                        <a href="#"><img
+                                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                                alt="Google Play"></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Download Brochure -->
+            <div class="text-center">
+                <a href="#" class="download-brochure">📄 Download Brochure</a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom mt-4 d-flex justify-content-between align-items-center left-text">
+                <p class="mb-0">©2025 Learntech Edu Solutions Pvt. Ltd. All Rights Reserved.</p>
+
+                <div class="d-flex align-items-center ">
+                    <p class="mb-0 me-2">Follow us on</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <style>
+        /* -----------------------------------footer css code */
+        .footer {
+            background-color: #0c2a45;
+            color: #fff;
+            padding: 40px 20px 20px;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 15px;
+            font-weight: 300;
+        }
+
+        .footer a:hover {
+            color: #f1a470;
+        }
+
+        .footer .footer-logo img {
+            height: 65px;
+        }
+
+        .footer .footer-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .footer .download-btn img {
+            max-width: 140px;
+            margin-bottom: 10px;
+        }
+
+        .footer .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #fff;
+            color: #0b2a66;
+            margin: 0 5px;
+            font-size: 16px;
+        }
+
+        .footer .social-icons a:hover {
+            background: #cdddf7;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 30px;
+            padding-top: 15px;
+            text-align: center;
+            font-size: 14px;
+            display: flex;
+        }
+
+        .download-brochure {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #000f34;
+            color: #0b2a66;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            border: 2px solid rgb(255, 255, 255);
+            transition: all 0.3s ease;
+            /* smooth transition for all properties */
+            border-radius: 50px;
+        }
+
+        .download-brochure:hover {
+
+            /* subtle zoom */
+            color: #ffffff;
+            /* optional color change on hover */
+            background: #0b2a66;
+            /* optional background change on hover */
+            border-color: #001a4f;
+            /* optional border change */
+        }
+
+
+        .text-right {
+            display: flex;
+            justify-content: flex-end;
+            /* pushes content to the right */
+            align-items: flex-end;
+            /* vertically centers if needed */
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            /* optional separator */
+            padding-top: 15px;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .footer-bottom .social-icons a {
+            color: #000000;
+            margin-left: 12px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .footer-bottom .social-icons a:hover {
+            color: #f1a470;
+            /* highlight on hover */
+        }
+
+        .left-text p {
+            font-size: 16px;
+        }
+
+        .form-bg {
+            background-color: #000124;
+            border-top-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+    </style>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="script.js"></script>
+
+
+
+
+</body>
+
+</html>
