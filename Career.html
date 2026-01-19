@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="navbar.css">
+
+
+
+
+</head>
+<style>
+    h1 {
+        font-weight: 400 !important;
+    }
+
+    .btn-blue {
+        position: relative;
+        display: inline-block;
+        padding: 10px 22px;
+        background: transparent;
+        color: #003479;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 3px;
+        border: 1.2px solid #003479;
+        text-decoration: none;
+        overflow: hidden;
+        cursor: pointer;
+        transition: color 0.35s ease;
+        z-index: 1;
+    }
+
+    /* Fill layer */
+    .btn-blue::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: #003479;
+        border: 1px solid #003479 !important;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.35s ease;
+        z-index: -1;
+    }
+
+    /* Hover effect */
+    .btn-blue:hover {
+        color: #ffffff;
+        border: 1px solid #003479 !important;
+    }
+
+    .btn-blue:hover::before {
+        transform: scaleY(1);
+    }
+
+
+    /* ---------- RESET ---------- */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins";
+    }
+
+    html,
+    body {
+        font-family: "Poppins" !important;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+        background-color: #ffffff;
+    }
+
+    h1 {
+        font-family: "Poppins" !important;
+        color: #001a4f;
+    }
+
+    .phone {
+        text-decoration: none;
+        font-size: 16px;
+        padding-left: 20px;
+    }
+
+    .phone i {
+        color: red;
+    }
+
+    .city-btn {
+        border: 1px solid blue;
+        padding: 5px 30px;
+
+    }
+
+    .city-btn {
+        display: inline-block;
+        padding: 3px 36px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 10px;
+        background: #0b2a66;
+        /* deep professional color */
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .city-btn::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 50%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.08);
+        transform: skewX(-25deg);
+        transition: all 0.5s ease;
+    }
+
+    .city-btn:hover {
+        background: linear-gradient(90deg, #0b2a66, #3370ea);
+        transform: translate(scale(1.4));
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+        color: #ffffff;
+    }
+
+    h2 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 32px;
+        font-weight: bold;
+        color: black;
+
+    }
+
+    p,
+    li {
+        font-size: 16px;
+    }
+</style>
+
+<body>
+
+    <div class="navbar px-5">
+        <div class="logo"><img src="https://www.keralastudy.com/images/logo.png" class="w-100" alt=""></div>
+        <div class="nav-links">
+            <div class="nav-item">Top Colleges</div>
+                <div class="nav-item">Top Courses</div>
+            <div class="nav-item">Entrance Exam</div>
+            <div class="nav-item">Boards</div>
+            <div class="nav-item">News</div>
+            <a href="tel:+919876543210" class="text-white phone"><i class="fa-solid fa-phone"></i> +91 98765 43210</a>
+        </div>
+        <div class="btns">
+            <button>Write a review</button>
+            <button><i class="fa-solid fa-user"></i> / Register</button>
+        </div>
+    </div>
+
+
+
+    <!-- navbar 2nd -->
+    <div class="navbar-two p-0">
+        <div class="nav-links" data-aos="fade-right">
+            <div class="nav-item">Home</div>
+            <div class="nav-item">Medical <i class="fa-solid fa-angle-down"></i>
+                <div class="dropdown">
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY COURSE</h4>
+                        <ul>
+                            <li>MBBS Colleges</li>
+                            <li>MS Colleges</li>
+                            <li>BAMS Colleges</li>
+                            <li>BPT Colleges</li>
+                            <li>M.F.Sc Colleges</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-column">
+                        <h4>POPULAR COLLEGES</h4>
+                        <ul>
+                            <li>AIIMS, New Delhi</li>
+                            <li>Kasturba Medical College, Mangalore</li>
+                            <li>Aligarh Muslim University, UP</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY CITY</h4>
+                        <ul>
+                            <li>Thiruvananthapuram</li>
+                            <li>Kozhikode</li>
+                            <li>Kochi</li>
+                            <li>Thrissur</li>
+                            <li>Kottayam</li>
+                            <li>Alappuzha</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>EXAMS</h4>
+                        <ul>
+                            <li>JEE Main</li>
+                            <li>JEE Advanced</li>
+                            <li>UPESEAT</li>
+                            <li>WBJEE</li>
+                            <li>OUCET</li>
+                            <li>AP EAMCET</li>
+                            <li>LPUNEST</li>
+                            <li>All Engineering Exams >></li>
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="nav-item">Engineering<i class="fa-solid fa-angle-down"></i>
+                <div class="dropdown">
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY COURSE</h4>
+                        <ul>
+                            <li>MBBS Colleges</li>
+                            <li>MS Colleges</li>
+                            <li>BAMS Colleges</li>
+                            <li>BPT Colleges</li>
+                            <li>M.F.Sc Colleges</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-column">
+                        <h4>POPULAR COLLEGES</h4>
+                        <ul>
+                            <li>AIIMS, New Delhi</li>
+                            <li>Kasturba Medical College, Mangalore</li>
+                            <li>Aligarh Muslim University, UP</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY CITY</h4>
+                        <ul>
+                            <li>Thiruvananthapuram</li>
+                            <li>Kozhikode</li>
+                            <li>Kochi</li>
+                            <li>Thrissur</li>
+                            <li>Kottayam</li>
+                            <li>Alappuzha</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+
+
+                    <div class="dropdown-column">
+                        <h4>EXAMS</h4>
+                        <ul>
+                            <li>JEE Main</li>
+                            <li>JEE Advanced</li>
+                            <li>UPESEAT</li>
+                            <li>WBJEE</li>
+                            <li>OUCET</li>
+                            <li>AP EAMCET</li>
+                            <li>LPUNEST</li>
+                            <li>All Engineering Exams >></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-item">Dental Colleges<i class="fa-solid fa-angle-down"></i>
+                <div class="dropdown">
+
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY COURSE</h4>
+                        <ul>
+                            <li>MBBS Colleges</li>
+                            <li>MS Colleges</li>
+                            <li>BAMS Colleges</li>
+                            <li>BPT Colleges</li>
+                            <li>M.F.Sc Colleges</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-column">
+                        <h4>POPULAR COLLEGES</h4>
+                        <ul>
+                            <li>AIIMS, New Delhi</li>
+                            <li>Kasturba Medical College, Mangalore</li>
+                            <li>Aligarh Muslim University, UP</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY CITY</h4>
+                        <ul>
+                            <li>Thiruvananthapuram</li>
+                            <li>Kozhikode</li>
+                            <li>Kochi</li>
+                            <li>Thrissur</li>
+                            <li>Kottayam</li>
+                            <li>Alappuzha</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+
+
+                    <div class="dropdown-column">
+                        <h4>EXAMS</h4>
+                        <ul>
+                            <li>JEE Main</li>
+                            <li>JEE Advanced</li>
+                            <li>UPESEAT</li>
+                            <li>WBJEE</li>
+                            <li>OUCET</li>
+                            <li>AP EAMCET</li>
+                            <li>LPUNEST</li>
+                            <li>All Engineering Exams >></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-item">Management <i class="fa-solid fa-angle-down"></i>
+                <div class="dropdown">
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY COURSE</h4>
+                        <ul>
+                            <li>MBBS Colleges</li>
+                            <li>MS Colleges</li>
+                            <li>BAMS Colleges</li>
+                            <li>BPT Colleges</li>
+                            <li>M.F.Sc Colleges</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-column">
+                        <h4>POPULAR COLLEGES</h4>
+                        <ul>
+                            <li>AIIMS, New Delhi</li>
+                            <li>Kasturba Medical College, Mangalore</li>
+                            <li>Aligarh Muslim University, UP</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY CITY</h4>
+                        <ul>
+                            <li>Thiruvananthapuram</li>
+                            <li>Kozhikode</li>
+                            <li>Kochi</li>
+                            <li>Thrissur</li>
+                            <li>Kottayam</li>
+                            <li>Alappuzha</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+
+
+                    <div class="dropdown-column">
+                        <h4>EXAMS</h4>
+                        <ul>
+                            <li>JEE Main</li>
+                            <li>JEE Advanced</li>
+                            <li>UPESEAT</li>
+                            <li>WBJEE</li>
+                            <li>OUCET</li>
+                            <li>AP EAMCET</li>
+                            <li>LPUNEST</li>
+                            <li>All Engineering Exams >></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-item">Commerce <i class="fa-solid fa-angle-down"></i>
+                <div class="dropdown">
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY COURSE</h4>
+                        <ul>
+                            <li>MBBS Colleges</li>
+                            <li>MS Colleges</li>
+                            <li>BAMS Colleges</li>
+                            <li>BPT Colleges</li>
+                            <li>M.F.Sc Colleges</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-column">
+                        <h4>POPULAR COLLEGES</h4>
+                        <ul>
+                            <li>AIIMS, New Delhi</li>
+                            <li>Kasturba Medical College, Mangalore</li>
+                            <li>Aligarh Muslim University, UP</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY CITY</h4>
+                        <ul>
+                            <li>Thiruvananthapuram</li>
+                            <li>Kozhikode</li>
+                            <li>Kochi</li>
+                            <li>Thrissur</li>
+                            <li>Kottayam</li>
+                            <li>Alappuzha</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+
+
+                    <div class="dropdown-column">
+                        <h4>EXAMS</h4>
+                        <ul>
+                            <li>JEE Main</li>
+                            <li>JEE Advanced</li>
+                            <li>UPESEAT</li>
+                            <li>WBJEE</li>
+                            <li>OUCET</li>
+                            <li>AP EAMCET</li>
+                            <li>LPUNEST</li>
+                            <li>All Engineering Exams >></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-item">Nursing <i class="fa-solid fa-angle-down"></i>
+                <div class="dropdown">
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY COURSE</h4>
+                        <ul>
+                            <li>MBBS Colleges</li>
+                            <li>MS Colleges</li>
+                            <li>BAMS Colleges</li>
+                            <li>BPT Colleges</li>
+                            <li>M.F.Sc Colleges</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-column">
+                        <h4>POPULAR COLLEGES</h4>
+                        <ul>
+                            <li>AIIMS, New Delhi</li>
+                            <li>Kasturba Medical College, Mangalore</li>
+                            <li>Aligarh Muslim University, UP</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY CITY</h4>
+                        <ul>
+                            <li>Thiruvananthapuram</li>
+                            <li>Kozhikode</li>
+                            <li>Kochi</li>
+                            <li>Thrissur</li>
+                            <li>Kottayam</li>
+                            <li>Alappuzha</li>
+                            <li class="text-info-emphasis">View More <i class="fa-solid fa-caret-right"></i></li>
+                        </ul>
+                    </div>
+
+
+                    <div class="dropdown-column">
+                        <h4>EXAMS</h4>
+                        <ul>
+                            <li>JEE Main</li>
+                            <li>JEE Advanced</li>
+                            <li>UPESEAT</li>
+                            <li>WBJEE</li>
+                            <li>OUCET</li>
+                            <li>AP EAMCET</li>
+                            <li>LPUNEST</li>
+                            <li>All Engineering Exams >></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="nav-item">Commerce</div>
+            <div class="nav-item">Nursing</div> -->
+            <div class="nav-link-item">
+                More
+                <div class="mini-menu">
+                    <ul>
+                        <a href="about-us.html">
+                            <li>About Us</li>
+                        </a>
+                        <li>Our Team</li>
+                        <li>Services</li>
+                        <li>Blogs</li>
+                        <li>Boards</li>
+                        <li>Schools</li>
+                    </ul>
+                </div>
+            </div>
+            <button class="btn city-btn">Admissions 2025</button>
+        </div>
+    </div>
+
+    <!-- Mobile Hamburger Menu -->
+    <div class="mobile-navbar">
+        <div class="mobile-logo">
+            <img src="https://www.keralastudy.com/images/logo.png" alt="Logo">
+        </div>
+        <div class="hamburger">&#9776;</div>
+    </div>
+
+    <!-- Mobile Menu Links -->
+    <div class="mobile-menu">
+        <div class="mobile-item">Home</div>
+        <div class="mobile-item">Medical</div>
+        <div class="mobile-item">Engineering</div>
+        <div class="mobile-item">Dental Colleges</div>
+        <div class="mobile-item">Management</div>
+        <div class="mobile-item">Commerce</div>
+        <div class="mobile-item">Nursing</div>
+        <div class="mobile-item">More</div>
+    </div>
+
+
+    <!-- ====================================================================================banner -->
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container text-start">
+            <div class="row">
+                <div class="col-lg-12 reveal text-start">
+                    <h1 style="color: #ffffff; font-weight: 400 !important;">
+                        <span style="color: #003264;">C</span>areer
+                    </h1>
+                    <p class="mt-4 text-start" style="color: #ffffff;">
+                        We partner with students, parents, and institutions to deliver
+                        transparent education pathways that lead to real careers
+                        not just admissions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        .hero {
+            position: relative;
+            padding: 120px 0;
+            background: url("chess-colleagues-corporate-team-solution-group-concept_11zon.jpg") center center / cover no-repeat;
+            overflow: hidden;
+        }
+
+        /* BLACK OVERLAY */
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, #164271dc, #16427100);
+            z-index: 1;
+        }
+
+        /* CONTENT ABOVE OVERLAY */
+        .hero .container {
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero h1 {
+            font-size: clamp(3.2rem, 6vw, 5.4rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: #ffffff;
+        }
+
+        .hero p {
+            max-width: 560px;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.85);
+
+            /* keeps paragraph right-aligned block */
+        }
+    </style>
+
+
+
+    <!-- BREADCRUMB -->
+    <nav class="breadcrumb-wrap container" aria-label="Breadcrumb">
+        <a href="#">Home</a>
+        <span class="divider" aria-hidden="true">›</span>
+        <a href="#">Placement</a>
+        <span class="divider" aria-hidden="true">›</span>
+        <span class="current">Career</span>
+    </nav>
+
+    <style>
+        .breadcrumb-wrap {
+            margin-top: 12px !important;
+            font-size: 17px;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #0a2540;
+        }
+
+        .breadcrumb-wrap a {
+            text-decoration: none;
+            color: #0a2540;
+            transition: color 0.25s ease;
+            line-height: 1;
+        }
+
+        .breadcrumb-wrap a:hover {
+            color: #000000;
+        }
+
+        /* Divider fix */
+        .breadcrumb-wrap .divider {
+            display: inline-flex;
+            align-items: center;
+            line-height: 1;
+            opacity: 0.6;
+            transform: translateY(1px);
+        }
+
+        .breadcrumb-wrap .current {
+            color: #00226b;
+            font-weight: 600;
+            line-height: 1;
+        }
+    </style>
+
+
+
+    <section class="about-learntech">
+        <div class="container">
+            <h2 style="color: #ffffff; font-weight: 400 !important;">
+                <span style="color: #003264;">About Kerala Study Pvt. Ltd.</span>ur <span
+                    style="color: #003264;"></span>
+            </h2>
+            <p>
+                Kerala Study is an educational services provider that has been active in the education sector
+                since 1994. Our headquarters is optimally located in Bangalore, with a strong network of branches across
+                India, including Kerala and Haryana, as well as international presence in the UAE, Bahrain, and Qatar.
+            </p>
+            <p>
+                Our primary focus is on delivering accurate academic guidance through seasoned counsellors who possess
+                in-depth knowledge of the education industry. We predominantly support students in fields such as
+                Medicine, Dentistry, Engineering, Computer Science, Nursing, Pharmacy, Law, Management, and more.
+            </p>
+            <p>
+                Our services are not limited by nationality. We cater to Indian nationals, NRIs, and international
+                students, with a commitment to making quality academic assistance accessible to all. In addition to
+                providing admission guidance for regional institutions, we also help students pursue higher education
+                opportunities at some of the world’s top universities and colleges.
+            </p>
+        </div>
+    </section>
+
+    <style>
+        .about-learntech {
+            padding: 80px 20px;
+            background: #ffffff;
+            color: #0a2540;
+        }
+
+
+
+        .about-container h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #0a2540;
+        }
+
+        .about-container p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 18px;
+            color: #425466;
+        }
+
+        @media (max-width: 768px) {
+            .about-container h2 {
+                font-size: 26px;
+            }
+
+            .about-container p {
+                font-size: 15px;
+            }
+        }
+    </style>
+
+
+    <style>
+        .btn-blue {
+            position: relative;
+            display: inline-block;
+            padding: 10px 22px;
+            background: #003479;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 400;
+            border-radius: 3px;
+            border: 1px solid #003479;
+            text-decoration: none;
+            overflow: hidden;
+            cursor: pointer;
+            transition: color 0.35s ease;
+            z-index: 1;
+        }
+
+        /* Fill layer */
+        .btn-blue::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: white;
+            border: 1px solid #003479 !important;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.35s ease;
+            z-index: -1;
+        }
+
+        /* Hover effect */
+        .btn-blue:hover {
+            color: #003479;
+            border: 1px solid #003479 !important;
+        }
+
+        .btn-blue:hover::before {
+            transform: scaleY(1);
+        }
+
+        .open-roles-section {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1300px;
+            margin: 50px auto;
+            gap: 50px;
+            padding: 0 20px;
+        }
+
+        .open-roles-left {
+            flex: 1 1 50px;
+        }
+
+        .open-roles-left h2 {
+            font-size: 36px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .open-roles-left p {
+            font-size: 16px;
+        }
+
+        .open-roles-left a {
+            color: #f58220;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .open-roles-right {
+            flex: 2 1 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .job-card {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .job-info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .job-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .job-info .open-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #4da5d6;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            font-weight: 600 !important;
+        }
+
+        .job-info h3 {
+            font-size: 25px;
+            margin: 0 0 5px 0;
+            font-weight: 400;
+            color: #003479 !important;
+        }
+
+        .job-info .job-meta {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .job-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .job-button,
+        .faq-button {
+            background-color: #ffffff;
+            color: #003479;
+            border: 2px solid #00347937;
+            padding: 10px 15px;
+            border-radius: 100% !important;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .faq-button {
+            border-radius: 5px;
+        }
+
+        .job-button:hover,
+        .faq-button:hover {
+            background-color: #ffffff;
+        }
+
+
+        /* FAQ inside job card */
+        .job-faq {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            font-size: 14px;
+            color: #555;
+            background-color: #f9f9f9;
+            padding: 0 10px;
+
+        }
+
+        .job-faq.open {
+            padding: 10px;
+            max-height: 200px;
+            /* adjust as needed */
+        }
+
+        @media (max-width: 900px) {
+            .open-roles-section {
+                flex-direction: column;
+            }
+
+            .open-roles-left,
+            .open-roles-right {
+                flex: 1 1 100%;
+            }
+
+            .job-info-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .job-buttons {
+                flex-direction: row;
+                align-self: flex-start;
+            }
+        }
+
+        .faq-button i {
+            font-size: 14px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-blue i {
+            font-size: 14px;
+            margin-left: 6px;
+            rotate: calc(222deg);
+        }
+    </style>
+    <h2 class="text-center fs-1 mb-5" style="color: #003264; font-weight: 600 !important;">
+        Current <span style="color: #00326491;">Openings</span>
+    </h2>
+    <section class="open-roles-section">
+
+        <div class="open-roles-left">
+            <h2>Contact Career Representative</h2>
+
+            <p class="contact-desc">
+                Please fill out the form to enable our career representatives to contact you at the earliest.
+            </p>
+
+            <div class="contact-email">
+                <a href="mailto:example@gmail.com">example@gmail.com</a><br>
+                <a href="mailto:example@gmail.com">example@gmail.com</a>
+            </div>
+
+            <div class="contact-phones">
+
+                <div class="phone-group">
+                    <i class="fa-solid fa-phone"></i>
+                    <div class="phone-numbers">
+                        <a href="tel:+919655856423">+91 9655856423</a>
+                        <a href="tel:+919655856423">+91 9655856423</a>
+                    </div>
+                </div>
+
+                <div class="phone-group">
+                    <i class="fa-solid fa-phone"></i>
+                    <div class="phone-numbers">
+                        <a href="tel:+919655856423">+91 9655856423</a>
+                        <a href="tel:+919655856423">+91 9655856423</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <style>
+            .open-roles-left {
+                max-width: 420px;
+                color: #0a2540;
+                font-family: Arial, sans-serif;
+            }
+
+            .open-roles-left h2 {
+                font-size: 26px;
+                font-weight: 700;
+                margin-bottom: 12px;
+            }
+
+            .contact-desc {
+                font-size: 15px;
+                color: #425466;
+                line-height: 1.7;
+                margin-bottom: 20px;
+            }
+
+            .contact-email {
+                margin-bottom: 14px;
+            }
+
+            .contact-email a {
+                display: block;
+                color: #ff7300;
+                text-decoration: none;
+                font-size: 15px;
+                line-height: 1.6;
+            }
+
+            .contact-email a:hover {
+                text-decoration: underline;
+            }
+
+            .contact-phones {
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .phone-group {
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .phone-group i {
+                color: #2563eb;
+                font-size: 26px;
+                margin-top: 4px;
+            }
+
+            .phone-numbers a {
+                display: block;
+                color: #0a2540;
+                text-decoration: none;
+                font-size: 15px;
+                line-height: 1.6;
+            }
+
+            .phone-numbers a:hover {
+                text-decoration: underline;
+            }
+        </style>
+
+
+        <div class="open-roles-right">
+            <!-- Job 1 -->
+            <div class="job-card">
+                <div class="job-info-row">
+                    <div class="job-info">
+                        <span class="open-label">Open Roles</span>
+                        <h3>Senior Inventory Specialist</h3>
+                        <span class="job-meta">Bangalore • 2-3 Years Exp. • No. of Vacancies - 01</span>
+                    </div>
+                    <div class="job-buttons">
+                        <button class="faq-button">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+
+
+                        <a href="#" class="btn-blue">
+                            Submit Application<i class="fa-solid fa-arrow-down"></i>
+                        </a>
+
+
+                    </div>
+                </div>
+                <div class="job-faq">
+                    The Senior Inventory Specialist is responsible for managing inventory levels, coordinating with
+                    suppliers, and ensuring accurate stock records.
+                </div>
+            </div>
+
+            <!-- Job 2 -->
+            <div class="job-card">
+                <div class="job-info-row">
+                    <div class="job-info">
+                        <span class="open-label">Open Roles</span>
+                        <h3>Senior Software Developer</h3>
+                        <span class="job-meta">Bangalore • 2-3 Years Exp. • No. of Vacancies - 01</span>
+                    </div>
+                    <div class="job-buttons">
+                        <button class="faq-button">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+
+
+                        <a href="#" class="btn-blue">
+                            Submit Application<i class="fa-solid fa-arrow-down"></i>
+                        </a>
+
+
+                    </div>
+                </div>
+                <div class="job-faq">
+                    The Senior Software Developer will work on full-stack web development, contributing to architecture,
+                    coding, and deployment of software solutions.
+                </div>
+            </div>
+
+            <!-- Job 3 -->
+            <div class="job-card">
+                <div class="job-info-row">
+                    <div class="job-info">
+                        <span class="open-label">Open Roles</span>
+                        <h3>Junior UI/UX Fullstack Designer</h3>
+                        <span class="job-meta">Bangalore • 2-3 Years Exp. • No. of Vacancies - 01</span>
+                    </div>
+                    <div class="job-buttons">
+                        <button class="faq-button">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+
+                        <a href="#" class="btn-blue">
+                            Submit Application<i class="fa-solid fa-arrow-down"></i>
+                        </a>
+
+
+                    </div>
+                </div>
+                <div class="job-faq">
+                    The Junior UI/UX Fullstack Designer will assist in designing user interfaces, user experiences, and
+                    front-end development tasks.
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="career-form-section">
+        <div class="career-form-container">
+            <h2 class="text-center fs-1 mb-5" style="color: #003264; font-weight: 600 !important;">
+                Enter Your <span style="color: #00326491;">Details</span>
+            </h2>
+
+            <form class="career-form">
+
+                <div class="form-group">
+                    <label>Full Name<span>*</span></label>
+                    <input type="text" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email ID<span>*</span></label>
+                    <input type="email" placeholder="Enter your email address" required>
+                </div>
+
+                <div class="form-group phone-group">
+                    <label>Mobile Number<span>*</span></label>
+                    <div class="phone-input">
+                        <span class="country-code">+91</span>
+                        <input type="tel" placeholder="Enter mobile number" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Date of Birth</label>
+                    <input type="date">
+                </div>
+
+                <div class="form-group">
+                    <label>Position Applied</label>
+                    <input type="text" placeholder="e.g. SEO Analyst">
+                </div>
+
+                <div class="form-group">
+                    <label>Job Location</label>
+                    <input type="text" placeholder="Preferred job location">
+                </div>
+
+                <div class="form-group">
+                    <label>Current Location</label>
+                    <input type="text" placeholder="Current city">
+                </div>
+
+                <div class="form-group">
+                    <label>Total Experience (Years)</label>
+                    <input type="number" placeholder="e.g. 2">
+                </div>
+
+                <div class="form-group">
+                    <label>Upload Resume</label>
+                    <input type="file" accept=".pdf,.doc,.docx">
+                    <small>Please upload a valid .PDF or .DOCX file</small>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Application</button>
+
+            </form>
+
+        </div>
+    </section>
+
+    <style>
+        .career-form-section {
+            padding: 80px 20px;
+            background: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        .career-form-container {
+            max-width: 85%;
+            margin: auto;
+        }
+
+        .career-form-container h2 {
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #0a2540;
+        }
+
+        .career-form {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            background: #3356771f;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0, 119, 255, 0.141);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            margin-bottom: 6px;
+            color: #0a2540;
+            font-weight: 600;
+        }
+
+        .form-group label span {
+            color: red;
+        }
+
+        .form-group input {
+            padding: 12px 14px;
+            border: 1px solid #d0d5dd;
+            border-radius: 4px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .form-group input:focus {
+            border-color: #2563eb;
+        }
+
+        .phone-input {
+            display: flex;
+            align-items: center;
+        }
+
+        .country-code {
+            padding: 12px 14px;
+            background: #f1f5f9;
+            border: 1px solid #d0d5dd;
+            border-right: none;
+            border-radius: 6px 0 0 6px;
+            font-size: 14px;
+        }
+
+        .phone-input input {
+            border-radius: 0 6px 6px 0;
+            width: 100%;
+        }
+
+        .form-group small {
+            font-size: 12px;
+            color: #6b7280;
+            margin-top: 6px;
+        }
+
+        .submit-btn {
+            grid-column: span 2;
+            justify-self: center;
+            /* ← centers button */
+            padding: 14px;
+            background: #003479;
+            border: 1px solid #003479;
+            color: #fff;
+            border: 1px solid #003479;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            width: 300px;
+        }
+
+        .submit-btn:hover {
+            background: #ffffff;
+            border: 1px solid #003479;
+            color: #003479;
+        }
+
+        @media (max-width: 768px) {
+            .submit-btn {
+                grid-column: span 1;
+                justify-self: center;
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            .career-form {
+                grid-template-columns: 1fr;
+            }
+
+            .submit-btn {
+                grid-column: span 1;
+            }
+        }
+    </style>
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- Logo & Info -->
+                <div class="col-lg-4 col-md-6 mb-4 left-text">
+                    <div class="footer-logo mb-3">
+                        <img src="https://www.keralastudy.com/images/logo.png" class="img-fluid" alt="">
+                    </div>
+                    <p>Dream. Apply. Achieve.<br>
+                        Our Expert Admission Guidance is the Bridge that Connects You to a Brighter Future.</p>
+                    <p><i class="fa fa-phone me-2"></i>1800 120 8696</p>
+                    <p><i class="fa fa-envelope me-2"></i>info@learntechww.com</p>
+                    <p><i class="fa fa-map-marker-alt me-2"></i>#80 (4), 'D' Main Rd, East End, 9th Block,<br>Jayanagar,
+                        Bangalore, Karnataka - 560041</p>
+                </div>
+
+
+                <!-- Info -->
+                <div class="col-lg-2 col-md-6 mb-4 pt-5">
+                    <h6 class="footer-title">Info</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Main-Exam-Page.html">Exams</a></li>
+                        <li><a href="Exam-profile.html">Exam Profile</a></li>
+                        <li><a href="Main-news-page.html">News</a></li>
+                        <li><a href="News-Detail-page.html">News Detail</a></li>
+                        <li><a href="main-college-page.html">Colleges</a></li>
+                        <li><a href="Inner-College-Page.html">College Detail</a></li>
+                        <li><a href="Main-course-page.html">Courses</a></li>
+                        <li><a href="Inner-course-page.html">Course Detail</a></li>
+                        <li><a href="Inner-College-Course.html">College Course</a></li>
+                        <li><a href="Main-article-page.html">Articles</a></li>
+                        <li><a href="Detail-article-page.html">Article Detail</a></li>
+                        <li><a href="boards-page.html">Boards</a></li>
+
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6 mb-4  pt-5">
+                    <h6 class="footer-title">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="disclaimer.html">disclaimer</a></li>
+                        <li><a href="education-loan.html">education-loan</a></li>
+                        <li><a href="NRI-Quota.html">NRI-Quota</a></li>
+                        <li><a href="Privacy-Policy.html">Privacy-Policy</a></li>
+                        <li><a href="terms-&-condition.html">Terms & Condition</a></li>
+                        <li><a href="Scholarships.html">Scholarships</a></li>
+                        <li><a href="Inner-Scholarships-Page.html">Inner-Scholarships</a></li>
+                        <li><a href="Students-Speak.html">Students-Speak</a></li>
+                        <li><a href="About-us.html">About Us</a></li>
+                        <li><a href="Contact-us.html">Contact Us</a></li>
+                        <li><a href="Career.html">Career</a></li>
+                        <li><a href="Our-Services.html">Our Services</a></li>
+                        <li><a href="Our-Team.html">Our Team</a></li>
+                        <li><a href="Site-Map.html">Sitemap</a></li>
+                        <li><a href="404.html">404</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal -->
+                <div class="col-lg-2 col-md-6 mb-4 pt-5">
+                    <h6 class="footer-title">Legal</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Feed</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Disclaimer</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Privacy Policy</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Terms & Conditions</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Advertise With Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Download App -->
+                <div class="col-lg-2 col-md-6 mb-4  pt-5">
+                    <h6 class="footer-title">Download Our App</h6>
+                    <div class="download-btn">
+                        <a href="#"><img
+                                src="https://www.learntechww.com/_next/image?url=%2Fimages%2Ficons%2Fapp-store.webp&w=384&q=75"
+                                alt="App Store"></a><br>
+                        <a href="#"><img
+                                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                                alt="Google Play"></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Download Brochure -->
+            <div class="text-center">
+                <a href="#" class="download-brochure">📄 Download Brochure</a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom mt-4 d-flex justify-content-between align-items-center left-text">
+                <p class="mb-0">©2025 Learntech Edu Solutions Pvt. Ltd. All Rights Reserved.</p>
+
+                <div class="d-flex align-items-center ">
+                    <p class="mb-0 me-2">Follow us on</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <style>
+        /* -----------------------------------footer css code */
+        .footer {
+            background-color: #0c2a45;
+            color: #fff;
+            padding: 40px 20px 20px;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 15px;
+            font-weight: 300;
+        }
+
+        .footer a:hover {
+            color: #f1a470;
+        }
+
+        .footer .footer-logo img {
+            height: 65px;
+        }
+
+        .footer .footer-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .footer .download-btn img {
+            max-width: 140px;
+            margin-bottom: 10px;
+        }
+
+        .footer .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #fff;
+            color: #0b2a66;
+            margin: 0 5px;
+            font-size: 16px;
+        }
+
+        .footer .social-icons a:hover {
+            background: #cdddf7;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 30px;
+            padding-top: 15px;
+            text-align: center;
+            font-size: 14px;
+            display: flex;
+        }
+
+        .download-brochure {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #000f34;
+            color: #0b2a66;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            border: 2px solid rgb(255, 255, 255);
+            transition: all 0.3s ease;
+            /* smooth transition for all properties */
+            border-radius: 50px;
+        }
+
+        .download-brochure:hover {
+
+            /* subtle zoom */
+            color: #ffffff;
+            /* optional color change on hover */
+            background: #0b2a66;
+            /* optional background change on hover */
+            border-color: #001a4f;
+            /* optional border change */
+        }
+
+
+        .text-right {
+            display: flex;
+            justify-content: flex-end;
+            /* pushes content to the right */
+            align-items: flex-end;
+            /* vertically centers if needed */
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            /* optional separator */
+            padding-top: 15px;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .footer-bottom .social-icons a {
+            color: #000000;
+            margin-left: 12px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .footer-bottom .social-icons a:hover {
+            color: #f1a470;
+            /* highlight on hover */
+        }
+
+        .left-text p {
+            font-size: 16px;
+        }
+
+        .form-bg {
+            background-color: #000124;
+            border-top-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+    </style>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="script.js"></script>
+
+
+    <script>
+        const faqButtons = document.querySelectorAll('.faq-button');
+
+        faqButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const card = button.closest('.job-card');
+                const faq = card.querySelector('.job-faq');
+                const icon = button.querySelector('i');
+
+                faq.classList.toggle('open');
+
+                if (faq.classList.contains('open')) {
+                    icon.style.transform = 'rotate(180deg)'; // UP
+                } else {
+                    icon.style.transform = 'rotate(0deg)';   // DOWN
+                }
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

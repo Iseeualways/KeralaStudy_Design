@@ -23,58 +23,55 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="navbar.css">
 
 
 
 
 </head>
 <style>
+    h1 {
+        font-weight: 400 !important;
+    }
+
     .btn-blue {
         position: relative;
-        padding: 6px 22px;
-        background: #003479;
-        color: #ffffff;
+        display: inline-block;
+        padding: 10px 22px;
+        background: white !important;
+        color: #003479;
         font-size: 16px;
-        font-weight: 600;
-        border: none;
-        border-radius: 10px;
+        font-weight: 500;
+        border-radius: 3px;
+        border: 1.2px solid #003479;
+        text-decoration: none;
+        overflow: hidden;
         cursor: pointer;
-        transition:
-            background 0.25s ease,
-            transform 0.2s ease,
-            box-shadow 0.3s ease;
-        box-shadow: 0 4px 14px rgba(26, 115, 232, 0.25);
+        transition: color 0.35s ease;
+        z-index: 1;
     }
 
-    /* Smooth professional hover */
-    .btn-blue:hover {
-        background: #1666cc;
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(26, 115, 232, 0.35);
-        color: white;
-    }
-
-    /* Pressed effect */
-    .btn-blue:active {
-        transform: translateY(1px);
-        box-shadow: 0 2px 8px rgba(26, 115, 232, 0.25);
-    }
-
-    /* Optional subtle underline slide */
-    .btn-blue::after {
+    /* Fill layer */
+    .btn-blue::before {
         content: "";
         position: absolute;
-        left: 50%;
-        bottom: 8px;
-        width: 0;
-        height: 1px;
-        background: rgba(255, 255, 255, 0.8);
-        transition: width 0.25s ease, left 0.25s ease;
+        inset: 0;
+        background: #003479;
+        border: 1px solid #003479 !important;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.35s ease;
+        z-index: -1;
     }
 
-    .btn-blue:hover::after {
-        width: 60%;
-        left: 20%;
+    /* Hover effect */
+    .btn-blue:hover {
+        color: #ffffff;
+        border: 1px solid #003479 !important;
+    }
+
+    .btn-blue:hover::before {
+        transform: scaleY(1);
     }
 
 
@@ -161,349 +158,7 @@
 
     p,
     li {
-        font-size: 18px;
-    }
-
-
-
-    /* -------------------------------------------------------------------navbar new */
-
-    /* ===== NAVBAR 1 (TOP) ===== */
-    .navbar {
-        background-color: #0c2a45;
-        /* Solid color */
-        color: #ffffff;
-        padding: 10px 100px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .navbar .logo img {
-        max-height: 50px;
-    }
-
-    .navbar .nav-links {
-        margin-left: 100px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 14px;
-    }
-
-    .btns {
-        margin-left: auto;
-        display: flex;
-        gap: 10px;
-        margin-right: 60px;
-    }
-
-    .btns button {
-        padding: 6px 14px;
-        border: none;
-        background: rgb(43, 167, 255);
-        color: #fff;
-        border-radius: 5px;
-        cursor: pointer;
-        font-weight: 600;
-        transition: background 0.3s ease;
-    }
-
-    .btns button:hover {
-        background: #1b8bd1;
-    }
-
-    /* ===== NAVBAR 2 (SECOND, TRANSPARENT WITH DROPDOWN) ===== */
-    .navbar-two {
-        width: 100%;
-        background: rgba(247, 251, 255, 0.771);
-        /* Transparent */
-        backdrop-filter: blur(8px);
-        position: relative;
-        z-index: 1000;
-        padding: 6px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-
-
-    }
-
-    .navbar-two .nav-links {
-        display: flex;
-        justify-content: end;
-        /* Center content */
-        align-items: center;
-        gap: 10px;
-        margin-inline: 10px;
-        font-size: 15px;
-        color: #000;
-    }
-
-    .navbar-two .nav-item {
-        position: relative;
-        text-transform: uppercase;
-        font-size: 14px;
-        font-weight: 400;
-        padding: 6px 12px;
-        cursor: pointer;
-        transition: color 0.3s ease;
-    }
-
-    .navbar-two .nav-item:hover {
-        color: #0077ff;
-    }
-
-    /* Dropdown */
-    .dropdown {
-        display: none;
-        position: fixed;
-        top: 90%;
-        left: 50%;
-        transform: translateX(-50%);
-        background: rgb(255, 255, 255);
-        padding: 20px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-        z-index: 1000;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        min-width: 1300px;
-        text-align: left;
-
-    }
-
-    .navbar-two .nav-item:hover .dropdown {
-        display: flex;
-    }
-
-
-    .dropdown-column {
-        min-width: 150px;
-        margin-right: 25px;
-    }
-
-    .dropdown-column li {
-        color: #000;
-    }
-
-    .dropdown-column h4 {
-        margin-bottom: 8px;
-        font-size: 14px;
-        font-weight: 700;
-        color: #123671;
-        border-bottom: 1px solid #ddd;
-        padding-bottom: 4px;
-    }
-
-    .dropdown ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .dropdown ul li {
-        padding: 5px 0;
-        font-size: 13px;
-        cursor: pointer;
-        transition: color 0.2s ease;
-    }
-
-    .dropdown ul li:hover {
-        color: #4d96ea;
-    }
-
-    /* ===== Responsive ===== */
-    @media (max-width: 1000px) {
-        .navbar {
-            padding: 10px 20px;
-            flex-wrap: wrap;
-        }
-
-        .navbar-two .nav-links {
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .dropdown {
-            min-width: 100%;
-            flex-direction: column;
-        }
-
-        .dropdown-column {
-            margin-bottom: 15px;
-        }
-    }
-
-    .nav-item {
-        position: relative;
-        display: inline-block;
-        padding: 10px 20px;
-        cursor: pointer;
-    }
-
-    .navbar .nav-item:hover {
-        transform: translateY(-5px);
-        transition: .2s ease-in-out;
-    }
-
-    .nav-link-item {
-        position: relative;
-        display: inline-block;
-        padding: 10px 20px;
-        cursor: pointer;
-    }
-
-    .mini-menu {
-        display: none;
-        /* hidden by default */
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #fff;
-        padding: 20px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-        z-index: 1000;
-        min-width: 150px;
-    }
-
-    .mini-menu ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .mini-menu ul li {
-        font-size: 14px;
-        padding: 5px 0;
-        cursor: pointer;
-        transition: color 0.2s;
-    }
-
-    .mini-menu ul li:hover {
-        color: #0077cc;
-        /* blue on hover */
-    }
-
-    /* show only when hovered */
-    .nav-link-item:hover .mini-menu {
-        display: block;
-    }
-
-    /* mobile navbar */
-
-
-    /* Hide by default on desktop */
-    .mobile-navbar,
-    .mobile-menu {
-        display: none;
-    }
-
-    /* Mobile view */
-    @media (max-width: 768px) {
-        .mobile-navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background: #0c2a45;
-            color: #fff;
-            position: relative;
-            z-index: 1001;
-        }
-
-        .mobile-navbar .mobile-logo img {
-            max-height: 50px;
-        }
-
-        .hamburger {
-            font-size: 28px;
-            cursor: pointer;
-        }
-
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            background: #0c2a45;
-            width: 100%;
-        }
-
-        .mobile-menu.show {
-            display: flex;
-        }
-
-        .mobile-item {
-            padding: 15px 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            color: #fff;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .mobile-item:hover {
-            background: #1b8bd1;
-        }
-    }
-
-    /* Hide desktop navbars on mobile */
-    @media (max-width: 768px) {
-
-        .navbar,
-        .navbar-two {
-            display: none;
-        }
-    }
-
-    @media (max-width: 1000px) {
-        .mobile-navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background: #0c2a45;
-            color: #fff;
-            position: relative;
-            z-index: 1001;
-        }
-
-        .mobile-navbar .mobile-logo img {
-            max-height: 50px;
-        }
-
-        .hamburger {
-            font-size: 28px;
-            cursor: pointer;
-        }
-
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            background: #0c2a45;
-            width: 100%;
-        }
-
-        .mobile-menu.show {
-            display: flex;
-        }
-
-        .mobile-item {
-            padding: 15px 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            color: #fff;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .mobile-item:hover {
-            background: #1b8bd1;
-        }
-    }
-
-    /* Hide desktop navbars on mobile */
-    @media (max-width: 1000px) {
-
-        .navbar,
-        .navbar-two {
-            display: none;
-        }
+        font-size: 16px;
     }
 </style>
 
@@ -513,9 +168,7 @@
         <div class="logo"><img src="https://www.keralastudy.com/images/logo.png" class="w-100" alt=""></div>
         <div class="nav-links">
             <div class="nav-item">Top Colleges</div>
-            <a href="courses.html">
-                <div class="nav-item">Top Courses</div>
-            </a>
+            <div class="nav-item">Top Courses</div>
             <div class="nav-item">Entrance Exam</div>
             <div class="nav-item">Boards</div>
             <div class="nav-item">News</div>
@@ -585,7 +238,7 @@
                         </ul>
                     </div>
 
-                  
+
                 </div>
             </div>
 
@@ -625,7 +278,7 @@
                         </ul>
                     </div>
 
-                  
+
                     <div class="dropdown-column">
                         <h4>EXAMS</h4>
                         <ul>
@@ -678,7 +331,7 @@
                         </ul>
                     </div>
 
-                    
+
                     <div class="dropdown-column">
                         <h4>EXAMS</h4>
                         <ul>
@@ -731,7 +384,7 @@
                         </ul>
                     </div>
 
-                   
+
                     <div class="dropdown-column">
                         <h4>EXAMS</h4>
                         <ul>
@@ -784,7 +437,7 @@
                         </ul>
                     </div>
 
-                  
+
                     <div class="dropdown-column">
                         <h4>EXAMS</h4>
                         <ul>
@@ -837,7 +490,7 @@
                         </ul>
                     </div>
 
-                    
+
                     <div class="dropdown-column">
                         <h4>EXAMS</h4>
                         <ul>
@@ -897,15 +550,588 @@
 
 
     <!-- ====================================================================================banner -->
+    <section class="hero-sec sticky-hero">
+        <div class="hero-container text-center">
+            <div class="hero-left">
+                <h1 class="text-white">
+                    Education Boards in <span class="highlight">India</span>
+                </h1>
 
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8"></div>
-                    <div class="col-lg-8"></div>
-                </div>
+                <form class="search-bar">
+                    <input type="text" placeholder="Find Your College" class="search-input">
+                    <button type="submit" class="search-btn text-white">
+                        Get Board Details
+                    </button>
+                </form>
             </div>
-        </section>
+        </div>
+    </section>
+    <style>
+        /* ================= HERO SECTION ================= */
+
+        .sticky-hero {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .hero-sec {
+            height: 320px;
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)),
+                url('40123918_8796857.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+        }
+
+        /* CONTENT INSIDE HERO */
+        .hero-container {
+            width: 86%;
+            margin: auto;
+        }
+
+        .hero-left h1 {
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .highlight {
+            color: #75a9c8;
+        }
+
+        /* ================= SEARCH BAR ================= */
+
+        .search-bar {
+            margin-top: 0px;
+            display: inline-flex;
+            align-items: center;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 6px 10px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .search-input {
+            border: none;
+            outline: none;
+            padding: 10px;
+            font-size: 0.95rem;
+            width: 360px;
+        }
+
+        .search-btn {
+            background: #002e62;
+            border: none;
+            border-radius: 10px;
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .search-btn img {
+            width: 18px;
+            filter: brightness(0) invert(1);
+        }
+
+        .search-btn:hover {
+            background: #005ecc;
+        }
+
+        /* ================= PAGE CONTENT ================= */
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+            .hero-left h1 {
+                font-size: 30px;
+            }
+
+            .search-input {
+                width: 260px;
+            }
+        }
+    </style>
+
+
+    <!-- BREADCRUMB -->
+    <nav class="breadcrumb-wrap container" aria-label="Breadcrumb">
+        <a href="#">Home</a>
+        <span class="divider" aria-hidden="true">›</span>
+        <a href="#">Placement</a>
+        <span class="divider" aria-hidden="true">›</span>
+        <span class="current">Boards-page</span>
+    </nav>
+
+    <style>
+        .breadcrumb-wrap {
+            margin-top: 12px !important;
+            font-size: 17px;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+
+            display: inline-flex;
+            align-items: center;
+            /* KEY FIX */
+            gap: 8px;
+
+            color: #0a2540;
+        }
+
+        .breadcrumb-wrap a {
+            text-decoration: none;
+            color: #0a2540;
+            transition: color 0.25s ease;
+            line-height: 1;
+            /* NORMALIZE */
+        }
+
+        .breadcrumb-wrap a:hover {
+            color: #000000;
+        }
+
+        /* Divider fix */
+        .breadcrumb-wrap .divider {
+            display: inline-flex;
+            align-items: center;
+            line-height: 1;
+            /* KEY FIX */
+            opacity: 0.6;
+            transform: translateY(1px);
+            /* MICRO ALIGNMENT */
+        }
+
+        .breadcrumb-wrap .current {
+            color: #00226b;
+            font-weight: 600;
+            line-height: 1;
+        }
+    </style>
+
+
+
+    <!-- =====================================================================================================content section -->
+
+
+    <section>
+        <div class="container mt-5">
+            <div class="row g-4">
+                <div class="col-lg-8 col-auto">
+                    <h4 class="mb-4 fs-1">Best Education Boards in <span style="color: #75a9c8;">India</span></h4>
+
+                    <p>Recognized educational boards are organizations that oversee the educational curriculum and
+                        examination process for schools and colleges. They set guidelines for teaching, evaluate student
+                        performance through standardized exams, and ensure that educational institutions adhere to these
+                        standards. Each board may have different approaches and curricula, catering to various
+                        educational needs and preferences. Whether you're exploring the best state boards in India,
+                        evaluating the top 5 education boards in India, or understanding the specific roles of
+                        professional education regulatory bodies like NMC and AICTE, recognizing the importance of these
+                        boards is crucial.</p>
+
+                    <h5><b>Significance of Educational Boards</b></h5>
+
+                    <ul class="edu-points">
+                        <li>
+                            <strong>Standardization:</strong>
+                            Ensure uniformity in education standards across schools affiliated with the same board.
+                        </li>
+
+                        <li>
+                            <strong>Curriculum Design:</strong>
+                            Develop curricula that meet academic and vocational standards, preparing students for
+                            further education or the workforce.
+                        </li>
+
+                        <li>
+                            <strong>Examinations and Certifications:</strong>
+                            Conduct standardized exams and issue certifications that are recognized for higher education
+                            and employment.
+                        </li>
+
+                        <li>
+                            <strong>Quality Assurance:</strong>
+                            Maintain and improve educational quality by setting benchmarks and assessing institutional
+                            performance.
+                        </li>
+                    </ul>
+                    <div class="text-center">
+                        <button class="btn btn-blue">Read More</button>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-auto">
+                    <div class="card border-0 p-4 rounded-3 contact-card mb-5">
+                        <h4 class="fw-bold text-center mb-3">Contact Us</h4>
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Full Name*" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Email ID*" required>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">🇮🇳 +91</span>
+                                <input type="tel" class="form-control" placeholder="Mobile Number*" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Interested Course*" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Location*" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="3" placeholder="Type your message"></textarea>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="terms" required>
+                                <label class="form-check-label" for="terms">
+                                    By clicking this, I agree to the <a href="#"
+                                        class="text-primary text-decoration-none">Terms & Conditions</a>
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-blue w-100 bg-white py-2 fw-semibold">Submit</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <style>
+        .contact-card {
+            background-color: #d4e3f9 !important;
+            border: 1px solid rgba(0, 98, 255, 0.192) !important;
+        }
+
+        .contact-card input,
+        .contact-card textarea {
+            border-radius: 8px;
+        }
+    </style>
+
+    <section class="boards-section">
+        <h4 class="mb-4 fs-1 text-center">Education <span style="color: #75a9c8;">Boards</span></h4>
+        <!-- FILTER TABS -->
+        <div class="board-tabs">
+            <button class="tab active" data-filter="all">All Boards</button>
+            <button class="tab" data-filter="state">State Boards</button>
+            <button class="tab" data-filter="national">National Boards</button>
+            <button class="tab" data-filter="international">International Boards</button>
+        </div>
+
+        <!-- CARDS GRID -->
+        <div class="boards-grid">
+
+            <article class="board-card national">
+                <div class="card-head">
+                    <img src="https://api.learntechww.com/schoolboard_logo/logo1727940633555.png" alt="CBSE">
+                    <h3>CBSE</h3>
+                </div>
+
+                <ul>
+                    <li><strong>Established:</strong> 1929</li>
+                    <li><strong>Location:</strong> New Delhi</li>
+                    <li><strong>Recognition:</strong> Ministry of Education</li>
+                    <li><strong>Gender:</strong> Co-Ed</li>
+                </ul>
+
+                <a href="#" class="details-btn">View Details</a>
+            </article>
+
+            <article class="board-card international">
+                <div class="card-head">
+                    <img src="https://api.learntechww.com/schoolboard_logo/logo1727940633555.png" alt="IB">
+                    <h3>International Baccalaureate</h3>
+                </div>
+
+                <ul>
+                    <li><strong>Established:</strong> 1968</li>
+                    <li><strong>Location:</strong> Geneva</li>
+                    <li><strong>Recognition:</strong> Global</li>
+                    <li><strong>Gender:</strong> Co-Ed</li>
+                </ul>
+
+                <a href="#" class="details-btn">View Details</a>
+            </article>
+
+        </div>
+    </section>
+
+    <style>
+        .boards-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+            font-family: system-ui, sans-serif;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        /* Tabs */
+        .board-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            border-radius: 2px;
+            border: 1px solid #d6e0ef;
+            background: #fff;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .tab.active,
+        .tab:hover {
+            background: #0b2a66;
+            color: #fff;
+            border-color: #0b2a66;
+        }
+
+        /* Grid */
+        .boards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        /* Card */
+        .board-card {
+            background: #eeeeee;
+            padding: 32px 30px;
+            border-radius: 2px;
+            border: 1px solid rgba(11, 42, 102, 0.08);
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.06),
+                0 2px 6px rgba(0, 0, 0, 0.04);
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease,
+                border-color 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Soft accent line */
+        .board-card::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 20px;
+            bottom: 20px;
+            width: 3px;
+            background: linear-gradient(180deg, #f5f8fc, #193c81, #f5f8fc);
+            border-radius: 1px;
+            opacity: 0.9;
+        }
+
+        /* Hover effect */
+        .board-card:hover {
+            transform: translateY(-6px);
+            box-shadow:
+                0 18px 40px rgba(0, 0, 0, 0.1),
+                0 6px 14px rgba(0, 0, 0, 0.06);
+            border-color: rgba(11, 42, 102, 0.18);
+        }
+
+        /* Card head */
+        .card-head {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 22px;
+        }
+
+        /* Logo */
+        .card-head img {
+            width: 56px;
+            height: 56px;
+            object-fit: contain;
+            background: #f5f8fc;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Title */
+        .card-head h3 {
+            font-size: 19px;
+            font-weight: 600;
+            color: #0b2a66;
+            line-height: 1.3;
+        }
+
+        /* List */
+        .board-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .board-card li {
+            font-size: 14px;
+            margin-bottom: 6px;
+            color: #333;
+        }
+
+        .details-btn {
+            position: relative;
+            display: inline-block;
+            padding: 10px 18px;
+            background: #0b2a66;
+            color: white;
+            border-radius: 2px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            border: 1px solid #0b2a66;
+            overflow: hidden;
+            transition: color 0.35s ease;
+            z-index: 1;
+        }
+
+        /* Top fill layer */
+        .details-btn::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: white;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.35s ease;
+            z-index: -1;
+        }
+
+        /* Hover effect */
+        .details-btn:hover {
+            color: #0b2a66;
+        }
+
+        .details-btn:hover::before {
+            transform: scaleY(1);
+        }
+
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .boards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+
+
+    <!-- =====================================================botton news sliding -->
+    <section class="news-cards-section py-4">
+        <div class="container">
+            <h4 class="mb-5 fs-1 text-center">Latest Updates on<span style="color: #75a9c8;"> Boards</span></h4>
+            <div class="row g-4">
+
+                <!-- CARD 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="news-card">
+                        <img src="https://picsum.photos/900/450?random=5" alt="">
+                        <div class="news-content">
+                            <span class="news-tag">Trending Education News</span>
+                            <h5>XAT 2026 Registration Extended Again</h5>
+                            <p class="news-date">Dec 8, 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="news-card">
+                        <img src="https://picsum.photos/900/450?random=6" alt="">
+                        <div class="news-content">
+                            <span class="news-tag">Trending Education News</span>
+                            <h5>CG TET 2025 Registration Ends Today</h5>
+                            <p class="news-date">Dec 8, 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="news-card">
+                        <img src="https://picsum.photos/900/450?random=7" alt="">
+                        <div class="news-content">
+                            <span class="news-tag">Trending Education News</span>
+                            <h5>CAT 2025 Live: Full Exam Analysis</h5>
+                            <p class="news-date">Dec 8, 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <style>
+        .news-card {
+            background: #fff;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            border-bottom: 2px solid #8e8e8e;
+            transition: 0.35s ease;
+            padding: 10px;
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 18px 20px 22px;
+        }
+
+        .news-tag {
+            display: inline-block;
+            background: #eef4ff;
+            color: #2f66ff;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 30px;
+            margin-bottom: 12px;
+        }
+
+        .news-card h5 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            line-height: 1.35;
+        }
+
+        .news-date {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Hover effect (subtle & classy) */
+        .news-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        }
+    </style>
 
 
 
@@ -927,15 +1153,25 @@
                         Bangalore, Karnataka - 560041</p>
                 </div>
 
+
                 <!-- Info -->
                 <div class="col-lg-2 col-md-6 mb-4 pt-5">
                     <h6 class="footer-title">Info</h6>
                     <ul class="list-unstyled">
-                        <li><a href="about-us.html"><i class="fa-solid fa-angles-right"></i> About us</a></li>
-                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Our Team</a></li>
-                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Contact us</a></li>
-                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Careers</a></li>
-                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Site Map</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Main-Exam-Page.html">Exams</a></li>
+                        <li><a href="Exam-profile.html">Exam Profile</a></li>
+                        <li><a href="Main-news-page.html">News</a></li>
+                        <li><a href="News-Detail-page.html">News Detail</a></li>
+                        <li><a href="main-college-page.html">Colleges</a></li>
+                        <li><a href="Inner-College-Page.html">College Detail</a></li>
+                        <li><a href="Main-course-page.html">Courses</a></li>
+                        <li><a href="Inner-course-page.html">Course Detail</a></li>
+                        <li><a href="Inner-College-Course.html">College Course</a></li>
+                        <li><a href="Main-article-page.html">Articles</a></li>
+                        <li><a href="Detail-article-page.html">Article Detail</a></li>
+                        <li><a href="boards-page.html">Boards</a></li>
+
                     </ul>
                 </div>
 
@@ -943,12 +1179,21 @@
                 <div class="col-lg-2 col-md-6 mb-4  pt-5">
                     <h6 class="footer-title">Quick Links</h6>
                     <ul class="list-unstyled">
-                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Blogs</a></li>
-                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> NRI Quota</a></li>
-                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Study Abroad</a></li>
-                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Scholarships</a></li>
-                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Student's Speak</a></li>
-                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Education Loan</a></li>
+                        <li><a href="disclaimer.html">disclaimer</a></li>
+                        <li><a href="education-loan.html">education-loan</a></li>
+                        <li><a href="NRI-Quota.html">NRI-Quota</a></li>
+                        <li><a href="Privacy-Policy.html">Privacy-Policy</a></li>
+                        <li><a href="terms-&-condition.html">Terms & Condition</a></li>
+                        <li><a href="Scholarships.html">Scholarships</a></li>
+                        <li><a href="Inner-Scholarships-Page.html">Inner-Scholarships</a></li>
+                        <li><a href="Students-Speak.html">Students-Speak</a></li>
+                        <li><a href="About-us.html">About Us</a></li>
+                        <li><a href="Contact-us.html">Contact Us</a></li>
+                        <li><a href="Career.html">Career</a></li>
+                        <li><a href="Our-Services.html">Our Services</a></li>
+                        <li><a href="Our-Team.html">Our Team</a></li>
+                        <li><a href="Site-Map.html">Sitemap</a></li>
+                        <li><a href="404.html">404</a></li>
                     </ul>
                 </div>
 

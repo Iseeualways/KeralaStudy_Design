@@ -23,87 +23,42 @@ if (phoneInput) {
   });
 }
 
-// ==================== College Carousel ====================
 $(document).ready(function () {
   const $carousel = $(".college-carousel");
-  
-  // Check if carousel exists before proceeding
-  if ($carousel.length === 0) return;
-  
-  const allCards = $(".college-card").clone();
-  let carouselInitialized = false;
 
-  function initCarousel() {
-    // Prevent re-initialization
-    if ($carousel.hasClass("slick-initialized")) {
-      $carousel.slick("unslick");
-    }
-    
-    $carousel.slick({
-      slidesToShow: 4,
-      centeredSlides: false,
-      slidesToScroll: 1,
-      infinite: true,
-      arrows: false,
-      autoplay: false,
-      speed: 600,
-      cssEase: "ease-in-out",
-      responsive: [
-        {
-          breakpoint: 768,
-          settings: { slidesToShow: 2 }
-        }
-      ]
-    });
-    carouselInitialized = true;
-  }
+  if (!$carousel.length) return;
 
-  // Init carousel only once
-  if (allCards.length > 0) {
-    initCarousel();
-  }
-
-  // Custom Arrows
-  $(".slick-prev-btn").off("click").on("click", function() {
-    if ($carousel.hasClass("slick-initialized")) {
-      $carousel.slick("slickPrev");
-    }
-  });
-  
-  $(".slick-next-btn").off("click").on("click", function() {
-    if ($carousel.hasClass("slick-initialized")) {
-      $carousel.slick("slickNext");
-    }
+  // Init slick ONCE
+  $carousel.slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    infinite: true,
+    arrows: false,
+    speed: 500,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: { slidesToShow: 2 }
+      }
+    ]
   });
 
-  // Filter functionality
-  $(".filter-btn").off("click").on("click", function () {
+  // Custom arrows
+  $(".slick-prev-btn").on("click", () => $carousel.slick("slickPrev"));
+  $(".slick-next-btn").on("click", () => $carousel.slick("slickNext"));
+
+  // Filter
+  $(".filter-btn").on("click", function () {
     const city = $(this).data("city");
-    
-    // Active state
+
     $(".filter-btn").removeClass("active");
     $(this).addClass("active");
 
-    // Destroy and recreate
-    if ($carousel.hasClass("slick-initialized")) {
-      $carousel.slick("unslick");
+    $carousel.slick("slickUnfilter");
+
+    if (city !== "all") {
+      $carousel.slick("slickFilter", `[data-city="${city}"]`);
     }
-    
-    $carousel.empty();
-
-    // Filter cards (limit duplication)
-    let filteredCards = city === "all"
-      ? allCards.clone()
-      : allCards.filter(`[data-city="${city}"]`).clone();
-
-    // Only duplicate if necessary (max 2x)
-    if (filteredCards.length < 4 && filteredCards.length > 0) {
-      filteredCards = filteredCards.add(filteredCards.clone());
-    }
-
-    // Append filtered cards and re-init
-    $carousel.append(filteredCards);
-    initCarousel();
   });
 });
 
