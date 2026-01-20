@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inner-college-page</title>
+    <title>Main-School-page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
@@ -21,8 +21,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="navbar.css">
 
 
@@ -30,28 +30,53 @@
 
 </head>
 <style>
-    h4 {
-        font-weight: 700;
-        color: #001a4d;
-    }
-
-    p {
-        font-size: 16px !important;
-    }
-
-    h5 {
-        font-weight: 700;
-    }
-
-    a {
+    .btn-blue {
+        position: relative;
+        display: inline-block;
+        padding: 10px 22px;
+        background: white !important;
+        color: #003479;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 3px;
+        border: 1.2px solid #003479;
         text-decoration: none;
+        overflow: hidden;
+        cursor: pointer;
+        transition: color 0.35s ease;
+        z-index: 1;
     }
+
+    /* Fill layer */
+    .btn-blue::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: #003479;
+        border: 1px solid #003479 !important;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.35s ease;
+        z-index: -1;
+    }
+
+    /* Hover effect */
+    .btn-blue:hover {
+        color: #ffffff;
+        border: 1px solid #003479 !important;
+    }
+
+    .btn-blue:hover::before {
+        transform: scaleY(1);
+    }
+
 
     /* ---------- RESET ---------- */
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: "Poppins";
     }
 
     html,
@@ -59,7 +84,12 @@
         font-family: "Poppins" !important;
         scroll-behavior: smooth;
         overflow-x: hidden;
-        background-color: #f9f9f9;
+        background-color: #ffffff;
+    }
+
+    h1 {
+        font-family: "Poppins" !important;
+        color: #001a4f;
     }
 
     .phone {
@@ -253,105 +283,45 @@
 
     /* ---------------------------------------------------------------------blue button  */
 
-    .btn-lg,
-    .btn-lg *,
-    .btn-lg :after,
-    .btn-lg :before,
-    .btn-lg:after,
-    .btn-lg:before {
-        border: 0 solid;
-        box-sizing: border-box;
-    }
-
     .btn-lg {
-        -webkit-tap-highlight-color: transparent;
-        -webkit-appearance: button;
-        background-color: #fff;
-        background-image: none;
-        color: #0b2a66;
-        cursor: pointer;
-        font-size: 100%;
-        font-weight: 900;
-        line-height: 1.5;
-        margin: 0;
-        -webkit-mask-image: -webkit-radial-gradient(#fff, #fff);
-        padding: 0;
-        text-transform: uppercase;
-    }
-
-    .btn-lg:disabled {
-        cursor: default;
-    }
-
-    .btn-lg:-moz-focusring {
-        outline: auto;
-    }
-
-    .btn-lg svg {
-        display: block;
-        vertical-align: middle;
-    }
-
-    .btn-lg [hidden] {
-        display: none;
-    }
-
-    .btn-lg {
-        border-radius: 3px;
-        border-width: 2px;
-        overflow: hidden;
-        padding: 0.8rem 3rem;
-        position: relative;
-
-    }
-
-    .btn-lg span {
-        mix-blend-mode: difference;
-    }
-
-    .btn-lg:after,
-    .btn-lg:before {
-        --tilt: 1.2rem;
+        display: inline-block;
+        padding: 14px 36px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 10px;
         background: #0b2a66;
+        /* deep professional color */
 
-        -webkit-clip-path: polygon(0 0,
-                calc(100% - var(--tilt)) 0,
-                100% 50%,
-                calc(100% - var(--tilt)) 100%,
-                0 100%);
-        clip-path: polygon(0 0,
-                calc(100% - var(--tilt)) 0,
-                100% 50%,
-                calc(100% - var(--tilt)) 100%,
-                0 100%);
-        content: "";
-        display: block;
-        height: 100%;
-        left: calc(-100% - var(--tilt));
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-lg::after {
+        content: '';
         position: absolute;
         top: 0;
-        transform: translateX(var(--progress, 0));
-        transition: transform 0.2s ease;
-        width: calc(100% + var(--tilt));
-        color: white !important;
-
-
+        left: -50%;
+        width: 50%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.08);
+        transform: skewX(-25deg);
+        transition: all 0.5s ease;
     }
 
-    .btn-lg:after {
+    .btn-lg:hover::after {
         left: 100%;
-        transform: translateX(var(--progress, 0)) rotate(180deg);
-        z-index: -1;
     }
 
-    .btn-lg:hover:before {
-        --progress: 100%;
+    .btn-lg:hover {
+        background: linear-gradient(90deg, #0b2a66, #3370ea);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+        color: #ffffff;
     }
-
-    .btn-lg:hover:after {
-        --progress: -100%;
-    }
-
 
 
     /* ---------------------------------------------------------------home search bar */
@@ -689,6 +659,9 @@
 
         padding: 10px 20px;
     }
+
+    /* the label below the search */
+    /* Container */
     .button-container {
         display: flex;
         width: fit-content;
@@ -701,7 +674,7 @@
         background: #ffffffa4;
     }
 
-
+    /* Buttons */
     .button {
         outline: none;
         border: none;
@@ -850,9 +823,9 @@
         <div class="logo"><img src="https://www.keralastudy.com/images/logo.png" class="w-100" alt=""></div>
         <div class="nav-links">
             <div class="nav-item">Top Colleges</div>
-        
-                <div class="nav-item">Top Courses</div>
-    
+
+            <div class="nav-item">Top Courses</div>
+
             <div class="nav-item">Entrance Exam</div>
             <div class="nav-item">Boards</div>
             <div class="nav-item">News</div>
@@ -1280,9 +1253,7 @@
                     </ul>
                 </div>
             </div>
-            <button class="btn-7 "
-                style="padding: 4px !important; padding-inline: 30px !important; border-radius: 3px; font-weight: 400;">Admissions
-                2025</button>
+            <button class="btn city-btn">Admissions 2025</button>
         </div>
     </div>
 
@@ -1307,232 +1278,201 @@
     </div>
 
 
-
     <!-- ====================================================================================banner -->
-    <section class="hero-40vh">
-        <div class="hero-inner container">
-            <div class="row ">
-                <!-- LOGO -->
-                <div class="col-lg-2 col-md-3">
-                    <div class="college-logo p-2">
-                        <img src="https://api.learntechww.com/college_logo/logo1747827527413.webp" alt="College Logo">
-                    </div>
-                </div>
 
-                <!-- CONTENT -->
-                <div class="col-lg-10 col-md-9 text-white">
-                    <h1>
-                         Vidya Bharath College of
-                        Pharmacy, Bangalore
-                    </h1>
+    <section class="hero-sec mb-0">
+        <div class="container p-0 text-start">
 
-                     <p>
-                        <i class="fa-solid fa-location-dot" style="color: #ff0000;"></i> Sy No. 38, Thirumenahalli
-                        Village, Yelahanka, Hobli,
-                        Bangalore North Taluk, Bangalore - 560089
-                    </p>
+            <div class="hero-left">
+                <h1 class="text-white">
+                    Start Your Child’s Journey with the Best Schools in India
+                </h1>
 
-                    <p>
-                        <i class="fa-solid fa-award" style="color: #FFD43B;"></i> <strong>Approved by:</strong>
-                        Karnataka State Pharmacy Council (KSPC),
-                        Government of Karnataka, Pharmacy Council of India (PCI)
-                    </p>
-
-                        <span class="edu-badge private-badge">Private</span>
-
-                    <div class="cta-btn-group">
-                        <button class="cta-btn cta-download">
-                            <i class="fa-solid fa-download"></i> Download Brochure
+                <!-- SEARCH + APPLY -->
+                <div class="hero-search-wrap">
+                    <form action="#" class="search-bar">
+                        <input type="text" placeholder="Find Your College" class="search-input">
+                        <button type="submit" class="search-btn">
+                            <img src="search_38dp_000000_FILL0_wght400_GRAD0_opsz40.svg" alt="search">
                         </button>
-                        <button class="cta-btn cta-fee">
-                            <i class="fa-solid fa-indian-rupee-sign"></i> Get Fee Structure
-                        </button>
-                    </div>
+                    </form>
+
+                    <a href="#" class="apply-btn">Apply Now</a>
                 </div>
             </div>
+
         </div>
     </section>
     <style>
-        
-        /* BADGE */
-        .edu-badge {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 6px 16px;
-            font-size: 13px;
-            font-weight: 700;
-            border-radius: 999px;
-            text-transform: uppercase;
+        .hero-search-wrap {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-top: 20px;
         }
 
-        .private-badge {
-            background: linear-gradient(135deg, #ff512f, #dd2476);
-            box-shadow: 0 0 12px rgba(255, 81, 47, 0.6);
+        /* SEARCH BAR */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border-radius: 12px;
+            padding: 2px 10px;
+            width: 600px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, .06);
         }
 
-        /* HERO */
-        .hero-40vh {
-            height: 45vh;
-            min-height: 280px;
+        .search-input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 14px 16px;
+            font-size: .95rem;
+        }
+
+        .search-btn {
+            background: #002e62;
+            border: none;
+            border-radius: 10px;
+            width: 45px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: .2s;
+        }
+
+        .search-btn img {
+            width: 25px;
+            filter: brightness(0) invert(1);
+        }
+
+        .search-btn:hover {
+            background: #005ecc;
+        }
+
+        /* APPLY BUTTON */
+        .apply-btn {
+            background: #ff7a00;
+            color: #ffffff;
+            padding: 14px 26px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: .2s;
+        }
+
+        .apply-btn:hover {
+            background: #ff7a00;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:768px) {
+            .hero-search-wrap {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-bar {
+                width: 100%;
+            }
+
+            .apply-btn {
+                text-align: center;
+            }
+        }
+    </style>
+
+
+
+    <style>
+        .hero-sec {
             background-image:
                 linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)),
                 url('40123918_8796857.jpg');
             background-size: cover !important;
             background-repeat: no-repeat !important;
             background-position: center !important;
-            position: relative;
-            display: flex;
-            align-items: center;
-            color: #fff;
-        }
-
-        .hero-inner {
+            padding: 60px 0 100px;
             position: relative;
         }
 
-        /* ⭐ Rating Top Right */
-        .rating-box {
-            position: absolute;
-            top: -30px;
-            right: 0;
+        .hero-container {
+            width: 86%;
+            margin: auto;
             display: flex;
             align-items: center;
-            gap: 6px;
-            background: #ffffff;
-            padding: 6px 12px;
-            border-radius: 30px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-        }
-
-
-
-        .stars i {
-            color: #ffc107;
-            font-size: 1rem;
-        }
-
-        .rating-text {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #000;
-        }
-
-        /* LOGO FIX */
-        .college-logo {
-            background: #ffffff;
-            padding: 1px;
-            border-radius: 6px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .college-logo img {
-            width: 100%;
-            height: 120px;
-            object-fit: contain;
-        }
-
-        /* TEXT */
-        .hero-inner h1 {
-            font-size: 34px;
-            font-weight: 700;
-        }
-
-        .hero-inner h1 span {
-            color: #75a9c8;
-        }
-
-        .hero-inner p {
-            font-size: 16px;
-            opacity: 0.95;
-            margin-bottom: 6px;
-        }
-
-        /* BADGE */
-        .edu-badge {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 6px 16px;
-            font-size: 13px;
-            font-weight: 700;
-            border-radius: 999px;
-            text-transform: uppercase;
-        }
-
-        .private-badge {
-            background: linear-gradient(135deg, #ff512f, #dd2476);
-            box-shadow: 0 0 12px rgba(255, 81, 47, 0.6);
-        }
-
-        /* CTA BUTTONS */
-        .cta-btn-group {
-            margin-top: 20px;
-            display: flex;
-            gap: 16px;
+            justify-content: space-between;
             flex-wrap: wrap;
-            justify-content: flex-end;
-            /* ✅ RIGHT SIDE */
         }
 
+        /* LEFT */
+        .hero-left {
+            flex: 1;
+            min-width: 300px;
+        }
 
-        .cta-btn {
-            padding: 10px 18px;
-            font-size: 15px;
-            font-weight: 500;
-            border-radius: 4px;
+        .hero-left h1 {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .search-box {
+            margin-top: 25px;
+            display: flex;
+            background: #fff;
+            border-radius: 40px;
+            padding: 10px 15px;
+            width: 100%;
+            max-width: 430px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        }
+
+        .search-box input {
             border: none;
-            cursor: pointer;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            outline: none;
+            flex: 1;
         }
 
-        .cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        .search-box button {
+            background: none;
+            border: none;
+            font-size: 20px;
         }
 
-        .cta-download {
-            background: #ffffff;
-            color: #002347;
-        }
-
-        .cta-fee {
-            background: #ff7a00;
-            color: #fff;
-        }
-
-        /* MOBILE */
-        @media (max-width: 768px) {
-            .rating-box {
-                top: -45px;
-                right: 10px;
+        /* RESPONSIVE */
+        @media(max-width: 900px) {
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
             }
 
-            .hero-inner h1 {
-                font-size: 26px;
+            .hero-left h1 {
+                font-size: 32px;
+            }
+
+            .right-card {
+                width: 100%;
+                max-width: 380px;
             }
         }
     </style>
-
-
- 
-
-
-
-
     <!-- BREADCRUMB -->
     <nav class="breadcrumb-wrap container" aria-label="Breadcrumb">
         <a href="#">Home</a>
         <span class="divider" aria-hidden="true">›</span>
         <a href="#">Placement</a>
         <span class="divider" aria-hidden="true">›</span>
-        <span class="current">Inner-College-Page</span>
+        <span class="current">Main College Page</span>
     </nav>
 
     <style>
         .breadcrumb-wrap {
-            margin-top: 12px !important;
+            margin-top: 12px;
             font-size: 17px;
             font-weight: 400;
             letter-spacing: 0.3px;
@@ -1575,731 +1515,916 @@
         }
     </style>
 
+      <section>
+        <div class="container mt-5">
+          
+            <h2 class="text-center text-primary-emphasis">List of <span
+            style="color: #75a9c8;">Best Schools</span>  in India 
+    </h2>
+            <p>Choosing the right school for your child is a pivotal decision that shapes their future. India boasts a
+                range of outstanding educational institutions, including the top schools in India, which provide high
+                standards of academic and extracurricular excellence. Whether you're looking for the best schools in
+                India or specifically searching for top CBSE schools in India or top ICSE schools in India, the variety
+                of options ensures that you can find a school that perfectly suits your child's needs.
+<br><br>
 
-    <!-- =========================================================================series of horizonatal buttons -->
 
-    <!-- City Filter Buttons -->
-    <div class="city-filters mt-4 text-start container">
-        <button class="filter-btn active" data-city="all">Info</button>
-        <button class="filter-btn" data-city="Thiruvananthapuram">Courses & Fee</button>
-        <button class="filter-btn" data-city="Kochi">Admissions</button>
-        <button class="filter-btn" data-city="Calicut">Placement </button>
-        <button class="filter-btn" data-city="Kollam">Ranking</button>
-        <button class="filter-btn" data-city="Kochi">Scholarship </button>
-        <button class="filter-btn" data-city="Calicut">Infrastructure </button>
-        <button class="filter-btn" data-city="Kollam">Review </button>
-        <button class="filter-btn" data-city="Kollam">FAQ</button>
-    </div>
+                In addition to top ranked schools in India, there are best boarding schools in India offering unique
+                residential experiences that contribute to personal growth. If you're interested in international
+                education, consider top international schools in India, which offer globally recognized curricula such
+                as the International Baccalaureate (IB) and Cambridge IGCSE. For a broad overview, check out a list of
+                best schools in India or explore leading schools in India for more tailored options.</p>
+        </div>
+    </section>
 
+
+    <h2 class="text-center text-primary-emphasis  mt-5 fs-1 mb-5">Top Colleges in <span
+            style="color: #75a9c8;">Kerala</span>
+    </h2>
+
+
+    <!-- ============================================================================FILTER COLLEGES -->
+
+  
+
+
+
+
+
+    <section class="filter-college">
+
+        <div class="container py-2 filter-colleges">
+            <div class="row">
+                <!-- Left Sidebar -->
+                <div class="col-lg-3 mb-4">
+                    <div class="filter-section">
+                        <h5>Found 20 Schools</h5>
+                        <div class="mb-4 filter-box">
+                            <h6 class="fw-bold text-primary">Boards</h6>
+                            <div class="border-line"></div>
+                            <div class="position-relative mb-2">
+                                <i class="fa fa-search"></i>
+                                <input type="search" class="form-control" placeholder="Search">
+                            </div>
+                            <div class="filter-box">
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
+                                        class="form-check-label">CBSE</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
+                                        class="form-check-label">CAIE</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
+                                        class="form-check-label">CISCE</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
+                                        class="form-check-label">IB</label></div>
+                            </div>
+                        </div>
+                        <div class="mb-4 filter-box">
+                            <h6 class="fw-bold text-primary">States</h6>
+                            <div class="border-line"></div>
+                            <div class="position-relative mb-2">
+                                <i class="fa fa-search"></i>
+                                <input type="search" class="form-control" placeholder="Search">
+                            </div>
+
+                            <div class="filter-box">
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
+                                        class="form-check-label">Andhra Pradesh</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
+                                        class="form-check-label">Arunachal Pradesh</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
+                                        class="form-check-label">Bihar</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
+                                        class="form-check-label">Gujarat</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
+                                        class="form-check-label">Haryana</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
+                                        class="form-check-label">Himachal Pradesh</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
+                                        class="form-check-label">Jharkhand</label></div>
+                            </div>
+                        </div>
+
+                        <div class="mb-4 filter-box">
+                            <h6 class="fw-bold text-primary">Cities</h6>
+                            <div class="border-line"></div>
+                            <div class="position-relative mb-2">
+                                <i class="fa fa-search"></i>
+                                <input type="search" class="form-control" placeholder="Search">
+                            </div>
+                            <div class="filter-box">
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
+                                        class="form-check-label">Bangalore</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
+                                        class="form-check-label">Chennai</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
+                                        class="form-check-label">Mangalore</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
+                                        class="form-check-label">Pune</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
+                                        class="form-check-label">Mysore</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
+                                        class="form-check-label">Coimbatore</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
+                                        class="form-check-label">Hyderabad</label></div>
+                            </div>
+                        </div>
+                        <div class="mb-4 filter-box">
+                            <h6 class="fw-bold text-primary"> School Types</h6>
+                            <div class="border-line"></div>
+                            <div class="position-relative mb-2">
+                                <i class="fa fa-search"></i>
+                                <input type="search" class="form-control" placeholder="Search">
+                            </div>
+                            <div class="filter-box">
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
+                                        class="form-check-label">Public</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
+                                        class="form-check-label">Deemed</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
+                                        class="form-check-label">Private</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
+                                        class="form-check-label">Government</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
+                                        class="form-check-label">Autonomous</label></div>
+
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+
+
+                <!-- RIGHT CONTENT -->
+                <div class="col-lg-9">
+
+                    <!-- FILTER TAGS -->
+                    <div
+                        class="d-flex justify-content-between align-items-center selected-filter-box border rounded-pill px-4 py-3 mb-4">
+                        <strong>Selected Filters</strong>
+
+                        <div class="d-flex gap-2 flex-wrap">
+                            <span class="badge px-3 py-2">Design <i class="fa fa-xmark ms-1"></i></span>
+                            <span class="badge px-3 py-2">Development <i class="fa fa-xmark ms-1"></i></span>
+                        </div>
+                    </div>
+
+                    <style>
+                        /* Layout */
+                        .form-check {
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                        }
+
+                        /* Hide default look */
+                        .form-check-input {
+                            appearance: none;
+                            -webkit-appearance: none;
+                            width: 15px;
+                            height: 15px;
+                            border: 1.6px solid #b8c0d4;
+                            border-radius: 100px !important;
+                            background: #fff;
+                            cursor: pointer;
+                            position: relative;
+                            transition: all 0.25s ease;
+                        }
+
+                        /* Checked state */
+                        .form-check-input:checked {
+                            background: #0b2a66;
+                            border-color: #0b2a66;
+                        }
+
+                        /* Checkmark */
+                        .form-check-input:checked::after {
+                            content: "";
+                            position: absolute;
+                            left: 5px;
+                            top: 2px;
+                            width: 5px;
+                            height: 10px;
+                            border: solid #fff;
+                            border-width: 0 2px 2px 0;
+                            transform: rotate(45deg);
+                        }
+
+                        /* Hover & focus */
+                        .form-check-input:hover {
+                            border-color: #0b2a66;
+                        }
+
+                        .form-check-input:focus {
+                            box-shadow: none;
+                        }
+
+                        /* Label */
+                        .form-check-label {
+                            font-size: 15px;
+                            font-weight: 500;
+                            color: #222;
+                            cursor: pointer;
+                        }
+
+                        .form-check-label {
+                            font-size: 14px !important;
+                        }
+
+                        /* FILTER CONTAINER */
+                        .selected-filter-box {
+                            background: #ffffff;
+                            border: 1px solid #e5e7eb;
+                            border-radius: 50px;
+                        }
+
+                        .selected-filter-box strong {
+                            color: #1f2937;
+                            /* dark grey */
+                            font-weight: 600;
+                        }
+
+                        /* BADGES */
+                        .selected-filter-box .badge {
+                            background: #234371 !important;
+                            /* deep blue */
+                            color: #ffffff !important;
+                            /* white text */
+                            border: none !important;
+                            border-radius: 30px;
+                            font-size: 14px;
+                            font-weight: 400;
+                            cursor: pointer;
+                            transition: 0.3s ease;
+                        }
+
+                        /* BADGE HOVER */
+                        .selected-filter-box .badge:hover {
+                            background: #0057a5 !important;
+                            /* lighter blue */
+                            transform: translateY(-2px);
+                        }
+
+                        /* CLOSE ICON */
+                        .selected-filter-box .badge i {
+                            color: #ffffff !important;
+                            font-size: 12px;
+                        }
+                    </style>
+
+
+                    <!-- 2 CARDS PER ROW -->
+                    <div class="row">
+
+                        <!-- Card 1 -->
+                        <div class="col-4">
+                            <div class="college-card">
+                                <div class="card-content">
+                                    <img src="https://collegevidya.com/_next/image/?url=https%3A%2F%2Fd1aeya7jd2fyco.cloudfront.net%2Fslider%2FTop-Amity-Online-University.jpg&w=1920&q=75"
+                                        alt="Amity University" class="main-img">
+                                    <img src="https://api.bangalorestudy.com:3000/college_logo/logo1693823278104.png"
+                                        alt="Logo" class="college-logo">
+                                    <span class="admission-tag">Admission Ongoing</span>
+                                    <!-- ⭐ Rating on image -->
+                                    <div class="rating-badge">
+                                        <i class="fa-solid fa-star"></i> 4.5
+                                    </div>
+                                </div>
+                                <div class="card-body py-3 px-3">
+                                    <h5>M.S Ramaiah Dental College (MSRDC)
+                                    </h5>
+
+                                    <p class="mt-2 mb-3"> Electronic City, Bangalore, Approved by </p>
+                                    <span> Est.
+                                        Year <strong>2004</strong></span><br>
+                                    <span>
+                                        Ownership <strong>Private</strong>
+                                    </span>
+                                    <div class="card-actions">
+                                        <button class="btn btn-view">View More</button>
+                                        <button class="btn btn-brochure">Brochure</button>
+                                        <button class="btn btn-apply">Apply Now</button>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 1 -->
+                        <div class="col-4">
+                            <div class="college-card">
+                                <div class="card-content">
+                                    <img src="https://collegevidya.com/_next/image/?url=https%3A%2F%2Fd1aeya7jd2fyco.cloudfront.net%2Fslider%2FTop-Amity-Online-University.jpg&w=1920&q=75"
+                                        alt="Amity University" class="main-img">
+                                    <img src="https://api.bangalorestudy.com:3000/college_logo/logo1693823278104.png"
+                                        alt="Logo" class="college-logo">
+                                    <span class="admission-tag">Admission Ongoing</span>
+                                    <!-- ⭐ Rating on image -->
+                                    <div class="rating-badge">
+                                        <i class="fa-solid fa-star"></i> 4.5
+                                    </div>
+                                </div>
+                                <div class="card-body py-3 px-3">
+                                    <h5>M.S Ramaiah Dental College (MSRDC)
+                                    </h5>
+
+                                    <p class="mt-2 mb-3"> Electronic City, Bangalore, Approved by </p>
+                                    <span> Est.
+                                        Year <strong>2004</strong></span><br>
+                                    <span>
+                                        Ownership <strong>Private</strong>
+                                    </span>
+                                    <div class="card-actions">
+                                        <button class="btn btn-view">View More</button>
+                                        <button class="btn btn-brochure">Brochure</button>
+                                        <button class="btn btn-apply">Apply Now</button>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 1 -->
+                        <div class="col-4">
+                            <div class="college-card">
+                                <div class="card-content">
+                                    <img src="https://collegevidya.com/_next/image/?url=https%3A%2F%2Fd1aeya7jd2fyco.cloudfront.net%2Fslider%2FTop-Amity-Online-University.jpg&w=1920&q=75"
+                                        alt="Amity University" class="main-img">
+                                    <img src="https://api.bangalorestudy.com:3000/college_logo/logo1693823278104.png"
+                                        alt="Logo" class="college-logo">
+                                    <span class="admission-tag">Admission Ongoing</span>
+                                    <!-- ⭐ Rating on image -->
+                                    <div class="rating-badge">
+                                        <i class="fa-solid fa-star"></i> 4.5
+                                    </div>
+                                </div>
+                                <div class="card-body py-3 px-3">
+                                    <h5>M.S Ramaiah Dental College (MSRDC)
+                                    </h5>
+
+                                    <p class="mt-2 mb-3"> Electronic City, Bangalore, Approved by </p>
+                                    <span> Est.
+                                        Year <strong>2004</strong></span><br>
+                                    <span>
+                                        Ownership <strong>Private</strong>
+                                    </span>
+                                    <div class="card-actions">
+                                        <button class="btn btn-view">View More</button>
+                                        <button class="btn btn-brochure">Brochure</button>
+                                        <button class="btn btn-apply">Apply Now</button>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 1 -->
+                        <div class="col-4">
+                            <div class="college-card">
+                                <div class="card-content">
+                                    <img src="https://collegevidya.com/_next/image/?url=https%3A%2F%2Fd1aeya7jd2fyco.cloudfront.net%2Fslider%2FTop-Amity-Online-University.jpg&w=1920&q=75"
+                                        alt="Amity University" class="main-img">
+                                    <img src="https://api.bangalorestudy.com:3000/college_logo/logo1693823278104.png"
+                                        alt="Logo" class="college-logo">
+                                    <span class="admission-tag">Admission Ongoing</span>
+                                    <!-- ⭐ Rating on image -->
+                                    <div class="rating-badge">
+                                        <i class="fa-solid fa-star"></i> 4.5
+                                    </div>
+                                </div>
+                                <div class="card-body py-3 px-3">
+                                    <h5>M.S Ramaiah Dental College (MSRDC)
+                                    </h5>
+
+                                    <p class="mt-2 mb-3"> Electronic City, Bangalore, Approved by </p>
+                                    <span> Est.
+                                        Year <strong>2004</strong></span><br>
+                                    <span>
+                                        Ownership <strong>Private</strong>
+                                    </span>
+                                    <div class="card-actions">
+                                        <button class="btn btn-view">View More</button>
+                                        <button class="btn btn-brochure">Brochure</button>
+                                        <button class="btn btn-apply">Apply Now</button>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- LOAD MORE -->
+                        <div class="text-center mb-4">
+                            <button class="btn-blue px-4">Load More</button>
+                        </div>
+
+                        <!-- AD BOX -->
+                        <div class="ad-box mb-4">
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="https://api.learntechww.com/banners/logo1768024492467.jpg"
+                                    style="width:300px; border-radius:8px;">
+                                <div>
+                                    <h5 class="fw-bold mb-1">S-VYASA University, Bangalore</h5>
+                                    <p class="text-muted small mb-2">Admissions Open 2025–26</p>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn bg-dark rounded-5 text-white">Open</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PREDICTORS -->
+                        <div class="predict-box">
+                            <h5 class="fw-bold mb-3">College Predictors</h5>
+
+                            <div class="row text-center g-3">
+                                <div class="col">
+                                    <div class="predict-icon"><img
+                                            src="https://images.shiksha.ws/public/images/CollegeShorlist/default_logo.svg">
+                                    </div>JEE Main
+                                </div>
+                                <div class="col">
+                                    <div class="predict-icon"><img
+                                            src="https://images.shiksha.ws/public/images/CollegeShorlist/default_logo.svg">
+                                    </div>NEET UG
+                                </div>
+                                <div class="col">
+                                    <div class="predict-icon"><img
+                                            src="https://images.shiksha.ws/public/images/CollegeShorlist/default_logo.svg">
+                                    </div>CAT
+                                </div>
+                                <div class="col">
+                                    <div class="predict-icon"><img
+                                            src="https://images.shiksha.ws/public/images/CollegeShorlist/default_logo.svg">
+                                    </div>GATE
+                                </div>
+                                <div class="col">
+                                    <div class="predict-icon"><img
+                                            src="https://images.shiksha.ws/public/images/CollegeShorlist/default_logo.svg">
+                                    </div>CUET
+                                </div>
+                                <div class="col">
+                                    <div class="predict-icon"><img
+                                            src="https://images.shiksha.ws/public/images/CollegeShorlist/default_logo.svg">
+                                    </div>CLAT
+                                </div>
+                                <div class="col">
+                                    <div class="predict-icon"><img
+                                            src="https://images.shiksha.ws/public/images/CollegeShorlist/default_logo.svg">
+                                    </div>IPMAT
+                                </div>
+                            </div>
+
+                            <div class="text-center mt-3">
+                                <button class="btn btn-danger px-4">&lt; View All Predictors &gt;</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
     <style>
-        .city-filters .filter-btn {
-            background: #f0f6feeb;
-            border: 1px solid #001b544e;
-            padding: 8px 18px;
-            margin: 5px;
-            border-radius: 25px;
-            cursor: pointer;
-            color: #000000;
+        /* ===== MOBILE FIX ===== */
+        @media (max-width: 768px) {
+
+            .col-4 {
+                width: 100%;
+            }
+
+            .main-img {
+                height: 150px;
+            }
+
+            .college-logo {
+                width: 44px;
+                height: 44px;
+            }
+
+            .card-body {
+                padding: 14px;
+            }
+
+            .card-body h5 {
+                font-size: 16px;
+            }
+
+            .card-body p {
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
+
+            /* STACK BUTTONS */
+            .card-actions {
+                flex-direction: column;
+            }
+
+            .card-actions .btn {
+                width: 100%;
+                padding: 11px 0;
+                font-size: 14px;
+            }
+        }
+
+        .rating-badge {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            background: rgba(0, 0, 0, 0.635);
+            color: #fff;
+            padding: 2px 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-top-left-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .rating-badge i {
+            color: #ffc800;
+            font-size: 0.85rem;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        /* COMMON SMALL BUTTON STYLE */
+        .card-actions .btn {
+            flex: 1;
+            /* keeps equal width */
+            padding: 6px 8px;
+            /* 🔥 small size */
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 3px;
+            /* no rounded corners */
+            white-space: nowrap;
+            /* 🔒 one line */
+        }
+
+        /* BLUE – View More */
+        .btn-view {
+            background: #00226b;
+            color: #fff;
+            border: none;
+        }
+
+        /* WHITE – Brochure */
+        .btn-brochure {
+            background: #ffffff;
+            color: #00226b;
+            border: 1px solid #00226b;
+        }
+
+        /* ORANGE – Apply */
+        .btn-apply {
+            background: #ff6a00;
+            color: #fff;
+            border: none;
+        }
+
+        /* Hover (clean) */
+        .card-actions .btn:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 480px) {
+            .card-actions .btn {
+                font-size: 11px;
+                padding: 5px;
+            }
+        }
+
+
+        .college-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
             transition: all 0.3s ease;
         }
 
-        .city-filters .filter-btn.active,
-        .city-filters .filter-btn:hover {
-            background: #002b58;
-            color: #fbfbfb;
-            border-color: #002b58;
-        }
-    </style>
-
-
-
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-lg-8">
-                <h5>About Vidya Bharath College of Pharmacy, Bangalore:</h5>
-                <p>
-                    Vidya Bharath College of Pharmacy, Bangalore, is a private institution managed by the Shri Maruthi
-                    Group of
-                    Institutions. The college is dedicated to providing value-based academic programmes in a supportive
-                    environment
-                    to equip students with the necessary knowledge and skills that can help them grow in the
-                    pharmaceutical industry
-                    and other related healthcare fields. The college has a distinguished history of helping talented
-                    students
-                    sharpen their skills and implement the acquired knowledge across various career paths.
-                </p>
-
-                <p>
-                    The faculty at Vidya Bharath College of Pharmacy, Bangalore, is well-qualified, young, and dynamic.
-                    The
-                    teacher-to-student ratio at the college is 1:10. This is done to ensure that each teacher addresses
-                    the
-                    academic and other basic needs of 10 students. Additionally, the college invites renowned scholars,
-                    respected
-                    dignitaries, and teachers who are well-versed in the education sector, specifically the
-                    pharmaceutical industry,
-                    to offer guest lectures, workshops, and seminars.
-                </p>
-            </div>
-            <div class="col-lg-4 position-relative">
-                <!-- Apply Now Image -->
-                <div class="image-card position-relative overflow-hidden mb-4">
-                    <img src="8609213_5853.jpg" alt="Course Image" class="img-fluid rounded-2">
-                    <button class="apply-btn position-absolute translate-middle-y">
-                        Apply Now
-                    </button>
-                </div>
-
-                <!-- Video Thumbnail Below -->
-                <div class="video-container position-relative text-center">
-                    <img src="https://cdn.pixabay.com/photo/2022/05/19/18/09/video-7207893_1280.png" class="img-fluid "
-                        alt="Video Thumbnail">
-                    <p class="">Add Video</p>
-                </div>
-            </div>
-
-            <style>
-                .image-card {
-                    width: 100%;
-                    position: relative;
-                    overflow: hidden;
-                    border-radius: 10px;
-                }
-
-                .image-card img {
-                    transition: all 0.4s ease;
-                    width: 100%;
-                    height: auto;
-                    filter: brightness(0.8);
-                }
-
-                .apply-btn {
-                    background: linear-gradient(90deg, #ff0000, #ffa600);
-                    color: #fff;
-                    border: none;
-                    padding: 10px 25px;
-                    border-radius: 5px;
-                    font-weight: 500;
-                    transition: all 0.3s ease;
-                    cursor: pointer;
-                    left: 35%;
-                    top: 50%;
-                    transform: translate(-50%, -50%);
-                    position: absolute;
-                    border: 2px solid white;
-
-                }
-
-                .image-card:hover img {
-                    filter: brightness(0.8);
-                    transform: scale(1.05);
-                }
-
-                .apply-btn:hover {
-                    transform: translate(-50%, -50%) scale(1.05);
-                }
-
-                /* Video container */
-                .video-container {
-                    overflow: hidden;
-                    border-radius: 10px;
-                    transition: transform 0.3s ease, box-shadow 0.3s ease;
-                    border: 1px solid rgb(196, 196, 196);
-                    padding: 20px;
-                }
-            </style>
-        </div>
-
-    </div>
-
-
-
-    <!-- ===============================================================fecilities -->
-
-
-
-    <style>
-        .facilities-section {
-            padding: 30px 0;
-            text-align: center;
-            /* background: linear-gradient(120deg, #fff8f2 0%, #ff7b0011 100%); */
-            position: relative;
-            overflow: hidden;
+        .college-card img.main-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
         }
 
-        .facilities-section::before {
-            content: "";
+        .college-logo {
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            /* background: radial-gradient(circle at 30% 30%, rgba(255, 102, 0, 0.08) 0%, transparent 60%),
-                radial-gradient(circle at 70% 70%, rgba(255, 174, 0, 0.08) 0%, transparent 60%); */
-            animation: moveBg 10s infinite linear;
-            z-index: 0;
-        }
-
-        @keyframes moveBg {
-            0% {
-                transform: translate(0, 0);
-            }
-
-            50% {
-                transform: translate(50px, 50px);
-            }
-
-            100% {
-                transform: translate(0, 0);
-            }
-        }
-
-        .facilities-section h3 {
-            font-weight: 700;
-            color: #7a3700;
-            position: relative;
-            z-index: 1;
-        }
-
-        .facility-item {
-            background: #fff;
-            border-radius: 10%;
-            width: 120px;
-            height: 120px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: auto;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-            transition: all 0.6s ease;
-            position: relative;
-            z-index: 1;
-            overflow: hidden;
-
-        }
-
-        .facility-item::before {
-            content: "";
-            position: absolute;
-            inset: 0;
+            top: 10px;
+            left: 10px;
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(255, 128, 0, 0.25), transparent 70%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            z-index: 0;
+            background: #fff;
+            padding: 0px;
         }
 
-        .facility-item i {
-            font-size: 40px;
-            color: #001f47;
-            margin-bottom: 6px;
-            transition: transform 0.4s ease, color 0.4s ease;
-            z-index: 1;
-        }
-
-        .facility-item p {
-            margin: 0;
-            font-size: 15px;
+        .card-body h5 {
+            font-size: 20px;
             font-weight: 600;
-            color: #222;
-            z-index: 1;
         }
 
-        .facility-item.active {
-            transform: scale(1.25) rotate(1deg);
-            background: linear-gradient(120deg, #003479, #003479);
+        .card-body span {
+            font-size: 16px;
+            margin-left: 3px;
+            color: #666666;
+        }
+
+        .card-body p {
+            font-size: 18px;
+            font-weight: 400;
+            color: #666666;
+
+        }
+
+        .card-body .rating {
+            font-size: 0.9rem;
+            color: #484848;
+        }
+
+        .btn-brochure {
+            font-size: 0.8rem;
+            padding: 0.25rem 0.75rem;
+        }
+
+        .admission-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #28a745;
             color: #fff;
-            border-radius: 50% !important;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 500;
         }
 
-        .facility-item.active::before {
-            opacity: 1;
-            animation: pulse 2s infinite;
+        .subsidy {
+            font-size: 0.8rem;
+            color: #0d6efd;
+            margin-top: 4px;
+            display: block;
         }
 
-        .facility-item.active i {
-            color: #fff;
-            transform: rotate(10deg) scale(1.2);
-        }
-
-        .facility-item.active p {
-            color: #fff;
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                opacity: 0.7;
-            }
-
-            50% {
-                transform: scale(1.3);
-                opacity: 0.3;
-            }
-
-            100% {
-                transform: scale(1);
-                opacity: 0.7;
-            }
-        }
-
-        @media(max-width: 767px) {
-            .facility-item {
-                width: 90px;
-                height: 90px;
-            }
-
-            .facility-item i {
-                font-size: 26px;
-            }
-
-            .facility-item p {
-                font-size: 12px;
-            }
+        .card-content {
+            position: relative;
         }
     </style>
 
 
-    <section class="facilities-section mt-5 mb-3">
-        <div class="container">
-            <h4 class="mb-5 fs-2">Facilities & Infrastructure</h4>
-            <div class="row g-4 justify-content-center">
-                <div class="col-6 col-md-2">
-                    <div class="facility-item">
-                        <i class="fa-solid fa-flask"></i>
-                        <p>Laboratory</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-2">
-                    <div class="facility-item">
-                        <i class="fa-solid fa-building"></i>
-                        <p>Boys Hostel</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-2">
-                    <div class="facility-item">
-                        <i class="fa-solid fa-house-user"></i>
-                        <p>Girls Hostel</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-2">
-                    <div class="facility-item">
-                        <i class="fa-solid fa-mug-hot"></i>
-                        <p>Cafeteria</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-2">
-                    <div class="facility-item">
-                        <i class="fa-solid fa-book"></i>
-                        <p>Library</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-2">
-                    <div class="facility-item">
-                        <i class="fa-solid fa-dumbbell"></i>
-                        <p>Gym</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        const items = document.querySelectorAll('.facility-item');
-        let current = 0;
-
-        function highlightNext() {
-            items.forEach(el => el.classList.remove('active'));
-            items[current].classList.add('active');
-            current = (current + 1) % items.length;
-        }
-
-        highlightNext();
-        setInterval(highlightNext, 1800);
-    </script>
-
-
-    <section class="school-hero-v2">
-        <div class="school-hero-overlay"></div>
-
-        <div class="school-hero-inner">
-            <p class="school-hero-subtext">
-                Interested in Studying at This School?
-            </p>
-
-            <h1 class="school-hero-heading">
-                New Horizon Public School, Bangalore
-            </h1>
-
-            <a href="#" class="school-hero-btn">Apply Now</a>
-        </div>
-    </section>
     <style>
-        .school-hero-v2 {
-            position: relative;
-            min-height: 420px;
-            display: flex;
+        .form-check-input {
+            border: 1px solid #444 !important;
+            /* darker border */
+        }
+
+
+        .predict-bg {
+
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .college-predict {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.09);
+        }
+
+        .college-predict h5 {
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1e3366;
+        }
+
+        /* GRID LAYOUT FOR 7 ITEMS */
+        .college-row.predict-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 12px;
+            justify-items: center;
             align-items: center;
-            justify-content: center;
             text-align: center;
-            background: url("8609213_5853.jpg") center / cover no-repeat;
-            padding: 40px 20px;
         }
 
-        /* Overlay */
-        .school-hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.55);
-            z-index: 1;
-        }
-
-        /* Content wrapper */
-        .school-hero-inner {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-
+        .college-row.predict-grid .col {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 22px;
+            justify-content: center;
+            gap: 6px;
+            padding: 6px;
         }
 
-        /* Subtitle */
-        .school-hero-subtext {
-            color: #ffffff;
-            font-size: 18px;
+        /* IMAGE STYLE */
+        .college-row.predict-grid img {
+            width: 85px;
+            height: 85px;
+            object-fit: contain;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .college-row.predict-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        /* TEXT STYLE */
+        .college-row.predict-grid p {
+            font-size: 14px;
             font-weight: 500;
+            color: #000;
             margin: 0;
         }
 
-        /* Title box */
-        .school-hero-heading {
-            display: inline-block;
-            background: #001d62;
-            color: #ffffff;
-            padding: 16px 28px;
-            border-radius: 6px;
-            font-size: 32px;
-            font-weight: 700;
-            line-height: 1.3;
-            margin: 0;
+        /* BUTTON */
+        .predict-btn .btn-orange {
+            background-color: #001d45;
+            color: white;
+            border-radius: 25px;
+            font-size: 14px;
+            padding: 8px 22px;
+            border: none;
+            transition: 0.3s;
         }
 
-        /* Button */
-        .school-hero-btn {
-            display: inline-block;
-            padding: 12px 28px;
-            background: #ffffff;
-            color: #002f6c;
-            font-size: 16px;
-            font-weight: 600;
-            border-radius: 3px;
-            text-decoration: none;
-            transition: all 0.45s ease;
+        .predict-btn .btn-orange:hover {
+            background-color: #374d67;
         }
 
-        .school-hero-btn:hover {
-            color: #002f6c;
-            letter-spacing: 5px;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .school-hero-heading {
-                font-size: 22px;
-                padding: 14px 18px;
-            }
-
-            .school-hero-subtext {
-                font-size: 15px;
-            }
-        }
-    </style>
-    <!-- ===========================================================LOCATION -->
-
-    <style>
-        :root {
-            --locate-bg: #ffffff;
-            --locate-fg: #e9ecf7;
-            --locate-muted: #9aa3bd;
-            --locate-brand: #7aa2ff;
-            --locate-brand2: #c2ff73;
-            --locate-card: #ffffff;
-            --locate-stroke: #ffffff;
-        }
-
-        body::before {
-            content: "";
-            position: fixed;
-            inset: -100px;
-            background-image:
-                radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, .06) 50%, transparent 52%),
-                radial-gradient(2px 2px at 40px 60px, rgba(255, 255, 255, .05) 50%, transparent 52%),
-                radial-gradient(2px 2px at 80px 20px, rgba(255, 255, 255, .04) 50%, transparent 52%);
-            background-size: 100px 100px, 120px 120px, 140px 140px;
-            mix-blend-mode: overlay;
-            opacity: .6;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .locate-wrap {
-            position: relative;
-            z-index: 1;
-            padding: 40px 20px;
-        }
-
-        .locate-title {
+        .predict-btn {
+            grid-column: 1 / -1;
             text-align: center;
-            font-weight: 800;
-            color: #00113a;
+            margin-top: 10px;
+        }
+
+        /* RESPONSIVE BREAKPOINTS */
+        @media (max-width: 1200px) {
+            .college-row.predict-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .college-row.predict-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .college-row.predict-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .college-row.predict-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .ad-label {
+            top: 130px;
+            left: 200px;
+            background: rgba(0, 0, 0, 0.525);
+            font-size: 30px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
+            color: white !important;
+            opacity: 1;
+        }
+
+        .ad-bg {
+            background-color: #e0e5ea !important;
+            border-radius: 10px;
             margin-bottom: 10px;
         }
 
-        .locate-lede {
-            text-align: center;
-            color: black;
-            margin-bottom: 40px;
-        }
-
-        .locate-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            gap: 28px;
-            grid-template-columns: 1.05fr 1.7fr;
-            align-items: stretch;
-
-        }
-
-        @media (max-width: 980px) {
-            .locate-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .locate-card {
-            background: var(--locate-card);
-            border: 1px solid var(--locate-stroke);
+        .ad-box {
+            border: 1px solid rgb(163, 163, 163);
             border-radius: 10px;
-            /* box-shadow: 0 10px 20px rgba(0, 0, 0, .45); */
-            overflow: hidden;
-            position: relative;
-            border: 2px solid rgba(28, 72, 113, 0.236) !important;
+            height: 200px;
+        }
+
+        .border-line {
+            border: 1px solid rgb(0, 94, 194);
+            margin-bottom: 20px;
+            margin-right: 10px !important;
+        }
+
+        .btn-load-more {
+            font-size: 16px;
+            background-color: white !important;
+            border: 2px solid var(--orange);
+            color: var(--orange);
+            font-weight: 500;
+            padding: 4px !important;
 
         }
 
-        .locate-card-inner {
-            padding: 28px;
-            display: grid;
-            gap: 18px;
-            align-content: start;
+        .ad-img {
+            margin-left: 10px;
         }
 
-        .locate-logo {
-            height: 180px;
-            border-radius: 18px;
-            display: grid;
-            place-items: center;
-            overflow: hidden;
-            outline: 1px solid var(--locate-stroke);
+        .btn-orange .apply {
+            padding: 5px 16px;
+            font-size: 14px;
+            border-radius: 8px !important;
+            border: 1px solid rgb(0, 85, 255);
         }
 
-        .locate-logo img {
-            max-width: 72%;
-            max-height: 72%;
-            object-fit: contain;
+        .filter-box {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 10px;
+            max-height: 50vh !important;
         }
 
-        .locate-name {
-            margin: 0;
-            font-size: clamp(18px, 1.8vw, 24px);
-            font-weight: 800;
-            letter-spacing: .2px;
-            color: #00113a;
+        .text-primary {
+            font-size: 22px;
+            color: #272727 !important;
+            font-weight: 400 !important;
         }
 
-        .locate-addr {
-            margin: 0;
-            color: var(--locate-muted);
-        }
+        .filter-colleges {
 
-        .locate-meta {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .locate-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 12px;
-            background: #0f1430;
-            color: #cbd7ff;
-            border: 1px solid #1c244a;
-            border-radius: 999px;
-        }
-
-        .locate-map {
-            position: relative;
             border-radius: 20px;
-            background: var(--locate-card);
-            border: 8px solid rgb(28, 72, 113);
-            overflow: hidden;
-            /* box-shadow: 0 30px 60px rgba(0, 0, 0, .45); */
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
-        .locate-map-frame {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%;
+        .filter-section {
+            background: #e9f4ff;
+            border-radius: 10px;
+            padding: 15px;
+            border: 2px solid rgba(0, 52, 83, 0.095);
+
+
         }
 
-        .locate-map-frame iframe {
+        .filter-section h5 {
+            color: #1e3366;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .filter-section .form-check-label {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .filter-box {
+            max-height: 220px;
+            overflow-y: auto;
+            border-radius: 8px;
+            padding-right: 8px;
+        }
+
+        .filter-box input[type="search"] {
+            border-radius: 30px;
+            padding-left: 35px;
+            border: 1px solid #ccc;
+        }
+
+        .filter-box .fa-search {
             position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        .locate-actions {
-            position: absolute;
-            left: 14px;
-            bottom: 14px;
-            display: flex;
-            gap: 12px;
-            z-index: 2;
-        }
-
-        .locate-btn {
-            position: relative;
-            isolation: isolate;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 16px;
-            border-radius: 14px;
-            text-decoration: none;
-            color: #0a0b13;
-            font-weight: 800;
-            background: linear-gradient(180deg, #7bb4ff, #0095ff);
-            box-shadow: 0 16px 30px rgba(127, 166, 255, .35);
-            transform: translateZ(0);
-            transition: transform .2s ease;
-        }
-
-        .locate-btn.alt {
-            background: linear-gradient(180deg, #e2a23a, #ff8c00);
-            box-shadow: 0 16px 30px rgba(183, 255, 90, .28);
-        }
-
-        .locate-btn-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: #0a0b13;
-            opacity: .7;
-        }
-
-        .locate-magnet {
-            padding: 16px;
-            margin: -16px;
-            border-radius: 20px;
-        }
-
-        .locate-reveal {
-            opacity: 0;
-            transform: translateY(14px);
-            transition: .6s cubic-bezier(.2, .8, .2, 1);
-        }
-
-        .locate-reveal.on {
-            opacity: 1;
-            transform: none;
-        }
-
-        .locate-map,
-        .locate-reveal {
-            position: relative;
-            border: 5px solid transparent;
-            border-image: linear-gradient(90deg, rgb(0, 50, 136), var(--orange)) 1;
-            border-radius: 20px;
-            /* optional – gives soft corners */
-            color: #fff;
-
-            transition: all 0.4s ease;
-            overflow: hidden;
+            left: 12px;
+            top: 10px;
+            color: #6c757d;
         }
     </style>
 
-    <main class="locate-wrap" aria-labelledby="locate-title">
-        <h4 id="locate-title" class="locate-title">Locate the College</h4>
-        <p class="locate-lede">A kinetic split with magnetic actions, grain, and scroll-revealed hierarchy for a
-            premium,
-            editorial feel.</p>
+    <style>
+        /* Predictors & Ads */
+        .predict-box,
+        .ad-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 14px;
+            border: 1px solid #e5e7eb;
+        }
 
-        <section class="locate-grid" aria-label="College location">
-            <article class="locate-card locate-reveal">
-                <div class="locate-card-inner">
-                    <div class="locate-logo">
-                        <img src="https://api.learntechww.com/college_logo/logo1747827527413.webp" alt="College logo">
-                    </div>
-                    <h2 class="locate-name">Vidya Bharath College of Pharmacy, Bangalore</h2>
-                    <p class="locate-addr text-dark">Sy No. 38, Thirumenahalli Village, Yelahanka, Hobli, Bangalore
-                        North Taluk,
-                        Bengaluru – 560089</p>
-
-                </div>
-            </article>
-
-            <aside class="locate-map locate-reveal">
-                <div class="locate-map-frame">
-                    <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
-                        src="https://www.google.com/maps?q=Vidya%20Bharath%20College%20of%20Pharmacy%20Bengaluru&output=embed"></iframe>
-                </div>
-            </aside>
-        </section>
-    </main>
-
-    <script>
-        const locateObs = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.classList.add('on');
-                    locateObs.unobserve(e.target);
-                }
-            });
-        }, { threshold: 0.18 });
-
-        document.querySelectorAll('.locate-reveal').forEach(el => locateObs.observe(el));
-
-        document.querySelectorAll('.locate-magnet').forEach(container => {
-            const link = container.querySelector('.locate-btn');
-            const strength = 18;
-            container.addEventListener('mousemove', e => {
-                const r = container.getBoundingClientRect();
-                const x = (e.clientX - (r.left + r.width / 2)) / (r.width / 2);
-                const y = (e.clientY - (r.top + r.height / 2)) / (r.height / 2);
-                link.style.transform = `translate(${x * strength}px, ${y * strength}px)`;
-            });
-            container.addEventListener('mouseleave', () => {
-                link.style.transform = 'translate(0,0)';
-            });
-        });
-    </script>
-
-
-
+        .predict-icon img {
+            width: 55px;
+        }
+    </style>
 
 
     <section>
-        <div class="container-fluid px-5 py-5 text-center">
+        <div class="container py-5 text-center">
             <h2>Start Your Future with <span style="color: #75a9c8;">Kerala’s Top Colleges</span></h2>
 
 
@@ -2380,7 +2505,39 @@
                         </a>
                     </div>
 
+                    <div class="college-swiper" data-city="Kollam">
+                        <a href="#">
+                            <div class="card-image"
+                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                            </div>
+                            <div class="card-text">
+                                <h5>St. Thomas College</h5>
+                                <p class="location"><i class="fa-solid fa-location-dot" style="color: #ff4d00;"></i> 40
+                                    Feet Rd, Fayazabad, Ilyas </p>
+                                <div class="card-actions">
+                                    <button class="btn-rect">Apply Now</button>
+                                    <button class="btn btn-viewmore">View More</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
 
+                    <div class="college-swiper" data-city="Kollam">
+                        <a href="#">
+                            <div class="card-image"
+                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                            </div>
+                            <div class="card-text">
+                                <h5>St. Thomas College</h5>
+                                <p class="location"><i class="fa-solid fa-location-dot" style="color: #ff4d00;"></i> 40
+                                    Feet Rd, Fayazabad, Ilyas </p>
+                                <div class="card-actions">
+                                    <button class="btn-rect">Apply Now</button>
+                                    <button class="btn btn-viewmore">View More</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
     </section>
@@ -2419,24 +2576,6 @@
 
 
         /* --------------------------------------------------------College Cards Carousal */
-        .college-carousel {
-            display: flex;
-            gap: 16px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            padding-bottom: 10px;
-
-        }
-
-        /* Hide scrollbar (optional) */
-        .college-carousel::-webkit-scrollbar {
-            display: none;
-        }
-
-        .college-carousel {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
 
         .college-swiper {
             position: relative;
@@ -2493,7 +2632,7 @@
         }
 
         .btn-rect {
-            padding: 5px 20px;
+            padding: 10px 20px;
             border-radius: 8px;
             border: none;
             background: #0b2a66;
@@ -2519,7 +2658,7 @@
         .btn-viewmore {
             position: relative;
             padding: 12px 28px;
-            font-size: 15px;
+            font-size: 14px !important;
             font-weight: 500;
             color: #0b2a66;
             background: transparent;
@@ -2575,308 +2714,13 @@
 
 
 
-    <!---------------------------------------------------------------- BOTTOM CONTACT FORM -->
-
-
-    <section class="lt-advisor-section">
-        <div class="lt-container">
-            <h2 class="lt-heading">Personalised Admission Support</h2>
-            <h3>Kerala’s Trusted Education Experts</h3>
-            <p class="lt-subtext">
-                Discover top colleges, explore courses, and get step-by-step guidance for secure admissions in Kerala.
-            </p>
-
-            <form class="lt-form">
-                <input type="text" class="lt-input" placeholder="Enter Name" name="name" required>
-
-                <div class="mb-3">
-                    <div class="phone-group">
-                        <div class="flag-box" role="button" tabindex="0" aria-haspopup="listbox">
-                            <img src="https://flagcdn.com/w40/in.png" alt="India Flag" class="flag-icon">
-                            <span class="country-code">+91</span>
-                            <span class="arrow"></span>
-                        </div>
-                        <input type="tel" class="phone-input form-control" placeholder="" required>
-                    </div>
-                </div>
 
 
 
-                <input type="email" class="lt-input" placeholder="Enter Email" name="email" required>
-
-                <select class="lt-input" name="stream" required>
-                    <option value="" disabled selected>Select Stream</option>
-                    <option value="Science">Science</option>
-                    <option value="Commerce">Commerce</option>
-                    <option value="Arts">Arts</option>
-                    <option value="Other">Other</option>
-                </select>
-
-                <button type="submit" class="btn-blue">Request for a Call Back</button>
-            </form>
-        </div>
-    </section>
-
-    <style>
-        .btn-blue {
-            position: relative;
-            display: inline-block;
-            padding: 10px 22px;
-            background: #003479;
-            color: #ffffff;
-            font-size: 16px;
-            font-weight: 400;
-            border-radius: 3px;
-            border: 1px solid #003479;
-            text-decoration: none;
-            overflow: hidden;
-            cursor: pointer;
-            transition: color 0.35s ease;
-            z-index: 1;
-        }
-
-        /* Fill layer */
-        .btn-blue::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: white;
-            border: 1px solid #003479 !important;
-            transform: scaleY(0);
-            transform-origin: top;
-            transition: transform 0.35s ease;
-            z-index: -1;
-        }
-
-        /* Hover effect */
-        .btn-blue:hover {
-            color: #003479;
-            border: 1px solid #003479 !important;
-        }
-
-        .btn-blue:hover::before {
-            transform: scaleY(1);
-        }
-
-        .lt-input,
-        .phone-group {
-            height: 38px;
-            /* Same height for all fields */
-        }
-
-        /* --- Single-line phone field --- */
-        .phone-group {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: #fff;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 10px 12px !important;
-            width: 100%;
-            transition: all 0.3s ease;
-            box-sizing: border-box;
-        }
-
-        .phone-group:focus-within {
-            border-color: #1f3c88;
-            box-shadow: 0 0 0 3px rgba(31, 60, 136, 0.15);
-        }
-
-        /* Flag + code section */
-        .flag-box {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            flex-shrink: 0;
-        }
-
-        /* Flag image */
-        .flag-icon {
-            width: 24px;
-            height: 16px;
-            border-radius: 2px;
-            object-fit: cover;
-        }
-
-        /* Country code */
-        .country-code {
-            font-size: 13px;
-            font-weight: 600;
-            color: #1f3c88;
-            white-space: nowrap;
-        }
-
-        /* Dropdown arrow */
-        .arrow {
-            width: 0;
-            height: 0;
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-top: 6px solid #666;
-            opacity: 0.7;
-        }
-
-        /* Input field */
-        .phone-input {
-            border: none !important;
-            outline: none !important;
-            box-shadow: none !important;
-            padding: 0;
-            font-size: 15px;
-            color: #222;
-            flex: 1;
-            background: transparent;
-        }
-
-        .phone-input::placeholder {
-            color: #999;
-        }
-
-        /* Responsive */
-        @media (max-width: 480px) {
-            .phone-group {
-                gap: 6px;
-                padding: 6px 8px;
-            }
-
-            .flag-icon {
-                width: 20px;
-                height: 14px;
-            }
-
-            .country-code {
-                font-size: 13px;
-            }
-        }
-
-        /* Section styling */
-        .lt-advisor-section {
-            background-color: #e4e8ff;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .lt-container {
-            max-width: 120%;
-            margin: 0 auto;
-        }
-
-        .lt-heading {
-            font-size: 26px;
-            font-weight: 700;
-            color: #1d3b75;
-            margin-bottom: 10px;
-        }
-
-        .lt-subtext {
-            font-size: 16px;
-            color: #333;
-            max-width: 900px;
-            margin: 0 auto 40px auto;
-        }
-
-        /* Form Styling */
-        .lt-form {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .lt-input {
-            padding: 2px 15px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            width: 330px;
-            background-color: #fff;
-            transition: border-color 0.3s;
-        }
-
-        .lt-input:focus {
-            outline: none;
-            border-color: #1d3b75;
-        }
-
-        .lt-phone-group {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: #fff;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 8px 12px;
-            width: 240px;
-            transition: all 0.3s ease;
-        }
-
-        .lt-phone-group:hover {
-            border-color: #007bff;
-            box-shadow: 0 0 6px rgba(0, 123, 255, 0.2);
-        }
-
-        .lt-flag {
-            width: 20px;
-            height: 14px;
-            border-radius: 2px;
-            object-fit: cover;
-        }
-
-        .lt-country-code {
-            font-size: 15px;
-            color: #333;
-            font-weight: 500;
-            white-space: nowrap;
-        }
-
-        .lt-phone-input {
-            border: none;
-            outline: none;
-            width: 100%;
-            font-size: 15px;
-            color: #222;
-            padding: 0;
-        }
-
-        .lt-phone-input::placeholder {
-            color: #999;
-        }
-
-        /* Button styling */
-        .lt-submit-btn {
-            padding: 12px 25px;
-            background-color: #264e9b;
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .lt-submit-btn:hover {
-            background-color: #1b3d80;
-        }
-
-        /* Responsive Tweaks */
-        @media (max-width: 768px) {
-            .lt-form {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .lt-input,
-            .lt-phone-group {
-                width: 90%;
-            }
-        }
-    </style>
 
 
 
-    <!-- =========================================================================================Footer -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">
@@ -2936,6 +2780,7 @@
                         <li><a href="404.html">404</a></li>
                     </ul>
                 </div>
+
                 <!-- Legal -->
                 <div class="col-lg-2 col-md-6 mb-4 pt-5">
                     <h6 class="footer-title">Legal</h6>
@@ -3123,7 +2968,27 @@
     <script src="script.js"></script>
 
 
+    <script>
+        $('.college-carousel').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            arrows: false, // because you use custom buttons
+            infinite: true,
+            responsive: [
+                { breakpoint: 992, settings: { slidesToShow: 2 } },
+                { breakpoint: 576, settings: { slidesToShow: 1 } }
+            ]
+        });
 
+        // Custom buttons
+        $('.slick-prev-btn').click(function () {
+            $('.college-carousel').slick('slickPrev');
+        });
+        $('.slick-next-btn').click(function () {
+            $('.college-carousel').slick('slickNext');
+        });
+
+    </script>
 
 </body>
 

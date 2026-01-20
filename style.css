@@ -419,16 +419,16 @@ p
     position: relative;
     height: 350px;
     width: 320px;
-    border-radius: 5px;
+    border-radius: 10px;
     overflow: hidden;
     background: #fff;
     transition: all 0.4s ease;
-    margin: 6px;
+    margin-inline: 6px;
     border: 1px solid rgb(203, 203, 203);
 }
 
 .college-card:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-4px) scale(1.02);
     box-shadow: 0 10px 30px rgba(0, 38, 88, 0.316);
 }
 
@@ -1813,10 +1813,7 @@ section.news-exams {
     --transition: all 0.3s ease;
 }
 
-.slick-track {
-    padding: 50px;
 
-}
 
 /* Card base */
 .pudding-card {

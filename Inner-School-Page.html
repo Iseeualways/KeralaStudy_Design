@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inner-college-page</title>
+    <title>Inner-School-page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
@@ -22,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style.css">
+  
     <link rel="stylesheet" href="navbar.css">
 
 
@@ -30,6 +30,52 @@
 
 </head>
 <style>
+    
+.btn-7 {
+    background: #00226b;
+    color: #fff;
+    font-weight: 700;
+    border: 1px solid #00226b;
+    padding: 0.8rem 3rem;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    transition: color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+
+/* WHITE REVEAL LAYER */
+.btn-7::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #ffffff;
+
+    --progress: 100%;
+    clip-path: polygon(0 calc(var(--progress) / 2),
+            100% calc(var(--progress) / 2),
+            100% calc(100% - var(--progress) / 2),
+            0 calc(100% - var(--progress) / 2));
+
+    transition: clip-path .25s ease;
+    z-index: -1;
+}
+
+/* HOVER */
+.btn-7:hover::before {
+    --progress: 0%;
+}
+
+.btn-7:hover {
+    color: #00226b;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
+}
+
+
+
     h4 {
         font-weight: 700;
         color: #001a4d;
@@ -689,6 +735,7 @@
 
         padding: 10px 20px;
     }
+
     .button-container {
         display: flex;
         width: fit-content;
@@ -850,9 +897,9 @@
         <div class="logo"><img src="https://www.keralastudy.com/images/logo.png" class="w-100" alt=""></div>
         <div class="nav-links">
             <div class="nav-item">Top Colleges</div>
-        
-                <div class="nav-item">Top Courses</div>
-    
+
+            <div class="nav-item">Top Courses</div>
+
             <div class="nav-item">Entrance Exam</div>
             <div class="nav-item">Boards</div>
             <div class="nav-item">News</div>
@@ -1280,7 +1327,7 @@
                     </ul>
                 </div>
             </div>
-            <button class="btn-7 "
+            <button class="btn-7 adm-btn"
                 style="padding: 4px !important; padding-inline: 30px !important; border-radius: 3px; font-weight: 400;">Admissions
                 2025</button>
         </div>
@@ -1307,38 +1354,38 @@
     </div>
 
 
-
     <!-- ====================================================================================banner -->
     <section class="hero-40vh">
         <div class="hero-inner container">
             <div class="row ">
                 <!-- LOGO -->
                 <div class="col-lg-2 col-md-3">
-                    <div class="college-logo p-2">
-                        <img src="https://api.learntechww.com/college_logo/logo1747827527413.webp" alt="College Logo">
+                    <div class="college-logo">
+                        <img src="https://api.learntechww.com/school_logo/logo1732797825700.jpg" alt="College Logo">
                     </div>
                 </div>
 
                 <!-- CONTENT -->
                 <div class="col-lg-10 col-md-9 text-white">
                     <h1>
-                         Vidya Bharath College of
-                        Pharmacy, Bangalore
+                        New Horizon International School (NHIS)
                     </h1>
 
-                     <p>
-                        <i class="fa-solid fa-location-dot" style="color: #ff0000;"></i> Sy No. 38, Thirumenahalli
-                        Village, Yelahanka, Hobli,
-                        Bangalore North Taluk, Bangalore - 560089
+                    <p>
+                        <i class="fa-solid fa-location-dot" style="color: #ff0000;"></i>
+                        Byrathi Village, Hennur Main Road, Kothanur, Bengaluru, Karnataka - 560077
                     </p>
 
                     <p>
-                        <i class="fa-solid fa-award" style="color: #FFD43B;"></i> <strong>Approved by:</strong>
-                        Karnataka State Pharmacy Council (KSPC),
-                        Government of Karnataka, Pharmacy Council of India (PCI)
+                        <i class="fa-solid fa-award" style="color: #FFD43B;"></i> <strong>Board:</strong>
+                        CBSE, CAIE
                     </p>
 
-                        <span class="edu-badge private-badge">Private</span>
+                    <p>
+                        <i class="fa-solid fa-award" style="color: #FFD43B;"></i> <strong>
+                            School Level:</strong>
+                        Pre-Primary, Primary, Higher Secondary
+                    </p>
 
                     <div class="cta-btn-group">
                         <button class="cta-btn cta-download">
@@ -1353,23 +1400,6 @@
         </div>
     </section>
     <style>
-        
-        /* BADGE */
-        .edu-badge {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 6px 16px;
-            font-size: 13px;
-            font-weight: 700;
-            border-radius: 999px;
-            text-transform: uppercase;
-        }
-
-        .private-badge {
-            background: linear-gradient(135deg, #ff512f, #dd2476);
-            box-shadow: 0 0 12px rgba(255, 81, 47, 0.6);
-        }
-
         /* HERO */
         .hero-40vh {
             height: 45vh;
@@ -1430,7 +1460,7 @@
 
         .college-logo img {
             width: 100%;
-            height: 120px;
+            height: 150px;
             object-fit: contain;
         }
 
@@ -1514,10 +1544,6 @@
             }
         }
     </style>
-
-
- 
-
 
 
 
