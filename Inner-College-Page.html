@@ -73,44 +73,39 @@
     }
 
     .city-btn {
-        border: 1px solid blue;
-        padding: 5px 30px;
-
-    }
-
-    .city-btn {
         display: inline-block;
-        padding: 3px 36px;
-        font-size: 16px;
-        font-weight: 600;
-        color: #fff;
+        padding: 4px 22px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #ffffff;
         text-decoration: none;
-        border-radius: 10px;
+        border-radius: 6px;
         background: #0b2a66;
-        /* deep professional color */
+        border: 1px solid #0b2a66;
         position: relative;
         overflow: hidden;
-        transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
     }
 
+    /* subtle shine */
     .city-btn::after {
         content: '';
         position: absolute;
-        top: 0;
-        left: -50%;
-        width: 50%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.08);
-        transform: skewX(-25deg);
-        transition: all 0.5s ease;
+        inset: 0;
+        background: rgba(11, 42, 102, 0.06);
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
 
     .city-btn:hover {
-        background: linear-gradient(90deg, #0b2a66, #3370ea);
-        transform: translate(scale(1.4));
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+        background: #0b2a66;
         color: #ffffff;
+        text-decoration: underline;
+
+    }
+
+    .city-btn:hover::after {
+        opacity: 1;
     }
 
     h2 {
@@ -689,6 +684,7 @@
 
         padding: 10px 20px;
     }
+
     .button-container {
         display: flex;
         width: fit-content;
@@ -850,9 +846,9 @@
         <div class="logo"><img src="https://www.keralastudy.com/images/logo.png" class="w-100" alt=""></div>
         <div class="nav-links">
             <div class="nav-item">Top Colleges</div>
-        
-                <div class="nav-item">Top Courses</div>
-    
+
+            <div class="nav-item">Top Courses</div>
+
             <div class="nav-item">Entrance Exam</div>
             <div class="nav-item">Boards</div>
             <div class="nav-item">News</div>
@@ -1280,8 +1276,7 @@
                     </ul>
                 </div>
             </div>
-            <button class="btn-7 "
-                style="padding: 4px !important; padding-inline: 30px !important; border-radius: 3px; font-weight: 400;">Admissions
+            <button class="city-btn">Admissions
                 2025</button>
         </div>
     </div>
@@ -1311,34 +1306,47 @@
     <!-- ====================================================================================banner -->
     <section class="hero-40vh">
         <div class="hero-inner container">
+            <div class="rating-box top-right">
+                <div class="stars d-flex gap-1">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+                </div>
+                <span class="rating-text">4.5/5</span>
+            </div>
             <div class="row ">
                 <!-- LOGO -->
-                <div class="col-lg-2 col-md-3">
+                <div class="col-lg-2 col-md-3 ms-auto text-end">
                     <div class="college-logo p-2">
                         <img src="https://api.learntechww.com/college_logo/logo1747827527413.webp" alt="College Logo">
                     </div>
                 </div>
 
+
                 <!-- CONTENT -->
                 <div class="col-lg-10 col-md-9 text-white">
-                    <h1>
-                         Vidya Bharath College of
+                    <h1 class="mb-3">
+                        Vidya Bharath College of
                         Pharmacy, Bangalore
                     </h1>
 
-                     <p>
-                        <i class="fa-solid fa-location-dot" style="color: #ff0000;"></i> Sy No. 38, Thirumenahalli
+                    <p class="mb-3">
+                        <i class="fa-solid fa-location-dot" style="color: #ff5900; font-size: 18px;"></i> Sy No. 38,
+                        Thirumenahalli
                         Village, Yelahanka, Hobli,
                         Bangalore North Taluk, Bangalore - 560089
                     </p>
 
                     <p>
-                        <i class="fa-solid fa-award" style="color: #FFD43B;"></i> <strong>Approved by:</strong>
+                        <i class="fa-solid fa-award" style="color: #FFD43B; font-size: 18px;"></i> <strong>Approved by
+                            :</strong>
                         Karnataka State Pharmacy Council (KSPC),
                         Government of Karnataka, Pharmacy Council of India (PCI)
                     </p>
 
-                        <span class="edu-badge private-badge">Private</span>
+                    <span class="edu-badge private-badge mx-4">Private</span>
 
                     <div class="cta-btn-group">
                         <button class="cta-btn cta-download">
@@ -1353,7 +1361,6 @@
         </div>
     </section>
     <style>
-        
         /* BADGE */
         .edu-badge {
             display: inline-block;
@@ -1365,18 +1372,14 @@
             text-transform: uppercase;
         }
 
-        .private-badge {
-            background: linear-gradient(135deg, #ff512f, #dd2476);
-            box-shadow: 0 0 12px rgba(255, 81, 47, 0.6);
-        }
+
 
         /* HERO */
         .hero-40vh {
             height: 45vh;
             min-height: 280px;
-            background-image:
-                linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)),
-                url('40123918_8796857.jpg');
+            background: #00226B;
+            background: linear-gradient(164deg, rgba(117, 169, 200, 1) 0%, rgba(0, 34, 107, 1) 100%);
             background-size: cover !important;
             background-repeat: no-repeat !important;
             background-position: center !important;
@@ -1388,27 +1391,32 @@
 
         .hero-inner {
             position: relative;
+            max-width: 1500px !important;
         }
 
         /* ⭐ Rating Top Right */
         .rating-box {
             position: absolute;
             top: -30px;
-            right: 0;
+            right: 10px !important;
             display: flex;
             align-items: center;
             gap: 6px;
-            background: #ffffff;
-            padding: 6px 12px;
+            background: #ffffffea;
+            padding: 3px 10px;
             border-radius: 30px;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .rating-text {
+            font-size: 12px !important;
         }
 
 
 
         .stars i {
             color: #ffc107;
-            font-size: 1rem;
+            font-size: 12px;
         }
 
         .rating-text {
@@ -1419,6 +1427,7 @@
 
         /* LOGO FIX */
         .college-logo {
+            margin-right: 10px;
             background: #ffffff;
             padding: 1px;
             border-radius: 6px;
@@ -1430,13 +1439,13 @@
 
         .college-logo img {
             width: 100%;
-            height: 120px;
+            height: 80px;
             object-fit: contain;
         }
 
         /* TEXT */
         .hero-inner h1 {
-            font-size: 34px;
+            font-size: 28px !important;
             font-weight: 700;
         }
 
@@ -1445,8 +1454,9 @@
         }
 
         .hero-inner p {
-            font-size: 16px;
-            opacity: 0.95;
+            font-size: 16px !important;
+            font-weight: 500;
+            opacity: 1;
             margin-bottom: 6px;
         }
 
@@ -1462,8 +1472,9 @@
         }
 
         .private-badge {
-            background: linear-gradient(135deg, #ff512f, #dd2476);
-            box-shadow: 0 0 12px rgba(255, 81, 47, 0.6);
+            background: white;
+            color: rgb(0, 110, 255);
+            border: 2px solid rgb(0, 110, 255);
         }
 
         /* CTA BUTTONS */
@@ -1478,8 +1489,8 @@
 
 
         .cta-btn {
-            padding: 10px 18px;
-            font-size: 15px;
+            padding: 7px 14px;
+            font-size: 16px;
             font-weight: 500;
             border-radius: 4px;
             border: none;
@@ -1516,7 +1527,7 @@
     </style>
 
 
- 
+
 
 
 
@@ -1525,9 +1536,9 @@
     <nav class="breadcrumb-wrap container" aria-label="Breadcrumb">
         <a href="#">Home</a>
         <span class="divider" aria-hidden="true">›</span>
-        <a href="#">Placement</a>
+        <span>College</span>
         <span class="divider" aria-hidden="true">›</span>
-        <span class="current">Inner-College-Page</span>
+        <span class="current">Inner-College</span>
     </nav>
 
     <style>
@@ -1593,23 +1604,48 @@
 
     <style>
         .city-filters .filter-btn {
-            background: #f0f6feeb;
-            border: 1px solid #001b544e;
-            padding: 8px 18px;
-            margin: 5px;
-            border-radius: 25px;
+            background: linear-gradient(135deg, #f5f9ff, #eaf1ff);
+            border: 1px solid rgba(0, 27, 84, 0.169);
+            padding: 7px 14px;
+            margin: 6px;
+            border-radius: 12px;
             cursor: pointer;
-            color: #000000;
-            transition: all 0.3s ease;
+            color: #0b1f44d4;
+            font-size: 16px;
+            font-weight: 400;
+
+            transition:
+                background 0.35s ease,
+                color 0.35s ease,
+                transform 0.25s ease,
+                box-shadow 0.35s ease,
+                border-color 0.35s ease;
         }
 
-        .city-filters .filter-btn.active,
+        /* Hover */
         .city-filters .filter-btn:hover {
-            background: #002b58;
-            color: #fbfbfb;
+            background: #003479;
+            color: #ffffff;
             border-color: #002b58;
+
+
+        }
+
+        /* Active */
+        .city-filters .filter-btn.active {
+            background: #003479;
+            color: #ffffff;
+            border-color: #002b58;
+            font-weight: 700;
+
+        }
+
+        /* Optional: ultra-smooth tap feel */
+        .city-filters .filter-btn:active {
+            transform: scale(1);
         }
     </style>
+
 
 
 
@@ -1645,7 +1681,7 @@
                 <!-- Apply Now Image -->
                 <div class="image-card position-relative overflow-hidden mb-4">
                     <img src="8609213_5853.jpg" alt="Course Image" class="img-fluid rounded-2">
-                    <button class="apply-btn position-absolute translate-middle-y">
+                    <button class="apply-btn position-absolute translate-middle-y px-2 py-1">
                         Apply Now
                     </button>
                 </div>
@@ -1722,7 +1758,6 @@
         .facilities-section {
             padding: 30px 0;
             text-align: center;
-            /* background: linear-gradient(120deg, #fff8f2 0%, #ff7b0011 100%); */
             position: relative;
             overflow: hidden;
         }
@@ -1734,8 +1769,6 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            /* background: radial-gradient(circle at 30% 30%, rgba(255, 102, 0, 0.08) 0%, transparent 60%),
-                radial-gradient(circle at 70% 70%, rgba(255, 174, 0, 0.08) 0%, transparent 60%); */
             animation: moveBg 10s infinite linear;
             z-index: 0;
         }
@@ -1925,11 +1958,11 @@
 
         <div class="school-hero-inner">
             <p class="school-hero-subtext">
-                Interested in Studying at This School?
+                Interested in Studying at This College?
             </p>
 
             <h1 class="school-hero-heading">
-                New Horizon Public School, Bangalore
+                Vidya Bharath College of Pharmacy, Bangalore
             </h1>
 
             <a href="#" class="school-hero-btn">Apply Now</a>
@@ -1970,7 +2003,7 @@
         /* Subtitle */
         .school-hero-subtext {
             color: #ffffff;
-            font-size: 18px;
+            font-size: 20px !important;
             font-weight: 500;
             margin: 0;
         }
@@ -1980,9 +2013,9 @@
             display: inline-block;
             background: #001d62;
             color: #ffffff;
-            padding: 16px 28px;
+            padding: 10px 22px;
             border-radius: 6px;
-            font-size: 32px;
+            font-size: 30px;
             font-weight: 700;
             line-height: 1.3;
             margin: 0;
@@ -2028,29 +2061,16 @@
             --locate-muted: #9aa3bd;
             --locate-brand: #7aa2ff;
             --locate-brand2: #c2ff73;
-            --locate-card: #ffffff;
+            --locate-card: #37589b12;
             --locate-stroke: #ffffff;
         }
 
-        body::before {
-            content: "";
-            position: fixed;
-            inset: -100px;
-            background-image:
-                radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, .06) 50%, transparent 52%),
-                radial-gradient(2px 2px at 40px 60px, rgba(255, 255, 255, .05) 50%, transparent 52%),
-                radial-gradient(2px 2px at 80px 20px, rgba(255, 255, 255, .04) 50%, transparent 52%);
-            background-size: 100px 100px, 120px 120px, 140px 140px;
-            mix-blend-mode: overlay;
-            opacity: .6;
-            pointer-events: none;
-            z-index: 0;
-        }
 
         .locate-wrap {
             position: relative;
             z-index: 1;
             padding: 40px 20px;
+
         }
 
         .locate-title {
@@ -2106,12 +2126,11 @@
             display: grid;
             place-items: center;
             overflow: hidden;
-            outline: 1px solid var(--locate-stroke);
         }
 
         .locate-logo img {
-            max-width: 72%;
-            max-height: 72%;
+            max-width: 60%;
+            max-height: 60%;
             object-fit: contain;
         }
 
@@ -2239,10 +2258,8 @@
     </style>
 
     <main class="locate-wrap" aria-labelledby="locate-title">
-        <h4 id="locate-title" class="locate-title">Locate the College</h4>
-        <p class="locate-lede">A kinetic split with magnetic actions, grain, and scroll-revealed hierarchy for a
-            premium,
-            editorial feel.</p>
+        <h2 id="locate-title" class="locate-title mb-5">Locate the College</h2>
+
 
         <section class="locate-grid" aria-label="College location">
             <article class="locate-card locate-reveal">
@@ -2251,7 +2268,8 @@
                         <img src="https://api.learntechww.com/college_logo/logo1747827527413.webp" alt="College logo">
                     </div>
                     <h2 class="locate-name">Vidya Bharath College of Pharmacy, Bangalore</h2>
-                    <p class="locate-addr text-dark">Sy No. 38, Thirumenahalli Village, Yelahanka, Hobli, Bangalore
+                    <p class="locate-addr text-dark"><i class="fa-solid fa-location-dot" style="color: red;"></i> Sy No.
+                        38, Thirumenahalli Village, Yelahanka, Hobli, Bangalore
                         North Taluk,
                         Bengaluru – 560089</p>
 
@@ -2298,287 +2316,238 @@
 
 
 
-    <section>
-        <div class="container-fluid px-5 py-5 text-center">
-            <h2>Start Your Future with <span style="color: #75a9c8;">Kerala’s Top Colleges</span></h2>
-
-
-            <!-- Carousel Wrapper -->
-            <div class="position-relative">
-                <!-- Prev Button -->
-                <button class="slick-prev-btn">&#10094;</button>
-                <!-- Next Button -->
-                <button class="slick-next-btn">&#10095;</button>
-
-                <!-- Carousel -->
-                <div class="college-carousel mx-5">
-                    <div class="college-swiper" data-city="Kollam">
-                        <a href="#">
-                            <div class="card-image"
-                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            </div>
-                            <div class="card-text">
-                                <h5>St. Thomas College</h5>
-                                <p class="location"><i class="fa-solid fa-location-dot" style="color: #ff4d00;"></i>40
-                                    Feet Rd, Fayazabad, Ilyas </p>
-                                <div class="card-actions">
-                                    <button class="btn-rect">Apply Now</button>
-                                    <button class="btn btn-viewmore">View More</button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="college-swiper" data-city="Kollam">
-                        <a href="#">
-                            <div class="card-image"
-                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            </div>
-                            <div class="card-text">
-                                <h5>St. Thomas College</h5>
-                                <p class="location"><i class="fa-solid fa-location-dot" style="color: #ff4d00;"></i> 40
-                                    Feet Rd, Fayazabad, Ilyas </p>
-                                <div class="card-actions">
-                                    <button class="btn-rect">Apply Now</button>
-                                    <button class="btn btn-viewmore">View More</button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="college-swiper" data-city="Kollam">
-                        <a href="#">
-                            <div class="card-image"
-                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            </div>
-                            <div class="card-text">
-                                <h5>St. Thomas College</h5>
-                                <p class="location"><i class="fa-solid fa-location-dot" style="color: #ff4d00;"></i>40
-                                    Feet Rd, Fayazabad, Ilyas </p>
-                                <div class="card-actions">
-                                    <button class="btn-rect">Apply Now</button>
-                                    <button class="btn btn-viewmore">View More</button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-
-                    <div class="college-swiper" data-city="Kollam">
-                        <a href="#">
-                            <div class="card-image"
-                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            </div>
-                            <div class="card-text">
-                                <h5>St. Thomas College</h5>
-                                <p class="location"><i class="fa-solid fa-location-dot" style="color: #ff4d00;"></i> 40
-                                    Feet Rd, Fayazabad, Ilyas </p>
-                                <div class="card-actions">
-                                    <button class="btn-rect">Apply Now</button>
-                                    <button class="btn btn-viewmore">View More</button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-
-                </div>
-            </div>
-    </section>
-
     <style>
-        .slick-prev-btn,
-        .slick-next-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 20;
+        /* ================= WRAPPER ================= */
+        .carousel-wrapper {
+            max-width: 1600px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            /* CENTER BUTTONS VERTICALLY */
+            gap: 18px;
+            padding: 0 37px;
+        }
+
+        /* ================= NAV BUTTONS ================= */
+        .nav-btn {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            border: none;
             background: #ffffff;
-            color: #0c2a45;
-            border: 1px solid rgb(255, 255, 255);
-            font-size: 26px;
-            width: 42px;
-            height: 42px;
-            border-radius: 20%;
+            font-size: 18px;
             cursor: pointer;
+            flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all .25s ease;
-        }
-
-        /* LEFT button */
-        .slick-prev-btn {
-            left: -20px;
-        }
-
-        /* RIGHT button */
-        .slick-next-btn {
-            right: -20px;
         }
 
 
 
-        /* --------------------------------------------------------College Cards Carousal */
+        /* ================= CAROUSEL ================= */
         .college-carousel {
             display: flex;
-            gap: 16px;
+            gap: 18px;
             overflow-x: auto;
             scroll-behavior: smooth;
+            flex: 1;
             padding-bottom: 10px;
-
+            justify-content: center;
+            /* ✅ THIS CENTERS THE 4 CARDS */
         }
 
-        /* Hide scrollbar (optional) */
+
         .college-carousel::-webkit-scrollbar {
             display: none;
         }
 
-        .college-carousel {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        .college-swiper {
-            position: relative;
-            height: 350px;
-            width: 320px;
-            border-radius: 5px;
-            overflow: hidden;
+        /* ================= CARD ================= */
+        .college-card {
+            flex: 0 0 300px;
             background: #fff;
-            transition: all 0.4s ease;
-            margin: 6px;
-            border: 1px solid rgb(203, 203, 203);
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #dcdcdc;
+            transition: 0.3s ease;
         }
 
 
-        .college-swiper a {
-            display: flex;
-            flex-direction: column;
+
+        .college-card a {
             text-decoration: none;
             color: inherit;
         }
 
+        /* IMAGE */
         .card-image {
             height: 200px;
-            /* half the card */
             background-size: cover;
             background-position: center;
-            border-bottom: 1px solid rgba(0, 13, 157, 0.05);
-            transition: transform 0.6s ease;
         }
 
-
-
+        /* CONTENT */
         .card-text {
-            padding: 18px;
-            align-items: start;
+            padding: 18px 18px 15px 18px;
         }
 
         .card-text h5 {
             font-size: 20px;
             font-weight: 400;
-            margin: 0 0 6px 0;
+            margin-bottom: 6px;
         }
 
-        .card-text .location {
+        .location {
             font-size: 16px;
             color: #777;
-            margin: 0 0 14px 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 16px;
         }
 
+        /* BUTTON ROW */
         .card-actions {
             display: flex;
             justify-content: space-between;
-
+            /* START & END */
+            align-items: center;
         }
 
-        .btn-rect {
-            padding: 5px 20px;
-            border-radius: 8px;
-            border: none;
+        /* BUTTONS */
+        .btn-apply {
+            padding: 8px 14px;
             background: #0b2a66;
-            /* deep professional blue */
-            color: #ffffff;
-            font-weight: 500;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .btn-view {
+            padding: 8px 14px;
+            background: transparent;
+            border: 1px solid #0b2a66;
+            color: #0b2a66;
+            border-radius: 6px;
             font-size: 14px;
             cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
-
         }
 
-        .btn-rect:hover {
-            background: #f4f8ff;
-            border: 1px solid #0b2a66;
-            /* subtle hover color */
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
-            color: #0b2a66;
-        }
-
-        .btn-viewmore {
-            position: relative;
-            padding: 12px 28px;
-            font-size: 15px;
-            font-weight: 500;
-            color: #0b2a66;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            transition: all 0.4s ease;
-
-        }
-
-        .btn-viewmore::after {
-            content: "";
-            position: absolute;
-            bottom: 6px;
-            left: 50%;
-            width: 0%;
-            height: 1.5px;
-            background: #0b2a66;
-            transition: all 0.4s ease;
-            transform: translateX(-50%);
-        }
-
-        .btn-viewmore:hover {
-            transform: translateY(-2px);
-            color: #0b2a66;
-        }
-
-        .btn-viewmore:hover::after {
-            width: 80%;
-        }
-
-
-        .btn-round {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            border: none;
-            background: #ffffff;
-            color: #000000;
-            font-size: 0.9rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.3s ease;
-            border: 1px solid black;
-        }
-
-        .btn-round:hover {
-            background: #3388ff;
-            transform: rotate(90deg) scale(1.1);
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .carousel-wrapper {
+                padding: 0 20px;
+            }
         }
     </style>
 
+    <section>
+        <h2 class="mb-4 text-center">Start Your Future with <span style="color: #75a9c8;">Kerala’s Top Colleges</span>
+        </h2>
+        <div class="carousel-wrapper">
+
+            <!-- PREV -->
+            <button class="nav-btn prev">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <!-- CARDS -->
+            <div class="college-carousel">
+
+                <div class="college-card">
+                    <a href="#">
+                        <div class="card-image"
+                            style="background-image:url('https://api.learntechww.com/college_banner_image/logo1747817850961.webp')">
+                        </div>
+                        <div class="card-text">
+                            <h5>St. Thomas College</h5>
+                            <p class="location">
+                                <i class="fa-solid fa-location-dot" style="color:#ff4d00"></i>
+                                40 Feet Rd, Fayazabad
+                            </p>
+                            <div class="card-actions">
+                                <button class="btn-apply">Apply Now</button>
+                                <button class="btn-view">View More</button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="college-card">
+                    <a href="#">
+                        <div class="card-image"
+                            style="background-image:url('https://api.learntechww.com/college_banner_image/logo1747820987012.webp')">
+                        </div>
+                        <div class="card-text">
+                            <h5>St. Thomas College</h5>
+                            <p class="location">
+                                <i class="fa-solid fa-location-dot" style="color:#ff4d00"></i>
+                                40 Feet Rd, Fayazabad
+                            </p>
+                            <div class="card-actions">
+                                <button class="btn-apply">Apply Now</button>
+                                <button class="btn-view">View More</button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="college-card">
+                    <a href="#">
+                        <div class="card-image"
+                            style="background-image:url('https://api.learntechww.com/college_banner_image/logo1747822119895.webp')">
+                        </div>
+                        <div class="card-text">
+                            <h5>St. Thomas College</h5>
+                            <p class="location">
+                                <i class="fa-solid fa-location-dot" style="color:#ff4d00"></i>
+                                40 Feet Rd, Fayazabad
+                            </p>
+                            <div class="card-actions">
+                                <button class="btn-apply">Apply Now</button>
+                                <button class="btn-view">View More</button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="college-card">
+                    <a href="#">
+                        <div class="card-image"
+                            style="background-image:url('https://api.learntechww.com/college_banner_image/logo1747822510409.webp')">
+                        </div>
+                        <div class="card-text">
+                            <h5>St. Thomas College</h5>
+                            <p class="location">
+                                <i class="fa-solid fa-location-dot" style="color:#ff4d00"></i>
+                                40 Feet Rd, Fayazabad
+                            </p>
+                            <div class="card-actions">
+                                <button class="btn-apply">Apply Now</button>
+                                <button class="btn-view">View More</button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- NEXT -->
+            <button class="nav-btn next">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+        </div>
+    </section>
 
 
     <!---------------------------------------------------------------- BOTTOM CONTACT FORM -->
 
 
-    <section class="lt-advisor-section">
+    <section class="lt-advisor-section mt-5">
         <div class="lt-container">
             <h2 class="lt-heading">Personalised Admission Support</h2>
             <h3>Kerala’s Trusted Education Experts</h3>

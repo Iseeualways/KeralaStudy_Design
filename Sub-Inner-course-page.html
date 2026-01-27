@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inner-college-Course-Page</title>
+    <title>Sub-Inner-Course-Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
@@ -24,10 +24,95 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="navbar.css">
+
+
+
+
 </head>
 <style>
     /* ---------------------------------------------------------------------blue button  */
+    .btn-7 {
+        background: #00226b;
+        color: #fff;
+        font-weight: 700;
+        border: 1px solid #00226b;
+        padding: 0.8rem 3rem;
+        cursor: pointer;
+        text-transform: uppercase;
 
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        transition: color .25s ease, transform .25s ease, box-shadow .25s ease;
+    }
+
+    /* WHITE REVEAL LAYER */
+    .btn-7::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: #ffffff;
+
+        --progress: 100%;
+        clip-path: polygon(0 calc(var(--progress) / 2),
+                100% calc(var(--progress) / 2),
+                100% calc(100% - var(--progress) / 2),
+                0 calc(100% - var(--progress) / 2));
+
+        transition: clip-path .25s ease;
+        z-index: -1;
+    }
+
+    /* HOVER */
+    .btn-7:hover::before {
+        --progress: 0%;
+    }
+
+    .btn-7:hover {
+        color: #00226b;
+
+        box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
+    }
+
+    .btn-lg {
+        display: inline-block;
+        padding: 14px 36px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 10px;
+        background: #0b2a66;
+        /* deep professional color */
+
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-lg::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 50%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.08);
+        transform: skewX(-25deg);
+        transition: all 0.5s ease;
+    }
+
+    .btn-lg:hover::after {
+        left: 100%;
+    }
+
+    .btn-lg:hover {
+        background: linear-gradient(90deg, #0b2a66, #3370ea);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+        color: #ffffff;
+    }
 
 
     .btn-blue {
@@ -37,7 +122,7 @@
         background: #003479;
         color: #ffffff;
         font-size: 16px;
-        font-weight: 00;
+        font-weight: 400;
         border-radius: 3px;
         border: 1px solid #003479;
         text-decoration: none;
@@ -70,6 +155,8 @@
         transform: scaleY(1);
     }
 
+
+
     .btn-orange {
         position: relative;
         display: inline-block;
@@ -78,7 +165,7 @@
         color: #ffffff;
         font-size: 18px;
         font-weight: 500;
-        border-radius: 8px;
+        border-radius: 3px;
         border: 1px solid #ffffff;
         text-decoration: none;
         overflow: hidden;
@@ -112,8 +199,6 @@
 
 
 
-
-
     /* ---------- RESET ---------- */
     * {
         margin: 0;
@@ -138,7 +223,7 @@
     h4 {
         font-size: 32px;
         color: #002168;
-        font-weight: 700;
+        font-weight: 700 !important;
     }
 
     .phone {
@@ -151,7 +236,7 @@
         color: red;
     }
 
-    .city-btn {
+   .city-btn {
         display: inline-block;
         padding: 4px 22px;
         font-size: 15px;
@@ -186,7 +271,6 @@
     .city-btn:hover::after {
         opacity: 1;
     }
-
     h2 {
         font-family: 'Poppins', sans-serif;
         font-size: 32px;
@@ -565,7 +649,7 @@
                     </ul>
                 </div>
             </div>
-            <button class="city-btn">Admissions 2025</button>
+            <button class="btn city-btn">Admissions 2025</button>
         </div>
     </div>
 
@@ -597,15 +681,12 @@
 
             <!-- LEFT SIDE -->
             <div class="hero-left">
-                <div class="col-md-12 text-white">
-                    <h1 class="fw-bold mb-4 mx-0">
-                        <span style="color: #ffffff; "> <span>Pharmacy, Bangalore B.E in
-                                Aerospace Engineering Course:
-                                Duration, Eligibility, Fee Structure</span> <br><span style="font-size: 20px;">M.S
-                                Ramaiah Institute of Technology
-                                (MSRIT), Bangalore</span>
+                <div class="col-md-12 text-white text-start">
+                    <h1 class="fw-bold mb-4 mx-0 fs-3">
+                        <span style="color: #ffffff;">Bachelor of Medicine and Bachelor of Surgery (MBBS) : Course, Duration, Eligibility, Fees, Admissions, Opportunities</span>
                     </h1>
-                    <a href="#" class="btn btn-orange px-2 py-1 fs-6">Apply Now</a>
+                    <p class="lead mb-4 text-white"><b>Duration : 5.5 Years</b></p>
+                    <a href="#" class="btn-orange px-2 py-1 fs-6">Apply Now</a>
                 </div>
             </div>
         </div>
@@ -615,8 +696,8 @@
 
     <style>
         .hero-sec {
-            background: #00226B;
-            background: linear-gradient(164deg, rgba(117, 169, 200, 1) 0%, rgba(0, 34, 107, 1) 100%);
+          background: #00226B;
+            background: linear-gradient(164deg, rgba(0, 34, 107, 1) 0%, rgba(117, 169, 200, 1) 100%);
             background-size: cover !important;
             background-repeat: no-repeat !important;
             background-position: center !important;
@@ -625,7 +706,7 @@
         }
 
         .hero-container {
-            width: 90%;
+            width: 86%;
             margin: auto;
             display: flex;
             align-items: center;
@@ -640,9 +721,8 @@
         }
 
         .hero-left h1 {
-            font-size: 25px;
             font-weight: 700;
-            line-height: 2.4;
+            line-height: 1.3;
         }
 
         .search-box {
@@ -667,6 +747,8 @@
             border: none;
             font-size: 20px;
         }
+
+
 
 
         /* TOP CONTENT (logo left + text right) */
@@ -714,6 +796,8 @@
             /* sends button to bottom-right */
         }
 
+
+
         /* RESPONSIVE */
         @media(max-width: 900px) {
             .hero-container {
@@ -736,14 +820,15 @@
 
 
 
-
     <!-- BREADCRUMB -->
     <nav class="breadcrumb-wrap container" aria-label="Breadcrumb">
         <a href="#">Home</a>
         <span class="divider" aria-hidden="true">›</span>
-        <a href="#">Inner-College</a>
+        <a href="#">Courses</a>
         <span class="divider" aria-hidden="true">›</span>
-        <span class="current">Inner-College-Course</span>
+        <a href="#">Inner Course</a>
+         <span class="divider" aria-hidden="true">›</span>
+        <span class="current">Sub Inner Course</span>
     </nav>
 
     <style>
@@ -816,15 +901,53 @@
             margin-left: 80px;
 
         }
+
+
+        .search-box {
+            background: rgba(96, 89, 89, 0);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 900px;
+            margin-inline: 60px;
+
+
+        }
+
+        .search-box input {
+            padding: 16px 16px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            outline: none;
+            flex: 1;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--text-dark);
+        }
+
+
+
+        /* Responsive Search */
+        @media(min-width: 600px) {
+            .search-box {
+                flex-direction: row;
+            }
+        }
     </style>
 
     <!-- =========================================================================series of horizonatal buttons -->
 
     <!-- City Filter Buttons -->
-    <div class="city-filters mt-4 mb-4 text-start container">
-        <button class="filter-btn active" data-city="all">Course Details</button>
-        <button class="filter-btn" data-city="Thiruvananthapuram">Eligibility Criteria</button>
-        <button class="filter-btn" data-city="Kochi">Fee Structure</button>
+    <div class="city-filters mt-3 mb-4 text-start container">
+        <button class="filter-btn active" data-city="all">Overview</button>
+        <button class="filter-btn" data-city="Thiruvananthapuram">Syllabus</button>
+        <button class="filter-btn" data-city="Kochi">Admissions</button>
+        <button class="filter-btn" data-city="Calicut">Top Colleges</button>
+        <button class="filter-btn" data-city="Kollam">Career Opportunities</button>
+        <button class="filter-btn" data-city="Kochi">FAQ</button>
     </div>
 
     <style>
@@ -869,417 +992,786 @@
         .city-filters .filter-btn:active {
             transform: scale(1);
         }
+
+        .city-filters{
+            margin-top:30px !important;
+        }
     </style>
 
-    <!-- =========================================CONTENT AFTER HERO -->
 
-    <div class="container mt-5">
-        <h4 class=" mb-3">MSRIT B.E in Aerospace Engineering Course Details:</h4>
-        <p>
-            B.E Aerospace Engineering at M.S Ramaiah Institute of Technology (MSRIT), Bangalore, is a 4-year
-            undergraduate program that focuses on design, development, and maintenance of aircraft and spacecraft.
-            The curriculum covers core topics such as mechanical, electrical, and computer science with
-            aerospace-specific modules to provide students with a strong foundation in aerodynamics, propulsion,
-            avionics, and structural analysis.
-            <br>
-            <br>
-
-
-            The program is structured to offer a blend of theoretical knowledge and hands-on experience through
-            laboratory sessions, simulation-based learning, and industry internships. Through the course, MSRIT
-            College aims to equip students with the technical expertise and analytical skills needed to excel in the
-            aerospace and defense sectors.
-
-        </p>
-    </div>
-
-
-    <!-- ==========================================================form section -->
-<section class="courses-form position-relative text-white">
-    <!-- SVG Background -->
-    <svg class="svg-bg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-        <defs>
-            <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#fff" />
-                <stop offset="100%" stop-color="rgb(10, 90, 187)" />
-            </linearGradient>
-        </defs>
-        <path fill="url(#waveGradient)" fill-opacity=".7"
-            d="M0,64L48,101.3C96,139,192,213,288,224C384,235,480,181,576,176C672,171,768,213,864,234.7C960,256,1056,256,1152,229.3C1248,203,1344,149,1392,122.7L1440,96L1440,0Z">
-            <animateTransform type="translate" values="0,0; -20,10; 0,0" dur="10s"
-                repeatCount="indefinite" />
-        </path>
-    </svg>
+    <!-- ====================================================body of the page -->
 
     <div class="container">
-        <div class="row align-items-center">
-            <!-- LEFT CONTENT -->
-            <div class="col-6">
-                <div class="left d-flex flex-column justify-content-center align-items-start text-start">
-                    <h4 class="text-dark">Did You Find Your Kerala College Yet?</h4>
-                    <p>Need help choosing the best one for your career?</p>
-                    <p>Our experts are ready to guide you with customized counseling and admission support.</p>
-                    <p>Fill out the form and get your free consultation today!</p>
-                </div>
+        <div class="row">
+            <div class="col-lg-9">
+                <h5>All About NEET-UG Exam:</h5>
+                <p>Vidya Bharath College of Pharmacy, Bangalore, is a private institution managed by the Shri Maruthi
+                    Group
+                    of Institutions. The college is dedicated to providing value-based academic programmes in a
+                    supportive
+                    environment to equip students with the necessary knowledge and skills that can help them grow in the
+                    pharmaceutical industry and other related healthcare fields. The college has a distinguished history
+                    of
+                    helping talented students sharpen their skills and implement the acquired knowledge across various
+                    career paths.<br>
+                    <br>
+
+                    The faculty at Vidya Bharath College of Pharmacy, Bangalore, is well-qualified, young, and dynamic.
+                    The
+                    teacher-to-student ratio at the college is 1:10. This is done to ensure that each teacher addresses
+                    the
+                    academic and other basic needs of 10 students. Additionally, the college invites renowned scholars,
+                    respected dignitaries, and teachers who are well-versed in the education sector, specifically the
+                    pharmaceutical industry, to offer guest lectures, workshops, and seminars.
+                </p>
+
+                <p>Vidya Bharath College of Pharmacy, Bangalore, is a private institution managed by the Shri Maruthi
+                    Group
+                    of Institutions. The college is dedicated to providing value-based academic programmes in a
+                    supportive
+                    environment to equip students with the necessary knowledge and skills that can help them grow in the
+                    pharmaceutical industry and other related healthcare fields. The college has a distinguished history
+                    of
+                    helping talented students sharpen their skills and implement the acquired knowledge across various
+                    career paths.<br>
+                    <br>
+
+                    The faculty at Vidya Bharath College of Pharmacy, Bangalore, is well-qualified, young, and dynamic.
+                    The
+                    teacher-to-student ratio at the college is 1:10. This is done to ensure that each teacher addresses
+                    the
+                    academic and other basic needs of 10 students. Additionally, the college invites renowned scholars,
+                    respected dignitaries, and teachers who are well-versed in the education sector, specifically the
+                    pharmaceutical industry, to offer guest lectures, workshops, and seminars.
+                </p>
+
+                <p>Vidya Bharath College of Pharmacy, Bangalore, is a private institution managed by the Shri Maruthi
+                    Group
+                    of Institutions. The college is dedicated to providing value-based academic programmes in a
+                    supportive
+                    environment to equip students with the necessary knowledge and skills that can help them grow in the
+                    pharmaceutical industry and other related healthcare fields. The college has a distinguished history
+                    of
+                    helping talented students sharpen their skills and implement the acquired knowledge across various
+                    career paths.<br>
+                    <br>
+
+                    The faculty at Vidya Bharath College of Pharmacy, Bangalore, is well-qualified, young, and dynamic.
+                    The
+                    teacher-to-student ratio at the college is 1:10. This is done to ensure that each teacher addresses
+                    the
+                    academic and other basic needs of 10 students. Additionally, the college invites renowned scholars,
+                    respected dignitaries, and teachers who are well-versed in the education sector, specifically the
+                    pharmaceutical industry, to offer guest lectures, workshops, and seminars.
+                </p>
+                <p>Vidya Bharath College of Pharmacy, Bangalore, is a private institution managed by the Shri Maruthi
+                    Group
+                    of Institutions. The college is dedicated to providing value-based academic programmes in a
+                    supportive
+                    environment to equip students with the necessary knowledge and skills that can help them grow in the
+                    pharmaceutical industry and other related healthcare fields. The college has a distinguished history
+                    of
+                    helping talented students sharpen their skills and implement the acquired knowledge across various
+                    career paths.<br>
+                    <br>
+
+                    The faculty at Vidya Bharath College of Pharmacy, Bangalore, is well-qualified, young, and dynamic.
+                    The
+                    teacher-to-student ratio at the college is 1:10. This is done to ensure that each teacher addresses
+                    the
+                    academic and other basic needs of 10 students. Additionally, the college invites renowned scholars,
+                    respected dignitaries, and teachers who are well-versed in the education sector, specifically the
+                    pharmaceutical industry, to offer guest lectures, workshops, and seminars.
+                </p>
+                <p>Vidya Bharath College of Pharmacy, Bangalore, is a private institution managed by the Shri Maruthi
+                    Group
+                    of Institutions. The college is dedicated to providing value-based academic programmes in a
+                    supportive
+                    environment to equip students with the necessary knowledge and skills that can help them grow in the
+                    pharmaceutical industry and other related healthcare fields. The college has a distinguished history
+                    of
+                    helping talented students sharpen their skills and implement the acquired knowledge across various
+                    career paths.<br>
+                    <br>
+
+
+                </p>
+
             </div>
 
-            <!-- FORM -->
-            <div class="col-6">
-                <div class="form-container text-center">
-                    <h4 class="text-dark mb-3">Talk to our Expert</h4>
+            <div class="col-lg-3">
+                <div class="interest-card">
+                    <div class="icon-bubble">
+                        <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js"
+                            type="module"></script>
+                        <dotlottie-wc src="https://lottie.host/518dea04-3ad9-492b-a03b-4b69054dac71/dYZNvq5MFU.lottie"
+                            style="width: 300px;height: 300px" autoplay loop></dotlottie-wc>
+                    </div>
+                    <div class="interest-text">
+                        <h6>Are you interested in this course?</h6>
 
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="mb-3">
-                                <input type="text" placeholder="Enter Name" class="form-control" required>
-                            </div>
-
-                            <div class="mb-3 position-relative">
-                                <input class="form-control ps-5" type="tel" value="+91" required>
-                                <div class="flag-dropdown">
-                                    <div class="flag in"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6">
-                            <div class="mb-3">
-                                <input type="email" placeholder="Enter Email" class="form-control" required>
-                            </div>
-                            <div class="mb-3">
-                                <input type="text" placeholder="Enter Interested Courses" class="form-control" required>
-                            </div>
-                        </div>
-
-                        <div class="col-12 text-center">
-                            <div class="mb-3">
-                                <input type="text" placeholder="College Name" class="form-control" required>
-                            </div>
-                            <button class="btn-blue">Submit</button>
+                        <button class="btn btn-blue">Check eligibility</button>
+                    </div>
+                </div>
+                <div class="college-card mt-4">
+                    <div class="college-header">
+                        <h5>Top MBBS Colleges</h5>
+                    </div>
+                    <div class="college-item mb-3">
+                        <img src="https://api.learntechww.com/college_banner_image/logo1747821131641.webp"
+                            alt="College Logo">
+                        <div class="college-text">
+                            <h6>Dr. Chandramma Dayananda Sagar Institute (CDSIMER)
+                            </h6>
+                            <p>Bangalore</p>
                         </div>
                     </div>
+
+                    <div class="college-item">
+                        <img src="https://api.learntechww.com/college_banner_image/logo1747821131641.webp"
+                            alt="College Logo">
+                        <div class="college-text">
+                            <h6>Dr. Chandramma Dayananda Sagar Institute (CDSIMER)
+                            </h6>
+                            <p>Bangalore</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="exam-card mt-4">
+                    <div class="exam-header">
+                        <h5>Top MBBS Exams</h5>
+                    </div>
+
+                    <div class="exam-item">
+                        <img src="https://api.learntechww.com/exam_logo/logo1722428079427.png" alt="NEET UG Logo"
+                            class="exam-img">
+                        <div class="exam-text">
+                            <h6>NEET-UG</h6>
+                        </div>
+                    </div>
+
+                    <div class="exam-item">
+                        <img src="https://api.learntechww.com/exam_logo/logo1722428079427.png" alt="COMEDK UGET Logo"
+                            class="exam-img">
+                        <div class="exam-text">
+                            <h6>COMEDK UGET</h6>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <style>
+        .exam-card {
+            background: linear-gradient(90deg, rgba(203, 230, 247, 0.173), rgba(0, 157, 255, 0.173));
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(13, 110, 253, 0.08);
+        }
+
+        /* Header */
+        .exam-header h5 {
+            font-size: 19px !important;
+            font-weight: 700;
+            color: #0d47a1;
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .exam-header h5::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -6px;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #0d6efd, #2196f3);
+            border-radius: 2px;
+        }
+
+        /* Exam items */
+        .exam-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: white;
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 14px;
+            transition: all 0.3s ease;
+            border-bottom: 4px solid #00487f;
+        }
+
+
+        /* Image */
+        .exam-item img {
+            width: 55px;
+            height: 55px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Text */
+        .exam-text h6 {
+            margin: 0;
+            font-weight: 600;
+            color: #333;
+            font-size: 15px;
+        }
+
+        .college-card {
+            background: #f0fbff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(13, 110, 253, 0.08);
+            text-align: left;
+
+        }
+
+        .college-card {
+            border: 1px solid rgba(13, 110, 253, 0.08) !important;
+            background: linear-gradient(90deg, rgba(203, 230, 247, 0.173), rgba(0, 157, 255, 0.173));
+
+        }
+
+        /* Heading section */
+        .college-header h5 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0d47a1;
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .college-header h5::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -6px;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #0d6efd, #2196f3);
+            border-radius: 2px;
+        }
+
+        /* College item section */
+        .college-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: white;
+            border-bottom: 4px solid #00487f;
+            border-radius: 10px;
+            padding: 14px;
+            transition: all 0.3s ease;
+        }
+
+
+
+        /* Image styling */
+        .college-item img {
+            width: 75px;
+            height: 75px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Text section */
+        .college-text h6 {
+            margin: 0;
+            font-weight: 600;
+            color: #333;
+            font-size: 15px;
+            line-height: 1.3;
+        }
+
+        .college-text p {
+            margin: 4px 0 0;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .interest-card {
+            background: linear-gradient(135deg, #ffffff 0%, #d6e9f9 100%);
+            border: 1px solid rgb(206, 218, 242);
+            border-radius: 16px;
+            padding: 28px 20px;
+            box-shadow: 0 8px 24px rgba(13, 110, 253, 0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .icon-bubble {
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: floaty 3s ease-in-out infinite;
+        }
+
+
+        .icon-bubble i {
+            font-size: 42px;
+            color: #0d6efd;
+        }
+
+
+        @keyframes floaty {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+
+        .interest-text h6 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #073763;
+            margin-bottom: 10px;
+        }
+    </style>
+    <div class="container text-center position-relative px-5 py-4">
+        <h4>Popular Kerala <span style="color:#ff7a00;">Specializations</span></h4>
+
+        <!-- Navigation Icons -->
+        <button class="nav-btn prev-btn">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="nav-btn next-btn">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <div class="row mt-4 justify-content-center">
+            <div class="col-md-2">
+                <div class="special-card orange-card rounded-2 even-row">
+                    <img src="https://api.learntechww.com/stream_logo/logo1717067704195.svg" class="mb-2" alt="">
+                    <h5>Finance</h5>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="special-card orange-card rounded-2 even-row">
+                    <img src="https://api.learntechww.com/stream_logo/logo1717065247461.svg" class="mb-2" alt="">
+                    <h5>Marketing</h5>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="special-card orange-card rounded-2 even-row">
+                    <img src="https://api.learntechww.com/stream_logo/logo1717064628857.svg" class="mb-2" alt="">
+                    <h5>Human Resource</h5>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="special-card orange-card rounded-2 even-row">
+                    <img src="https://api.learntechww.com/stream_logo/logo1717067549745.svg" class="mb-2" alt="">
+                    <h5>Operations</h5>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="special-card orange-card rounded-2 even-row">
+                    <img src="https://api.learntechww.com/stream_logo/logo1717066851520.svg" class="mb-2" alt="">
+                    <h5>Business Analytics</h5>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="special-card orange-card rounded-2 even-row">
+                    <img src="https://api.learntechww.com/stream_logo/logo1717067949835.svg" class="mb-2" alt="">
+                    <h5>Business Management</h5>
                 </div>
             </div>
         </div>
     </div>
-</section>
-<style>
-    /* Reduce input width ONLY */
-.form-container .form-control {
-    max-width: 85%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Correct flag alignment for reduced width */
-.flag-dropdown {
-    position: absolute;
-    top: 50%;
-    left: calc(10% + 12px); /* aligns with centered input */
-    transform: translateY(-50%);
-}
-
-/* Background */
-.courses-form {
-    background: radial-gradient(circle at 10% 50%, #c7e3f4, rgb(153, 191, 239));
-    padding: 70px 0 60px;
-    position: relative;
-    overflow: hidden;
-    min-height: 350px;
-}
-
-.svg-bg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    opacity: 0.05;
-}
-
-.courses-form .container {
-    position: relative;
-    z-index: 2;
-}
-
-.courses-form p {
-    color: #000;
-}
-
-.flag.in {
-    width: 24px;
-    height: 16px;
-    background-image: url('https://flagcdn.com/w40/in.png');
-    background-size: cover;
-    border-radius: 2px;
-}
-
-</style>
-
-
-    <!-- ---------------------------------------------------------------------swiper -->
-
-
-
-    <section>
-        <div class="container-fluid px-5 py-5 text-center">
-            <h2>Start Your Future with <span style="color: #75a9c8;">Kerala’s Top Colleges</span></h2>
-
-
-            <!-- Carousel Wrapper -->
-            <div class="position-relative">
-                <!-- Prev Button -->
-                <button class="slick-prev-btn">&#10094;</button>
-                <!-- Next Button -->
-                <button class="slick-next-btn">&#10095;</button>
-
-                <!-- Carousel -->
-                <div class="college-carousel mx-5">
-                    <div class="college-swiper" data-city="Kollam">
-                        <a href="#">
-                            <div class="card-image"
-                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            </div>
-                            <div class="card-text text-start">
-                                <h5>St. Thomas College</h5>
-                                <p class="location"><i class="fa-solid fa-location-dot" style="color: #ff4d00;"></i> 40
-                                    Feet Rd, Fayazabad, Ilyas </p>
-                                <div class="card-actions">
-                                    <button class="btn-rect">Apply Now</button>
-                                    <button class="btn btn-viewmore">View More</button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="college-swiper" data-city="Kollam">
-                        <a href="#">
-                            <div class="card-image"
-                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            </div>
-                            <div class="card-text text-start">
-                                <h5>St. Thomas College</h5>
-                                <p class="location"><i class="fa-solid fa-location-dot" style="color: #ff4d00;"></i> 40
-                                    Feet Rd, Fayazabad, Ilyas </p>
-                                <div class="card-actions">
-                                    <button class="btn-rect">Apply Now</button>
-                                    <button class="btn btn-viewmore">View More</button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="college-swiper" data-city="Kollam">
-                        <a href="#">
-                            <div class="card-image"
-                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            </div>
-                            <div class="card-text text-start">
-                                <h5>St. Thomas College</h5>
-                                <p class="location"><i class="fa-solid fa-location-dot" style="color: #ff4d00;"></i> 40
-                                    Feet Rd, Fayazabad, Ilyas </p>
-                                <div class="card-actions">
-                                    <button class="btn-rect">Apply Now</button>
-                                    <button class="btn btn-viewmore">View More</button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-
-                    <div class="college-swiper" data-city="Kollam">
-                        <a href="#">
-                            <div class="card-image"
-                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            </div>
-                            <div class="card-text text-start">
-                                <h5>St. Thomas College</h5>
-                                <p class="location"><i class="fa-solid fa-location-dot" style="color: #ff4d00;"></i> 40
-                                    Feet Rd, Fayazabad, Ilyas </p>
-                                <div class="card-actions">
-                                    <button class="btn-rect">Apply Now</button>
-                                    <button class="btn btn-viewmore">View More</button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-
-                </div>
-            </div>
-    </section>
 
     <style>
-        .slick-prev-btn,
-        .slick-next-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 20;
-            background: #ffffff;
-            color: #0c2a45;
-            border: 1px solid rgb(255, 255, 255);
-            font-size: 26px;
-            width: 42px;
-            height: 42px;
-            border-radius: 20%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all .25s ease;
-        }
-
-        /* LEFT button */
-        .slick-prev-btn {
-            left: -20px;
-        }
-
-        /* RIGHT button */
-        .slick-next-btn {
-            right: -20px;
-        }
-
-
-
-        /* --------------------------------------------------------College Cards Carousal */
-        .college-carousel {
-            display: flex;
-            gap: 16px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            padding-bottom: 10px;
-
-        }
-
-        /* Hide scrollbar (optional) */
-        .college-carousel::-webkit-scrollbar {
-            display: none;
-        }
-
-        .college-carousel {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        .college-swiper {
-            position: relative;
-            height: 350px;
-            width: 320px;
-            border-radius: 5px;
+        /* === SPECIALIZATION CARDS === */
+        .special-card {
+            padding: 5px 15px;
+            text-align: center;
+            transition: all 0.5s ease;
+            /* box-shadow: 0 2px 5px rgb(159, 159, 159); */
             overflow: hidden;
-            background: #fff;
-            transition: all 0.4s ease;
-            margin: 6px;
-            border: 1px solid rgb(203, 203, 203);
-        }
-
-
-        .college-swiper a {
+            height: 19.3vh;
             display: flex;
             flex-direction: column;
-            text-decoration: none;
-            color: inherit;
+            justify-content: center;
+            align-items: center;
+            border-radius: 60px !important;
         }
 
-        .card-image {
-            height: 200px;
-            /* half the card */
-            background-size: cover;
-            background-position: center;
-            border-bottom: 1px solid rgba(0, 13, 157, 0.05);
-            transition: transform 0.6s ease;
+        .even-row {
+            border: 1px solid rgba(0, 64, 160, 0.095) !important;
+            border-left: 9px solid rgba(0, 64, 160, 0.188) !important;
         }
 
 
-
-        .card-text {
-            padding: 18px;
-            align-items: start;
+        .special-card img {
+            margin-bottom: 20px !important;
+            margin-top: 10px;
+            width: 50px !important;
+            height: 50px !important;
         }
 
-        .card-text h5 {
-            font-size: 20px;
-            font-weight: 400;
-            margin: 0 0 6px 0;
-        }
-
-        .card-text .location {
-            font-size: 16px;
-            color: #777;
-            margin: 0 0 14px 0;
-        }
-
-        .card-actions {
-            display: flex;
-            justify-content: space-between;
-
-        }
-
-        .btn-rect {
-            padding: 8px 14px;
-            border-radius: 8px;
-            border: none;
-            background: #0b2a66;
-            /* deep professional blue */
-            color: #ffffff;
-            font-weight: 500;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
-
-        }
-
-        .btn-rect:hover {
-            background: #f4f8ff;
-            border: 1px solid #0b2a66;
-            /* subtle hover color */
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
-            color: #0b2a66;
-        }
-
-        .btn-viewmore {
-            position: relative;
-            padding: 8px 14px;
-            font-size: 14px;
-            font-weight: 500;
-            color: #0b2a66;
-            background: transparent;
-            border: 1px solid #0b2a66;
-            cursor: pointer;
-            transition: all 0.4s ease;
-
-        }
-
-        .btn-viewmore:hover {
-           
-            color: #0b2a66;
-        }
-
-
-        .btn-round {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            border: none;
+        .special-card.orange-card {
             background: #ffffff;
             color: #000000;
-            font-size: 0.9rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.3s ease;
-            border: 1px solid black;
         }
 
-        .btn-round:hover {
-            background: #3388ff;
-            transform: rotate(90deg) scale(1.1);
+        .special-card h5 {
+            font-size: 14px !important;
+            font-weight: 500 !important;
+        }
+
+        .special-card p {
+            margin-top: auto;
+            margin-bottom: 0;
+        }
+
+
+
+        .special-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* === NAVIGATION BUTTONS === */
+        .nav-btn {
+            position: absolute;
+            top: 60%;
+            transform: translateY(-50%);
+            background: white;
+            border: none;
+            color: #002470;
+            font-size: 24px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .nav-btn:hover {
+            background: linear-gradient(90deg, #003e89, #3562a0);
+            color: #fff;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev-btn {
+            left: -10px !important;
+        }
+
+        .next-btn {
+            right: -10px !important;
         }
     </style>
 
+    <!-- Font Awesome CDN -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+    <!-- ====================================approach section -->
+
+    <section>
+        <div class="container text-center mt-5">
+            <h4 class="mb-4">Top MBA Study Approach <span style="color:#ff7a00;">Specialization</span></h4>
+            <p class="text-start">Learntech Edu Solutions Pvt. Ltd. follows a holistic approach toward admission to the
+                stream of your
+                dreams. The experts will help you to navigate your way to your dream college and course that will align
+                with your academic and professional goals. It includes counselling for your preferred courses.
+                Furthermore, the recommendations will be made to align your long-term goals with your academic goals.
+                You will have a smoother path to college. This will make your educational experience easier. You will
+                gain insights into the industry along with the practical and theoretical knowledge required to enter the
+                program.</p>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="approach-box">
+                        <img src="approach-img.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!---------------------------------------------------------------- BOTTOM CONTACT FORM -->
+
+
+    <section class="lt-advisor-section">
+        <div class="lt-container">
+            <h2 class="lt-heading">Personalised Admission Support</h2>
+            <h3>Kerala’s Trusted Education Experts</h3>
+            <p class="lt-subtext">
+                Discover top colleges, explore courses, and get step-by-step guidance for secure admissions in Kerala.
+            </p>
+
+            <form class="lt-form">
+                <input type="text" class="lt-input" placeholder="Enter Name" name="name" required>
+
+                <div class="mb-3">
+                    <div class="phone-group">
+                        <div class="flag-box" role="button" tabindex="0" aria-haspopup="listbox">
+                            <img src="https://flagcdn.com/w40/in.png" alt="India Flag" class="flag-icon">
+                            <span class="country-code">+91</span>
+                            <span class="arrow"></span>
+                        </div>
+                        <input type="tel" class="phone-input form-control" placeholder="" required>
+                    </div>
+                </div>
+
+
+
+                <input type="email" class="lt-input" placeholder="Enter Email" name="email" required>
+
+                <select class="lt-input" name="stream" required>
+                    <option value="" disabled selected>Select Stream</option>
+                    <option value="Science">Science</option>
+                    <option value="Commerce">Commerce</option>
+                    <option value="Arts">Arts</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <button type="submit" class=" btn-7">Request for a Call Back</button>
+            </form>
+        </div>
+    </section>
+
+    <style>
+        .lt-input,
+        .phone-group {
+            height: 38px;
+            /* Same height for all fields */
+        }
+
+        /* --- Single-line phone field --- */
+        .phone-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px 12px !important;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .phone-group:focus-within {
+            border-color: #1f3c88;
+            box-shadow: 0 0 0 3px rgba(31, 60, 136, 0.15);
+        }
+
+        /* Flag + code section */
+        .flag-box {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        /* Flag image */
+        .flag-icon {
+            width: 24px;
+            height: 16px;
+            border-radius: 2px;
+            object-fit: cover;
+        }
+
+        /* Country code */
+        .country-code {
+            font-size: 13px;
+            font-weight: 600;
+            color: #1f3c88;
+            white-space: nowrap;
+        }
+
+        /* Dropdown arrow */
+        .arrow {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 6px solid #666;
+            opacity: 0.7;
+        }
+
+        /* Input field */
+        .phone-input {
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+            padding: 0;
+            font-size: 15px;
+            color: #222;
+            flex: 1;
+            background: transparent;
+        }
+
+        .phone-input::placeholder {
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .phone-group {
+                gap: 6px;
+                padding: 6px 8px;
+            }
+
+            .flag-icon {
+                width: 20px;
+                height: 14px;
+            }
+
+            .country-code {
+                font-size: 13px;
+            }
+        }
+
+        /* Section styling */
+        .lt-advisor-section {
+            background-color: #e4e8ff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .lt-container {
+            max-width: 120%;
+            margin: 0 auto;
+        }
+
+        .lt-heading {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1d3b75;
+            margin-bottom: 10px;
+        }
+
+        .lt-subtext {
+            font-size: 16px;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* Form Styling */
+        .lt-form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .lt-input {
+            padding: 2px 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            width: 330px;
+            background-color: #fff;
+            transition: border-color 0.3s;
+        }
+
+        .lt-input:focus {
+            outline: none;
+            border-color: #1d3b75;
+        }
+
+        .lt-phone-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 8px 12px;
+            width: 240px;
+            transition: all 0.3s ease;
+        }
+
+        .lt-phone-group:hover {
+            border-color: #007bff;
+            box-shadow: 0 0 6px rgba(0, 123, 255, 0.2);
+        }
+
+        .lt-flag {
+            width: 20px;
+            height: 14px;
+            border-radius: 2px;
+            object-fit: cover;
+        }
+
+        .lt-country-code {
+            font-size: 15px;
+            color: #333;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .lt-phone-input {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 15px;
+            color: #222;
+            padding: 0;
+        }
+
+        .lt-phone-input::placeholder {
+            color: #999;
+        }
+
+        /* Button styling */
+        .lt-submit-btn {
+            padding: 12px 25px;
+            background-color: #264e9b;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .lt-submit-btn:hover {
+            background-color: #1b3d80;
+        }
+
+        /* Responsive Tweaks */
+        @media (max-width: 768px) {
+            .lt-form {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .lt-input,
+            .lt-phone-group {
+                width: 90%;
+            }
+        }
+    </style>
 
 
 

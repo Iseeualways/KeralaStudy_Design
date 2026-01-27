@@ -107,47 +107,41 @@
         color: red;
     }
 
-    .city-btn {
-        border: 1px solid blue;
-        padding: 5px 30px;
-
-    }
-
-    .city-btn {
+     .city-btn {
         display: inline-block;
-        padding: 3px 36px;
-        font-size: 16px;
-        font-weight: 600;
-        color: #fff;
+        padding: 4px 22px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #ffffff;
         text-decoration: none;
-        border-radius: 10px;
+        border-radius: 6px;
         background: #0b2a66;
-        /* deep professional color */
+        border: 1px solid #0b2a66;
         position: relative;
         overflow: hidden;
-        transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
     }
 
+    /* subtle shine */
     .city-btn::after {
         content: '';
         position: absolute;
-        top: 0;
-        left: -50%;
-        width: 50%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.08);
-        transform: skewX(-25deg);
-        transition: all 0.5s ease;
+        inset: 0;
+        background: rgba(11, 42, 102, 0.06);
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
 
     .city-btn:hover {
-        background: linear-gradient(90deg, #0b2a66, #3370ea);
-        transform: translate(scale(1.4));
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+        background: #0b2a66;
         color: #ffffff;
+        text-decoration: underline;
+
     }
 
+    .city-btn:hover::after {
+        opacity: 1;
+    }
     h2 {
         font-family: 'Poppins', sans-serif;
         font-size: 32px;
@@ -160,7 +154,6 @@
     li {
         font-size: 16px;
     }
-
 </style>
 
 <body>
@@ -169,8 +162,8 @@
         <div class="logo"><img src="https://www.keralastudy.com/images/logo.png" class="w-100" alt=""></div>
         <div class="nav-links">
             <div class="nav-item">Top Colleges</div>
-           
-                <div class="nav-item">Top Courses</div>
+
+            <div class="nav-item">Top Courses</div>
             <div class="nav-item">Entrance Exam</div>
             <div class="nav-item">Boards</div>
             <div class="nav-item">News</div>
@@ -557,11 +550,11 @@
     <section class="hero">
         <div class="container text-end">
             <div class="row">
-                <div class="col-lg-12 reveal text-end">
+                <div class="col-lg-12 reveal text-start">
                     <h1 style="color: #ffffff; font-weight: 400 !important;">
                         <span style="color: #003264;">S</span>ite<span style="color: #fcfcfc;">m</span>ap
                     </h1>
-                    <p class="mt-4 text-end ms-auto" style="color: #ffffff;">
+                    <p class="mt-4 text-start " style="color: #ffffff;">
                         We partner with students, parents, and institutions to deliver
                         transparent education pathways that lead to real careers
                         not just admissions.
@@ -583,7 +576,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(90deg,  #16427100, #164271dc);
+            background: linear-gradient(90deg, #16427100, #164271dc);
             z-index: 1;
         }
 
@@ -609,17 +602,15 @@
         }
     </style>
 
-     <!-- BREADCRUMB -->
+    <!-- BREADCRUMB -->
     <nav class="breadcrumb-wrap container" aria-label="Breadcrumb">
         <a href="#">Home</a>
-        <span class="divider" aria-hidden="true">›</span>
-        <a href="#">Placement</a>
         <span class="divider" aria-hidden="true">›</span>
         <span class="current">Sitemap</span>
     </nav>
 
     <style>
-         .breadcrumb-wrap {
+        .breadcrumb-wrap {
             margin-top: 12px;
             font-size: 17px;
             font-weight: 400;
@@ -662,68 +653,110 @@
             line-height: 1;
         }
     </style>
-
     <section class="sitemap-section">
         <div class="sitemap-container">
 
-            <h2>Site Map</h2>
+            <h2>Information</h2>
 
             <div class="sitemap-grid">
 
                 <!-- Column 1 -->
                 <div class="sitemap-column">
-                    <h4>Company</h4>
+
                     <ul>
+                        <li><a href="#">Home</a></li>
                         <li><a href="#">About Us</a></li>
-                        <li><a href="#">Why Learntech</a></li>
+                        <li><a href="#">Contact Us</a></li>
                         <li><a href="#">Our Team</a></li>
                         <li><a href="#">Careers</a></li>
-                        <li><a href="#">Contact Us</a></li>
                     </ul>
                 </div>
 
                 <!-- Column 2 -->
                 <div class="sitemap-column">
-                    <h4>Courses</h4>
+
                     <ul>
-                        <li><a href="#">Medical</a></li>
-                        <li><a href="#">Engineering</a></li>
-                        <li><a href="#">Management</a></li>
-                        <li><a href="#">Computer Science</a></li>
-                        <li><a href="#">Nursing & Pharmacy</a></li>
+                        <li><a href="#">Exams</a></li>
+                        <li><a href="#">NRI Quota</a></li>
+                        <li><a href="#">Study Abroad</a></li>
+                        <li><a href="#">Educational Loan</a></li>
+                        <li><a href="#">Scholarships</a></li>
                     </ul>
                 </div>
 
                 <!-- Column 3 -->
                 <div class="sitemap-column">
-                    <h4>Admissions</h4>
+
                     <ul>
-                        <li><a href="#">Admission Guidance</a></li>
-                        <li><a href="#">Study Abroad</a></li>
-                        <li><a href="#">Top Universities</a></li>
-                        <li><a href="#">Eligibility Check</a></li>
-                        <li><a href="#">Apply Now</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Blogs</a></li>
+                        <li><a href="#">Student's Speak</a></li>
+                        <li><a href="#">Boards</a></li>
+                        <li><a href="#">Colleges</a></li>
                     </ul>
                 </div>
 
-                <!-- Column 4 -->
-                <div class="sitemap-column">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="#">Blogs</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">News & Updates</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                    </ul>
-                </div>
+
 
             </div>
 
         </div>
+        <div class="sitemap-container mt-4">
+
+            <h2>Colleges</h2>
+
+            <div class="sitemap-grid">
+
+                <!-- Column 1 -->
+                <div class="sitemap-column">
+
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="sitemap-column">
+
+                    <ul>
+                        <li><a href="#">Exams</a></li>
+                        <li><a href="#">NRI Quota</a></li>
+                        <li><a href="#">Study Abroad</a></li>
+                        <li><a href="#">Educational Loan</a></li>
+                        <li><a href="#">Scholarships</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="sitemap-column">
+
+                    <ul>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Blogs</a></li>
+                        <li><a href="#">Student's Speak</a></li>
+                        <li><a href="#">Boards</a></li>
+                        <li><a href="#">Colleges</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
 
+
     <style>
+        .sitemap-column ul {
+            list-style: disc ;
+            padding-left: 20px;
+        }
+
+        .sitemap-column ul li {
+            margin-bottom: 6px;
+        }
+
         .sitemap-section {
             padding: 80px 20px;
             background: #f8fafc;
@@ -736,10 +769,11 @@
         }
 
         .sitemap-container h2 {
-            font-size: 32px;
+            width: 1500px !important;
+            font-size: 34px;
             font-weight: 700;
-            margin-bottom: 40px;
-            color: #0a2540;
+            margin-bottom: 20px;
+            color: #0e2f4f;
         }
 
         .sitemap-grid {
@@ -766,9 +800,9 @@
         }
 
         .sitemap-column ul li a {
-            color: #425466;
+            color: #000000;
             text-decoration: none;
-            font-size: 15px;
+            font-size: 16px;
             transition: 0.3s ease;
         }
 
@@ -809,7 +843,7 @@
                         Bangalore, Karnataka - 560041</p>
                 </div>
 
-                
+
                 <!-- Info -->
                 <div class="col-lg-2 col-md-6 mb-4 pt-5">
                     <h6 class="footer-title">Info</h6>
@@ -827,11 +861,11 @@
                         <li><a href="Main-article-page.html">Articles</a></li>
                         <li><a href="Detail-article-page.html">Article Detail</a></li>
                         <li><a href="boards-page.html">Boards</a></li>
-                        
+
                     </ul>
                 </div>
 
-                 <!-- Quick Links -->
+                <!-- Quick Links -->
                 <div class="col-lg-2 col-md-6 mb-4  pt-5">
                     <h6 class="footer-title">Quick Links</h6>
                     <ul class="list-unstyled">

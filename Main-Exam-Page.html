@@ -31,46 +31,47 @@
 
 </head>
 <style>
-   .btn-blue {
-    position: relative;
-    display: inline-block;
-    padding: 10px 22px;
-    background: white;
-    color: #003479;
-    font-size: 16px;
-    font-weight: 500;
-    border-radius: 3px;
-    border: 1.2px solid #003479;
-    text-decoration: none;
-    overflow: hidden;
-    cursor: pointer;
-    transition: color 0.35s ease;
-    z-index: 1;
-}
+    .btn-blue {
+        position: relative;
+        display: inline-block;
+        padding: 10px 22px;
+        background: #003479;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 3px;
+        border: 1.2px solid #003479;
+        text-decoration: none;
+        overflow: hidden;
+        cursor: pointer;
+        transition: color 0.35s ease;
+        z-index: 1;
+    }
 
 
-/* Fill layer */
-.btn-blue::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: #003479;
-     border: 1px solid #003479 !important;
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: transform 0.35s ease;
-    z-index: -1;
-}
+    /* Fill layer */
+    .btn-blue::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: #ffffff;
+        border: 1px solid #003479 !important;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.35s ease;
+        z-index: -1;
+    }
 
-/* Hover effect */
-.btn-blue:hover {
-    color: #ffffff;
-     border: 1px solid #003479 !important;
-}
+    /* Hover effect */
+    .btn-blue:hover {
+        color: #003479;
+        background: #003479;
+        border: 1px solid #003479 !important;
+    }
 
-.btn-blue:hover::before {
-    transform: scaleY(1);
-}
+    .btn-blue:hover::before {
+        transform: scaleY(1);
+    }
 
 
     /* ---------- RESET ---------- */
@@ -105,44 +106,39 @@
     }
 
     .city-btn {
-        border: 1px solid blue;
-        padding: 5px 30px;
-
-    }
-
-    .city-btn {
         display: inline-block;
-        padding: 3px 36px;
-        font-size: 16px;
-        font-weight: 600;
-        color: #fff;
+        padding: 4px 22px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #ffffff;
         text-decoration: none;
-        border-radius: 10px;
+        border-radius: 6px;
         background: #0b2a66;
-        /* deep professional color */
+        border: 1px solid #0b2a66;
         position: relative;
         overflow: hidden;
-        transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
     }
 
+    /* subtle shine */
     .city-btn::after {
         content: '';
         position: absolute;
-        top: 0;
-        left: -50%;
-        width: 50%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.08);
-        transform: skewX(-25deg);
-        transition: all 0.5s ease;
+        inset: 0;
+        background: rgba(11, 42, 102, 0.06);
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
 
     .city-btn:hover {
-        background: linear-gradient(90deg, #0b2a66, #3370ea);
-        transform: translate(scale(1.4));
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+        background: #0b2a66;
         color: #ffffff;
+        text-decoration: underline;
+
+    }
+
+    .city-btn:hover::after {
+        opacity: 1;
     }
 
     h2 {
@@ -165,9 +161,9 @@
         <div class="logo"><img src="https://www.keralastudy.com/images/logo.png" class="w-100" alt=""></div>
         <div class="nav-links">
             <div class="nav-item">Top Colleges</div>
-         
-                <div class="nav-item">Top Courses</div>
-         
+
+            <div class="nav-item">Top Courses</div>
+
             <div class="nav-item">Entrance Exam</div>
             <div class="nav-item">Boards</div>
             <div class="nav-item">News</div>
@@ -549,229 +545,297 @@
 
 
     <!-- ====================================================================================banner -->
-        
+
     <section class="hero-sec mb-0">
         <div class="hero-container text-center">
 
-           <div class="hero-inner container mt-4">
-            <h1><span style="color: #fff;">Entrance Exams in</span>  <span style="color: #75a9c8;">India</span></h1>
-            <form action="#" class="search-bar">
-                <input type="text" placeholder="Find Your College" class="search-input">
-                <button type="submit" class="search-btn">
-                    <img src="search_38dp_000000_FILL0_wght400_GRAD0_opsz40.svg" alt="search">
+            <div class="hero-inner container mt-4">
+                <h1 class="mb-4"><span style="color: #fff;">Entrance Exams in</span> <span
+                        style="color: #ffffff;">Kerala</span></h1>
+                <form action="#" class="search-bar">
+                    <input type="text" placeholder="Search Entrance Exam" class="search-input">
+                    <button type="submit" class="search-btn">
+                        <img src="search_38dp_000000_FILL0_wght400_GRAD0_opsz40.svg" alt="search">
+                    </button>
+                </form>
+
+
+                <!-- <button class="btn exam-btn m-4">
+                    <i class="fa-solid fa-bell"></i> Get Exam Alert
                 </button>
-            </form>
-            <h4 class="mt-3 text-start text-white"><b>Upcoming Entrance Exams</b></h4>
-            <div class="exam-calendar mt-1">
-                <div class="exam-item">
-                    <div class="exam-date">
-                        <span class="day">12</span>
-                        <span class="month">Jan</span>
-                    </div>
-                    <div class="exam-info">
-                        <h4>CAT 2026</h4>
-                        <p>Entrance Exam</p>
-                    </div>
-                </div>
+                <style>
+                    .exam-btn {
+                        padding: 12px 25px;
+                        background: #ff7a00;
+                        color: white;
+                        border-radius: 4px;
+                        font-weight: 600;
+                        transition: 0.25s ease;
+                    }
 
-                <div class="exam-item">
-                    <div class="exam-date">
-                        <span class="day">28</span>
-                        <span class="month">Feb</span>
-                    </div>
-                    <div class="exam-info">
-                        <h4>MAT 2026</h4>
-                        <p>Phase 1</p>
-                    </div>
-                </div>
-
-                <div class="exam-item">
-                    <div class="exam-date">
-                        <span class="day">10</span>
-                        <span class="month">Mar</span>
-                    </div>
-                    <div class="exam-info">
-                        <h4>CUET PG</h4>
-                        <p>Registration Close</p>
-                    </div>
-                </div>
-                <div class="exam-item">
-                    <div class="exam-date">
-                        <span class="day">12</span>
-                        <span class="month">Jan</span>
-                    </div>
-                    <div class="exam-info">
-                        <h4>CAT 2026</h4>
-                        <p>Entrance Exam</p>
-                    </div>
-                </div>
-
-                <div class="exam-item">
-                    <div class="exam-date">
-                        <span class="day">28</span>
-                        <span class="month">Feb</span>
-                    </div>
-                    <div class="exam-info">
-                        <h4>MAT 2026</h4>
-                        <p>Phase 1</p>
-                    </div>
-                </div>
-            </div>
-
-            <button class="btn exam-btn m-4">
-                <i class="fa-solid fa-bell"></i> Get Exam Alert
-            </button>
-            <style>
-                .exam-btn {
-                    padding: 12px 25px;
-                    background: #ff7a00;
-                    color: white;
-                    border-radius: 4px;
-                    font-weight: 600;
-                    transition: 0.25s ease;
-                }
-
-                .exam-btn:hover {
-                    border: 1px solid rgb(0, 33, 152);
-                    background-color: white;
-                }
-            </style>
+                    .exam-btn:hover {
+                        border: 1px solid rgb(0, 33, 152);
+                        background-color: white;
+                    }
+                </style> -->
 
 
-            <style>
-                /* ============================
+
+
+                <style>
+                    /* ============================
    EXAM CALENDAR STRIP
 ============================ */
-                .exam-calendar {
-                    margin-top: 25px;
+                    .exam-calendar {
+                        margin-top: 25px;
+                        display: flex;
+                        gap: 20px;
+                        justify-content: center;
+                        flex-wrap: wrap;
+                        z-index: 2;
+                        background-color: #00193829;
+                        padding: 10px;
+                        border-radius: 20px;
+                    }
+
+                    .exam-item {
+                        display: flex;
+                        align-items: center;
+                        gap: 15px;
+                        background: rgba(255, 255, 255, 0.921);
+                        backdrop-filter: blur(8px);
+                        border-radius: 4px;
+                        padding: 12px 20px;
+                        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+                        transition: 0.25s ease;
+                        cursor: pointer;
+                    }
+
+                    .exam-item:hover {
+                        transform: translateY(-4px);
+                        box-shadow: 0 8px 26px rgba(0, 0, 0, 0.20);
+                    }
+
+                    /* Date Box */
+                    .exam-date {
+                        background: rgb(43, 167, 255);
+                        color: #fff;
+                        border-radius: 42px;
+                        padding: 10px 14px;
+                        text-align: center;
+                        min-width: 55px;
+                    }
+
+                    .exam-date .day {
+                        font-size: 1.4rem;
+                        font-weight: 700;
+                        line-height: 1;
+                    }
+
+                    .exam-date .month {
+                        font-size: 0.9rem;
+                        font-weight: 600;
+                        opacity: 0.85;
+                    }
+
+                    /* Exam Info */
+                    .exam-info h4 {
+                        font-size: 1.05rem;
+                        font-weight: 700;
+                        margin: 0;
+                    }
+
+                    .exam-info p {
+                        margin: 0;
+                        font-size: 0.8rem;
+                        opacity: 0.8;
+                    }
+
+                    /* Responsive */
+                    @media (max-width: 576px) {
+                        .exam-item {
+                            width: 100%;
+                            max-width: 330px;
+                            justify-content: flex-start;
+                        }
+                    }
+
+                    .search-bar {
+                        position: relative;
+                        display: inline-flex;
+                        align-items: center;
+                        background: #fff;
+                        border-radius: 12px;
+                        padding: 6px 10px;
+                        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+                    }
+
+                    .search-input {
+                        border: none;
+                        outline: none;
+                        padding: 8px 10px;
+                        font-size: 0.95rem;
+                        width: 400px;
+                    }
+
+                    .search-btn {
+                        background: #002e62;
+                        border: none;
+                        border-radius: 10px;
+                        padding: 7px 10px;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transition: 0.2s ease;
+                    }
+
+                    .search-btn img {
+                        width: 20px;
+                        height: 20px;
+                        filter: brightness(0) invert(1);
+                    }
+
+                    .hero-inner h1 {
+                        font-weight: 700;
+                    }
+
+                    .search-btn:hover {
+                        background: #005ecc;
+                    }
+                </style>
+            </div>
+
+            <h2 class="text-white mt-5 fs-4">Upcoming Entrance Exams</h2>
+            <section class="exam-carousel-section mt-3 mb-5">
+
+                <div class="carousel-wrapper px-5 mx-0">
+                    <!-- Left Arrow -->
+                    <a href="#prev" class="arrow left">&#10094;</a>
+
+                    <!-- Carousel -->
+                    <div class="carousel" id="carousel">
+                        <div class="exam-item" id="item1">
+                            <span class="date"><b>12</b> Jan</span>
+                            <span class="exam-name">CAT 2026</span>
+                        </div>
+                        <div class="exam-item" id="item2">
+                            <span class="date"><b>28</b> Feb</span>
+                            <span class="exam-name">MAT 2026</span>
+                        </div>
+                        <div class="exam-item" id="item3">
+                            <span class="date"><b>10</b> Mar</span>
+                            <span class="exam-name">CUET PG</span>
+                        </div>
+                        <div class="exam-item" id="item4">
+                            <span class="date"><b>12</b> Jan</span>
+                            <span class="exam-name">CAT 2026</span>
+                        </div>
+                        <div class="exam-item" id="item5">
+                            <span class="date"><b>28</b> Feb</span>
+                            <span class="exam-name">MAT 2026</span>
+                        </div>
+                        <div class="exam-item" id="item4">
+                            <span class="date"><b>12</b> Jan</span>
+                            <span class="exam-name">CAT 2026</span>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Arrow -->
+                    <a href="#next" class="arrow right">&#10095;</a>
+                </div>
+            </section>
+            <style>
+                .exam-carousel-section {
+                    padding: 3px;
+                    background: rgba(255, 255, 255, 0.156);
+                    color: #fff;
+                }
+
+                .carousel-wrapper {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .carousel {
                     display: flex;
                     gap: 20px;
-                    justify-content: center;
-                    flex-wrap: wrap;
-                    z-index: 2;
-                    background-color: #00193829;
-                    padding: 10px;
-                    border-radius: 20px;
+                    overflow-x: auto;
+                    scroll-snap-type: x mandatory;
+                    scroll-behavior: smooth;
+                    padding: 10px 50px;
+
+                }
+
+                .carousel::-webkit-scrollbar {
+                    display: none;
                 }
 
                 .exam-item {
-                    display: flex;
-                    align-items: center;
-                    gap: 15px;
-                    background: rgba(255, 255, 255, 0.921);
-                    backdrop-filter: blur(8px);
-                    border-radius: 4px;
-                    padding: 12px 20px;
-                    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
-                    transition: 0.25s ease;
-                    cursor: pointer;
-                }
-
-                .exam-item:hover {
-                    transform: translateY(-4px);
-                    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.20);
-                }
-
-                /* Date Box */
-                .exam-date {
-                    background: rgb(43, 167, 255);
-                    color: #fff;
-                    border-radius: 42px;
-                    padding: 10px 14px;
+                    flex: 0 0 auto;
+                    background: #f0f4f8;
+                    color: #000;
+                    padding: 8px 15px;
+                    border-radius: 8px;
                     text-align: center;
-                    min-width: 55px;
+                    scroll-snap-align: start;
+                    min-width: 120px;
                 }
 
-                .exam-date .day {
-                    font-size: 1.4rem;
-                    font-weight: 700;
-                    line-height: 1;
+                .date {
+                    background-color: #63a4d2;
+                    padding: 8px 20px;
+                    border-radius: 50px;
+                    display: inline-block;
+                    font-size: 20px;
+                    color: #ffffff;
+                    margin-bottom: 5px;
+                    text-align: center;
+                    transition: transform 0.3s ease;
+                    /* Smooth scaling */
                 }
 
-                .exam-date .month {
-                    font-size: 0.9rem;
-                    font-weight: 600;
-                    opacity: 0.85;
+                /* On hover of the parent exam-item */
+                .exam-item:hover .date {
+                    transform: scale(1.1);
                 }
 
-                /* Exam Info */
-                .exam-info h4 {
-                    font-size: 1.05rem;
-                    font-weight: 700;
-                    margin: 0;
+                .exam-name {
+                    font-weight: 500;
                 }
 
-                .exam-info p {
-                    margin: 0;
-                    font-size: 0.8rem;
-                    opacity: 0.8;
-                }
-
-                /* Responsive */
-                @media (max-width: 576px) {
-                    .exam-item {
-                        width: 100%;
-                        max-width: 330px;
-                        justify-content: flex-start;
-                    }
-                }
-
-                .search-bar {
-                    position: relative;
-                    display: inline-flex;
-                    align-items: center;
-                    background: #fff;
-                    border-radius: 12px;
-                    padding: 6px 10px;
-                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-                }
-
-                .search-input {
-                    border: none;
-                    outline: none;
-                    padding: 8px 10px;
-                    font-size: 0.95rem;
-                    width: 400px;
-                }
-
-                .search-btn {
-                    background: #002e62;
-                    border: none;
-                    border-radius: 10px;
-                    padding: 7px 10px;
+                .arrow {
+                    position: absolute;
+                    font-size: 30px;
+                    color: #fff;
+                    background: rgba(0, 0, 0, 0);
+                    padding: 5px 10px;
+                    border-radius: 50%;
                     cursor: pointer;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    transition: 0.2s ease;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    text-decoration: none;
+                    z-index: 10;
                 }
 
-                .search-btn img {
-                    width: 20px;
-                    height: 20px;
-                    filter: brightness(0) invert(1);
+                .arrow.left {
+                    left: 5px;
                 }
 
-                .hero-inner h1 {
-                    font-weight: 700;
-                }
-
-                .search-btn:hover {
-                    background: #005ecc;
+                .arrow.right {
+                    right: 5px;
                 }
             </style>
         </div>
-        
-        </div>
-        
+
     </section>
-     <!-- BREADCRUMB -->
+    <!-- BREADCRUMB -->
     <nav class="breadcrumb-wrap container" aria-label="Breadcrumb">
         <a href="#">Home</a>
         <span class="divider" aria-hidden="true">›</span>
-        <a href="#">Placement</a>
-        <span class="divider" aria-hidden="true">›</span>
-        <span class="current">Main Exam Page</span>
+        <span class="current">Exams</span>
     </nav>
 
     <style>
@@ -823,13 +887,12 @@
 
     <style>
         .hero-sec {
-             background-image:
-                linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)),
-                url('40123918_8796857.jpg');
+            background: #00226B;
+            background: linear-gradient(164deg, rgba(0, 34, 107, 1) 0%, rgba(117, 169, 200, 1)100%);
             background-size: cover !important;
             background-repeat: no-repeat !important;
             background-position: center !important;
-            padding: 10px  30px;
+            padding: 10px 30px;
             position: relative;
         }
     </style>
@@ -840,7 +903,7 @@
 
 
     <div class="container text-center mt-5 mb-5">
-        <h2>Top Entrance Exams in India and Exams for Kerala Study</h4>
+        <h2 class="text-primary-emphasis">Top Entrance Exams in Kerala</h4>
             <p>Choosing the right entrance exam is crucial for students aiming to gain admission to prestigious
                 institutions
                 in India and abroad. These exams serve as gateways to undergraduate (UG) and postgraduate (PG) courses
@@ -849,53 +912,56 @@
                 and demanding entrance exams, both nationally and internationally, categorized by their relevance and
                 purpose.</p>
 
-            <button class="btn btn-blue">Read More</button>
+            <button class="btn-blue py-1 px-2">Read More</button>
     </div>
 
 
     <!-- ===================================================================================
      =================================================================================left and right section -->
 
- <section class="exam-section py-5">
+    <section class="exam-section py-5">
         <div class="container">
             <!-- Tabs -->
             <div class="exam-section mb-5">
-                <div class="d-flex justify-content-center align-items-center flex-wrap gap-2 mb-4">
+                <div class="d-flex justify-content-start align-items-center flex-wrap gap-2 mb-4">
                     <button class="btn px-3 fw-semibold"><i class="bi bi-caret-left-fill"></i></button>
                     <button class="btn px-4 fw-semibold active">All Exams</button>
-                    <button class="btn px-4 fw-semibold">Marketing</button>
-                    <button class="btn px-4 fw-semibold">Finance</button>
-                    <button class="btn px-4 fw-semibold">Human Resource</button>
-                    <button class="btn px-4 fw-semibold">International Business</button>
-                    <button class="btn px-4 fw-semibold">Operations Management</button>
-                    <!-- <button class="btn px-4 fw-semibold">Business Analytics</button>
-                        <button class="btn px-4 fw-semibold">Entrepreneurship</button> -->
+                    <button class="btn px-4 fw-semibold">Medical</button>
+                    <button class="btn px-4 fw-semibold">Dental</button>
+                    <button class="btn px-4 fw-semibold">Ayurveda</button>
+                    <button class="btn px-4 fw-semibold">Naturopat</button>
+                    <button class="btn px-4 fw-semibold">Unani</button>
+                    <button class="btn px-4 fw-semibold">Siddha</button>
+                    <button class="btn px-4 fw-semibold">Homoepathi</button>
+                    <button class="btn px-4 fw-semibold">Veterinary</button>
                     <button class="btn px-3 fw-semibold"><i class="bi bi-caret-right-fill"></i></button>
 
                 </div>
             </div>
             <style>
-                .exam-section .btn {
-                    border: 1px solid #002962;
+                 .exam-section .btn {
+                    border: 1px solid #0034795a;
+                    padding: 6px 20px !important;
+                    font-size: 14px;
                     /* blue border */
                     color: #21487e;
                     /* blue text */
                     background: white;
-                    border-radius: 25px;
+                    border-radius: 5px;
                     transition: 0.3s ease;
                     font-weight: 400 !important;
-                    
+
                 }
 
                 .exam-section .btn:hover {
-                    background: #002456;
+                    background: #003479;
                     color: #fff;
                 }
 
                 .exam-section .btn.active {
-                    background: #234371 !important;
+                    background: #003479 !important;
                     color: #fff !important;
-                    font-weight: 400 !important;
+                    font-weight: 700 !important;
                 }
 
                 .exam-section .btn i {
@@ -904,15 +970,14 @@
 
                 /* Arrow buttons little smaller */
                 .exam-section .btn.px-3 {
-                    padding: 6px 12px !important;
+                    padding: 3px 12px !important;
+                    border: none !important;
                 }
             </style>
 
             <div class="row g-4">
                 <!-- Left: Exam Cards -->
                 <div class="col-lg-8">
-
-
                     <div class="row g-4 ">
                         <div class="col-md-4 col-sm-6">
                             <div class="card exam-card h-100 border-0 shadow-sm">
@@ -921,7 +986,7 @@
                                         alt="MAT" class="img-fluid">
                                 </div>
                                 <div class="card-body text-center">
-                                    <h5 class="fw-bold text-dark mb-0">CAT</h5>
+                                    <h5 class=" text-dark mb-0">CAT</h5>
                                 </div>
                             </div>
                         </div>
@@ -933,7 +998,7 @@
                                         alt="AIFSET" class="img-fluid">
                                 </div>
                                 <div class="card-body text-center">
-                                    <h5 class="fw-bold text-dark mb-0">XAT</h5>
+                                    <h5 class=" text-dark mb-0">XAT</h5>
                                 </div>
                             </div>
                         </div>
@@ -945,7 +1010,7 @@
                                         alt="NEET-MDS" class="img-fluid">
                                 </div>
                                 <div class="card-body text-center">
-                                    <h5 class="fw-bold text-dark mb-0">CMAT</h5>
+                                    <h5 class=" text-dark mb-0">CMAT</h5>
                                 </div>
                             </div>
                         </div>
@@ -957,7 +1022,7 @@
                                         alt="JEE MAIN" class="img-fluid">
                                 </div>
                                 <div class="card-body text-center">
-                                    <h5 class="fw-bold text-dark mb-0">MAT</h5>
+                                    <h5 class=" text-dark mb-0">MAT</h5>
                                 </div>
                             </div>
                         </div>
@@ -969,7 +1034,7 @@
                                         alt="JEE MAIN" class="img-fluid">
                                 </div>
                                 <div class="card-body text-center">
-                                    <h5 class="fw-bold text-dark mb-0">ATMA</h5>
+                                    <h5 class=" text-dark mb-0">ATMA</h5>
                                 </div>
                             </div>
                         </div>
@@ -982,21 +1047,145 @@
                                         alt="JEE MAIN" class="img-fluid">
                                 </div>
                                 <div class="card-body text-center">
-                                    <h5 class="fw-bold text-dark mb-0">NMAT by GMAC</h5>
+                                    <h5 class=" text-dark mb-0">NMAT by GMAC</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card exam-card h-100 border-0 shadow-sm">
+                                <div class="exam-img text-center">
+                                    <img src="https://api.learntechww.com/exam_cover_image/logo1726552550674.webp"
+                                        alt="JEE MAIN" class="img-fluid">
+                                </div>
+                                <div class="card-body text-center">
+                                    <h5 class=" text-dark mb-0">MAT</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card exam-card h-100 border-0 shadow-sm">
+                                <div class="exam-img text-center">
+                                    <img src="https://api.learntechww.com/exam_cover_image/logo1726552550674.webp"
+                                        alt="JEE MAIN" class="img-fluid">
+                                </div>
+                                <div class="card-body text-center">
+                                    <h5 class=" text-dark mb-0">ATMA</h5>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card exam-card h-100 border-0 shadow-sm">
+                                <div class="exam-img text-center">
+                                    <img src="https://api.learntechww.com/exam_cover_image/logo1726552550674.webp"
+                                        alt="JEE MAIN" class="img-fluid">
+                                </div>
+                                <div class="card-body text-center">
+                                    <h5 class=" text-dark mb-0">NMAT by GMAC</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card exam-card h-100 border-0 shadow-sm">
+                                <div class="exam-img text-center">
+                                    <img src="https://api.learntechww.com/exam_cover_image/logo1726552550674.webp"
+                                        alt="JEE MAIN" class="img-fluid">
+                                </div>
+                                <div class="card-body text-center">
+                                    <h5 class=" text-dark mb-0">MAT</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card exam-card h-100 border-0 shadow-sm">
+                                <div class="exam-img text-center">
+                                    <img src="https://api.learntechww.com/exam_cover_image/logo1726552550674.webp"
+                                        alt="JEE MAIN" class="img-fluid">
+                                </div>
+                                <div class="card-body text-center">
+                                    <h5 class=" text-dark mb-0">ATMA</h5>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card exam-card h-100 border-0 shadow-sm">
+                                <div class="exam-img text-center">
+                                    <img src="https://api.learntechww.com/exam_cover_image/logo1726552550674.webp"
+                                        alt="JEE MAIN" class="img-fluid">
+                                </div>
+                                <div class="card-body text-center">
+                                    <h5 class=" text-dark mb-0">NMAT by GMAC</h5>
                                 </div>
                             </div>
                         </div>
 
                     </div>
                     <div class="slr-pagination my-5">
-                        <button class="slr-page prev">&laquo; Prev</button>
+                        <button class="slr-page prev">&laquo; </button>
                         <button class="slr-page active">1</button>
                         <button class="slr-page">2</button>
                         <button class="slr-page">3</button>
-                        <button class="slr-page next">Next &raquo;</button>
+                        <button class="slr-page next">&raquo;</button>
                     </div>
 
                     <style>
+                        /* Exam Card */
+                        .exam-card {
+                            border-radius: 12px;
+                            overflow: hidden;
+                            transition: transform 0.3s ease, box-shadow 0.3s ease;
+                            cursor: pointer;
+                            background: #fff;
+                        }
+
+                        /* Image Container */
+                        .exam-img img {
+                            transition: transform 0.3s ease;
+                            border-radius: 12px 12px 0 0;
+                        }
+
+                        /* Card Body */
+                        .exam-card .card-body {
+                            transition: background 0.3s ease, color 0.3s ease;
+                            padding: 16px;
+                            background: #ffffff;
+                            /* default white */
+                        }
+
+                        /* Card Hover Effect */
+                        .exam-card:hover {
+                            transform: translateY(-6px);
+                            box-shadow: 0 12px 25px rgba(0, 52, 121, 0.15);
+                        }
+
+                        .exam-card:hover .exam-img img {
+                            transform: scale(1.01);
+                        }
+
+                        /* Card Body changes to orange on hover */
+                        .exam-card:hover .card-body {
+                            background: #ffecd5;
+                            /* orange */
+                        }
+
+                        .exam-card h5 {
+                            font-weight: 600;
+                            font-size: 16px;
+                            color: #001d5b;
+                            transition: color 0.3s ease;
+                        }
+
+                        /* Text color changes on hover to white for contrast */
+                        .exam-card:hover h5 {
+                            color: #ffffff;
+                        }
+
                         .slr-pagination {
                             display: flex;
                             justify-content: center;
@@ -1033,34 +1222,165 @@
                         }
                     </style>
 
+
+
+                    <div class="exam-alert-container">
+                        <div class="exam-alert-icon">
+                            <!-- Animated bell SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"
+                                fill="#ffd343" stroke="#ff0000" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-bell">
+                                <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                            </svg>
+                        </div>
+
+                        <div class="exam-alert-content">
+                            <h4>Get Exam Alerts</h4>
+                            <p>
+                                Stay updated with the latest exam notifications, application dates,
+                                admit cards, and results.
+                            </p>
+                        </div>
+
+                        <div class="exam-alert-action">
+                            <button class="alert-btn">Get Alerts</button>
+                        </div>
+                    </div>
+
+                    <style>
+                        /* Container animation */
+                        @keyframes floatAlert {
+                            0% {
+                                transform: translateY(0);
+                            }
+
+                            50% {
+                                transform: translateY(-6px);
+                            }
+
+                            100% {
+                                transform: translateY(0);
+                            }
+                        }
+
+                        @keyframes shakeBell {
+                            0% {
+                                transform: rotate(0deg);
+                            }
+
+                            25% {
+                                transform: rotate(15deg);
+                            }
+
+                            50% {
+                                transform: rotate(-10deg);
+                            }
+
+                            75% {
+                                transform: rotate(10deg);
+                            }
+
+                            100% {
+                                transform: rotate(0deg);
+                            }
+                        }
+
+                        /* Exam Alert Container */
+                        .exam-alert-container {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            background: linear-gradient(135deg, #f7f9fc, #ffffff);
+                            border: 2px solid rgba(11, 101, 170, 0.163);
+                            padding: 20px 24px;
+                            border-radius: 12px;
+                            box-shadow:
+                                0 6px 14px rgba(0, 0, 0, 0.08),
+                                0 20px 45px rgba(0, 0, 0, 0.12);
+                            max-width: 100%;
+                            animation: floatAlert 2.5s ease-in-out infinite;
+                        }
+
+                        /* Alert Icon */
+                        .exam-alert-icon {
+                            margin-left: 22px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+
+                        .exam-alert-icon svg {
+                            width: 46px;
+                            height: 46px;
+                            stroke: #bd7e00;
+                            animation: shakeBell 1.5s ease-in-out infinite;
+                        }
+
+                        /* Content */
+                        .exam-alert-content h4 {
+                            margin: 0 0 6px 0;
+                            font-size: 18px;
+                            font-weight: 700;
+                            color: #111;
+                        }
+
+                        .exam-alert-content p {
+                            margin: 0;
+                            font-size: 14px;
+                            color: #555;
+                            max-width: 520px;
+                            line-height: 1.5;
+                        }
+
+                        /* CTA Button */
+                        .alert-btn {
+                            background: #ff0000;
+                            color: #fff;
+                            border: none;
+                            padding: 10px 22px;
+                            border-radius: 50px;
+                            font-size: 14px;
+                            font-weight: 600;
+                            cursor: pointer;
+                            transition: 0.3s ease, transform 0.3s ease;
+                        }
+
+                        .alert-btn:hover {
+                            background: #072d6f;
+                            box-shadow: 0 8px 20px rgba(11, 60, 145, 0.35);
+                            transform: scale(1.1);
+                        }
+                    </style>
                 </div>
 
 
+
                 <!-- Right: Contact Form -->
-                <div class="col-lg-4">
+                <div class="col-lg-4 px-4 ">
                     <div class="card border-0 p-4 rounded-3 contact-card mb-5">
                         <h4 class="fw-bold text-center mb-3">Contact Us</h4>
                         <form>
-                            <div class="mb-3">
+                            <div class="mb-2">
                                 <input type="text" class="form-control" placeholder="Full Name*" required>
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-2">
                                 <input type="email" class="form-control" placeholder="Email ID*" required>
                             </div>
-                            <div class="input-group mb-3">
+                            <div class="input-group mb-2">
                                 <span class="input-group-text">🇮🇳 +91</span>
                                 <input type="tel" class="form-control" placeholder="Mobile Number*" required>
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-2">
                                 <input type="text" class="form-control" placeholder="Interested Course*" required>
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-2">
                                 <input type="text" class="form-control" placeholder="Location*" required>
                             </div>
-                            <div class="mb-3">
-                                <textarea class="form-control" rows="3" placeholder="Type your message"></textarea>
+                            <div class="mb-2">
+                                <textarea class="form-control" rows="2" placeholder="Type your message"></textarea>
                             </div>
-                            <div class="form-check mb-3">
+                            <div class="form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="terms" required>
                                 <label class="form-check-label" for="terms">
                                     By clicking this, I agree to the <a href="#"
@@ -1070,34 +1390,82 @@
                             <button type="submit" class=" btn-blue w-100 py-2 fw-semibold">Submit</button>
                         </form>
                     </div>
+                    <!-- RIGHT STICKY NEWS (NEW VERSION) -->
+                    <aside class="news-sidebar">
+                        <h4 class="mb-3 fs-3 fw-bold text-center">Latest <span style="color: #75a9c8;">News</span></h4>
 
-                    <div class="container mt-5">
-                        <h4 class="text-center">Latest News</h4>
-                        <div class="news-container rounded-2 p-1 d-flex flex-row gap-3 mb-2">
-                            <img src="https://api.learntechww.com/news_banner_image/logo1761718068328.webp"
-                                class="img-fluid w-25" alt="">
-                            <h5>MCC NEET-PG 2025 Counselling Schedule Released</h5>
+                        <div class="news-item">
+                            <span class="news-date">DEC 17</span>
+                            <p>Beyond Tuition: The Hidden Costs of College</p>
                         </div>
-                        <div class="news-container rounded-2 p-1 d-flex flex-row gap-3 mb-2">
-                            <img src="https://api.learntechww.com/news_banner_image/logo1761718068328.webp"
-                                class="img-fluid w-25" alt="">
-                            <h5>MCC NEET-PG 2025 Counselling Schedule Released</h5>
+
+                        <div class="news-item">
+                            <span class="news-date">DEC 15</span>
+                            <p>New Education Policy Updates 2025</p>
                         </div>
-                        <div class="news-container rounded-2 p-1 d-flex flex-row gap-3 mb-2">
-                            <img src="https://api.learntechww.com/news_banner_image/logo1761718068328.webp"
-                                class="img-fluid w-25" alt="">
-                            <h5>MCC NEET-PG 2025 Counselling Schedule Released</h5>
+
+                        <div class="news-item">
+                            <span class="news-date">DEC 12</span>
+                            <p>Top Universities Announce Admissions</p>
                         </div>
-                        <div class="news-container rounded-2 p-1 d-flex flex-row gap-3 mb-2">
-                            <img src="https://api.learntechww.com/news_banner_image/logo1761718068328.webp"
-                                class="img-fluid w-25" alt="">
-                            <h5>MCC NEET-PG 2025 Counselling Schedule Released</h5>
+
+                        <div class="news-item">
+                            <span class="news-date">DEC 12</span>
+                            <p>Top Universities Announce Admissions</p>
                         </div>
-                    </div>
+                    </aside>
+
+                    <style>
+                        /* NEW RIGHT STICKY NEWS */
+                        .news-sidebar {
+                            background-color: #d4e3f959 !important;
+                            padding: 20px;
+                            border-radius: 10px;
+                            position: sticky;
+                            top: 120px;
+                            padding-bottom: 10px;
+                        }
+
+                        /* INDIVIDUAL NEWS ITEM */
+                        .news-item {
+                            border-bottom: 2px solid #640000;
+                            padding: 12px 0;
+                            transition: all 0.3s ease;
+                            cursor: pointer;
+                        }
+
+                        .news-item:hover {
+                            padding-left: 8px;
+                            border-bottom-color: #ff6a00;
+                        }
+
+                        .news-item:hover p {
+                            color: #003479;
+                        }
+
+                        .news-item:last-child {
+                            border-bottom: none;
+                        }
+
+                        /* DATE STYLE */
+                        .news-date {
+                            font-size: 18px;
+                            font-weight: bold;
+                            color: #001d5b;
+                        }
+
+                        /* NEWS DESCRIPTION */
+                        .news-item p {
+                            font-size: 16px;
+                            margin-top: 6px;
+                        }
+                    </style>
+
                 </div>
             </div>
         </div>
     </section>
+    
 
     <style>
         .news-container h5 {
@@ -1129,13 +1497,351 @@
         }
 
         .contact-card {
-            background-color: #d4e3f9 !important;
+            background-color: #d4e3f968 !important;
             border: 1px solid rgba(0, 98, 255, 0.192) !important;
         }
 
         .contact-card input,
         .contact-card textarea {
             border-radius: 8px;
+        }
+    </style>
+
+
+
+    
+    <!---------------------------------------------------------------- BOTTOM CONTACT FORM -->
+
+
+    <section class="lt-advisor-section">
+        <div class="lt-container">
+            <h2 class="lt-heading">Personalised Admission Support</h2>
+            <h3>Kerala’s Trusted Education Experts</h3>
+            <p class="lt-subtext">
+                Discover top colleges, explore courses, and get step-by-step guidance for secure admissions in Kerala.
+            </p>
+
+            <form class="lt-form">
+                <input type="text" class="lt-input" placeholder="Enter Name" name="name" required>
+
+                <div class="mb-3">
+                    <div class="phone-group">
+                        <div class="flag-box" role="button" tabindex="0" aria-haspopup="listbox">
+                            <img src="https://flagcdn.com/w40/in.png" alt="India Flag" class="flag-icon">
+                            <span class="country-code">+91</span>
+                            <span class="arrow"></span>
+                        </div>
+                        <input type="tel" class="phone-input form-control" placeholder="" required>
+                    </div>
+                </div>
+
+
+
+                <input type="email" class="lt-input" placeholder="Enter Email" name="email" required>
+                <input type="email" class="lt-input" placeholder="Interested Course?" name="email" required>
+
+
+
+                <button type="submit" class="btn-8">Request for a Call Back</button>
+            </form>
+        </div>
+    </section>
+
+    <style>
+        .btn-8 {
+            background: #003a73;
+            color: #ffffff;
+            font-weight: 700;
+            border: 2px solid #ffffff;
+            padding: 0.8rem 3rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            transition: color .25s ease, transform .25s ease, box-shadow .25s ease;
+        }
+
+        /* WHITE REVEAL LAYER */
+        .btn-8::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: white;
+
+            --progress: 100%;
+            clip-path: polygon(0 calc(var(--progress) / 2),
+                    100% calc(var(--progress) / 2),
+                    100% calc(100% - var(--progress) / 2),
+                    0 calc(100% - var(--progress) / 2));
+
+            transition: clip-path .25s ease;
+            z-index: -1;
+        }
+
+        /* HOVER */
+        .btn-8:hover::before {
+            --progress: 0%;
+        }
+
+        .btn-8:hover {
+            color: #003a73;
+            border: 2px solid #003a73;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
+        }
+
+        /* --- Single-line phone field --- */
+        .phone-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 0px 12px;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .phone-group:focus-within {
+            border-color: #1f3c88;
+            box-shadow: 0 0 0 3px rgba(31, 60, 136, 0.15);
+        }
+
+        /* Flag + code section */
+        .flag-box {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        /* Flag image */
+        .flag-icon {
+            width: 24px;
+            height: 16px;
+            border-radius: 2px;
+            object-fit: cover;
+        }
+
+        /* Country code */
+        .country-code {
+            font-size: 13px;
+            font-weight: 600;
+            color: #1f3c88;
+            white-space: nowrap;
+        }
+
+        /* Dropdown arrow */
+        .arrow {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 6px solid #666;
+            opacity: 0.7;
+        }
+
+        /* Input field */
+        .phone-input {
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+            padding: 0;
+            font-size: 15px;
+            color: #222;
+            flex: 1;
+            background: transparent;
+        }
+
+        .phone-input::placeholder {
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .phone-group {
+                gap: 6px;
+                padding: 6px 8px;
+            }
+
+            .flag-icon {
+                width: 20px;
+                height: 14px;
+            }
+
+            .country-code {
+                font-size: 13px;
+            }
+        }
+
+        /* Section styling */
+        .lt-advisor-section {
+            background-color: #e4e8ff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .lt-container {
+            max-width: 120%;
+            margin: 0 auto;
+        }
+
+        .lt-heading {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1d3b75;
+            margin-bottom: 10px;
+        }
+
+        .lt-subtext {
+            font-size: 16px;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* Form Styling */
+        .lt-form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .lt-input,
+        .phone-group {
+            height: 38px;
+            width: 320px;
+            box-sizing: border-box;
+        }
+
+        .lt-input {
+            padding: 0 15px;
+            font-size: 15px;
+            border-radius: 8px;
+        }
+
+        .phone-group {
+            padding: 0 12px;
+        }
+
+        .phone-input {
+            height: 100%;
+            font-size: 15px;
+        }
+
+        .flag-box {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-7 {
+            height: 48px;
+            padding: 0 28px;
+            font-size: 15px;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+
+            .lt-input,
+            .phone-group,
+            .btn-7 {
+                width: 100%;
+            }
+        }
+
+
+        .lt-input {
+            padding: 2px 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            width: 330px;
+            background-color: #fff;
+            transition: border-color 0.3s;
+        }
+
+        .lt-input:focus {
+            outline: none;
+            border-color: #1d3b75;
+        }
+
+        .lt-phone-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 8px 12px;
+            width: 240px;
+            transition: all 0.3s ease;
+        }
+
+        .lt-phone-group:hover {
+            border-color: #007bff;
+            box-shadow: 0 0 6px rgba(0, 123, 255, 0.2);
+        }
+
+        .lt-flag {
+            width: 20px;
+            height: 14px;
+            border-radius: 2px;
+            object-fit: cover;
+        }
+
+        .lt-country-code {
+            font-size: 15px;
+            color: #333;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .lt-phone-input {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 15px;
+            color: #222;
+            padding: 0;
+        }
+
+        .lt-phone-input::placeholder {
+            color: #999;
+        }
+
+        /* Button styling */
+        .lt-submit-btn {
+            padding: 12px 25px;
+            background-color: #264e9b;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .lt-submit-btn:hover {
+            background-color: #1b3d80;
+        }
+
+        /* Responsive Tweaks */
+        @media (max-width: 768px) {
+            .lt-form {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .lt-input,
+            .lt-phone-group {
+                width: 90%;
+            }
         }
     </style>
 
@@ -1158,7 +1864,7 @@
                         Bangalore, Karnataka - 560041</p>
                 </div>
 
-                
+
                 <!-- Info -->
                 <div class="col-lg-2 col-md-6 mb-4 pt-5">
                     <h6 class="footer-title">Info</h6>
@@ -1176,11 +1882,11 @@
                         <li><a href="Main-article-page.html">Articles</a></li>
                         <li><a href="Detail-article-page.html">Article Detail</a></li>
                         <li><a href="boards-page.html">Boards</a></li>
-                        
+
                     </ul>
                 </div>
 
-                 <!-- Quick Links -->
+                <!-- Quick Links -->
                 <div class="col-lg-2 col-md-6 mb-4  pt-5">
                     <h6 class="footer-title">Quick Links</h6>
                     <ul class="list-unstyled">

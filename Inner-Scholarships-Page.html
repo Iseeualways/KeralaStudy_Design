@@ -117,45 +117,40 @@
         color: red;
     }
 
-    .city-btn {
-        border: 1px solid blue;
-        padding: 5px 30px;
-
-    }
-
-    .city-btn {
+   .city-btn {
         display: inline-block;
-        padding: 3px 36px;
-        font-size: 16px;
-        font-weight: 600;
-        color: #fff;
+        padding: 4px 22px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #ffffff;
         text-decoration: none;
-        border-radius: 10px;
+        border-radius: 6px;
         background: #0b2a66;
-        /* deep professional color */
+        border: 1px solid #0b2a66;
         position: relative;
         overflow: hidden;
-        transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
     }
 
+    /* subtle shine */
     .city-btn::after {
         content: '';
         position: absolute;
-        top: 0;
-        left: -50%;
-        width: 50%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.08);
-        transform: skewX(-25deg);
-        transition: all 0.5s ease;
+        inset: 0;
+        background: rgba(11, 42, 102, 0.06);
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
 
     .city-btn:hover {
-        background: linear-gradient(90deg, #0b2a66, #3370ea);
-        transform: translate(scale(1.4));
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+        background: #0b2a66;
         color: #ffffff;
+        text-decoration: underline;
+
+    }
+
+    .city-btn:hover::after {
+        opacity: 1;
     }
 
     h2 {
@@ -1489,7 +1484,7 @@
                             padding: 0.8rem 3rem;
                             cursor: pointer;
                             text-transform: uppercase;
-
+                            border-radius: 5px;
                             position: relative;
                             overflow: hidden;
                             isolation: isolate;
@@ -1519,7 +1514,7 @@
                         }
 
                         .btn-9:hover {
-                            color: #ff7a00;
+                            color: #ff7a00 !important;
                             border: 2px solid #ff7a00;
 
                         }
@@ -1534,9 +1529,8 @@
 
     <style>
         .hero-40vh {
-           background-image:
-                linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)),
-                url('40123918_8796857.jpg');
+            background: #00226B;
+    background: linear-gradient(164deg, rgba(0, 34, 107, 1) 0%, rgba(117, 169, 200, 1) 100%);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -1557,7 +1551,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.35);
+          
             /* 🔥 control darkness here */
             z-index: 1;
         }

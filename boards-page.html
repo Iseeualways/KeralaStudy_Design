@@ -38,8 +38,8 @@
         position: relative;
         display: inline-block;
         padding: 10px 22px;
-        background: white !important;
-        color: #003479;
+        background: #003479 !important;
+        color: #ffffff;
         font-size: 16px;
         font-weight: 500;
         border-radius: 3px;
@@ -56,7 +56,7 @@
         content: "";
         position: absolute;
         inset: 0;
-        background: #003479;
+        background: #ffffff;
         border: 1px solid #003479 !important;
         transform: scaleY(0);
         transform-origin: top;
@@ -66,7 +66,7 @@
 
     /* Hover effect */
     .btn-blue:hover {
-        color: #ffffff;
+        color: #003479;
         border: 1px solid #003479 !important;
     }
 
@@ -107,45 +107,41 @@
         color: red;
     }
 
-    .city-btn {
-        border: 1px solid blue;
-        padding: 5px 30px;
-
-    }
 
     .city-btn {
         display: inline-block;
-        padding: 3px 36px;
-        font-size: 16px;
-        font-weight: 600;
-        color: #fff;
+        padding: 4px 22px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #ffffff;
         text-decoration: none;
-        border-radius: 10px;
+        border-radius: 6px;
         background: #0b2a66;
-        /* deep professional color */
+        border: 1px solid #0b2a66;
         position: relative;
         overflow: hidden;
-        transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
     }
 
+    /* subtle shine */
     .city-btn::after {
         content: '';
         position: absolute;
-        top: 0;
-        left: -50%;
-        width: 50%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.08);
-        transform: skewX(-25deg);
-        transition: all 0.5s ease;
+        inset: 0;
+        background: rgba(11, 42, 102, 0.06);
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
 
     .city-btn:hover {
-        background: linear-gradient(90deg, #0b2a66, #3370ea);
-        transform: translate(scale(1.4));
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+        background: #0b2a66;
         color: #ffffff;
+        text-decoration: underline;
+
+    }
+
+    .city-btn:hover::after {
+        opacity: 1;
     }
 
     h2 {
@@ -554,7 +550,7 @@
         <div class="hero-container text-center">
             <div class="hero-left">
                 <h1 class="text-white">
-                    Education Boards in <span class="highlight">India</span>
+                    Education Boards in India
                 </h1>
 
                 <form class="search-bar">
@@ -577,9 +573,8 @@
 
         .hero-sec {
             height: 320px;
-            background-image:
-                linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)),
-                url('40123918_8796857.jpg');
+            background: #00226B;
+            background: linear-gradient(164deg, rgba(0, 34, 107, 1) 0%, rgba(117, 169, 200, 1) 100%);
             background-size: cover;
             background-position: center;
             display: flex;
@@ -594,7 +589,7 @@
 
         .hero-left h1 {
             font-size: 42px;
-            font-weight: 700;
+            font-weight: 600 !important;
             line-height: 1.3;
         }
 
@@ -660,8 +655,6 @@
     <!-- BREADCRUMB -->
     <nav class="breadcrumb-wrap container" aria-label="Breadcrumb">
         <a href="#">Home</a>
-        <span class="divider" aria-hidden="true">›</span>
-        <a href="#">Placement</a>
         <span class="divider" aria-hidden="true">›</span>
         <span class="current">Boards-page</span>
     </nav>
@@ -758,7 +751,7 @@
                         </li>
                     </ul>
                     <div class="text-center">
-                        <button class="btn btn-blue">Read More</button>
+                        <button class="px-2 py-1 btn-blue">Read More</button>
                     </div>
 
                 </div>
@@ -806,7 +799,7 @@
 
     <style>
         .contact-card {
-            background-color: #d4e3f9 !important;
+            background-color: #e4e4e4 !important;
             border: 1px solid rgba(0, 98, 255, 0.192) !important;
         }
 
@@ -840,7 +833,7 @@
 
                 <ul>
                     <li><strong>Established:</strong> Shiksha Kendra, 2, Community Centre, Preet Vihar, Delhi</li>
-                    <li><strong>Approvals and Recognition :</strong>  Ministry of Education</li>
+                    <li><strong>Approvals and Recognition :</strong> Ministry of Education</li>
                     <li><strong>Recognition:</strong> Ministry of Education</li>
                     <li><strong>Genders Accepted:</strong> Co-Ed</li>
                 </ul>
@@ -872,7 +865,6 @@
             max-width: 1300px;
             margin: 80px auto;
             padding: 0 20px;
-            font-family: system-ui, sans-serif;
         }
 
         .section-title {
@@ -920,7 +912,7 @@
             background: #213a550d;
             padding: 32px 30px;
             border-radius: 5px;
-            border: 2px solid rgba(11, 41, 102, 0.132);
+            border: 1px solid rgba(11, 41, 102, 0.132);
             box-shadow:
                 0 8px 20px rgba(0, 0, 0, 0.06),
                 0 2px 6px rgba(0, 0, 0, 0.04);
@@ -932,22 +924,8 @@
             overflow: hidden;
         }
 
-        /* Soft accent line */
-        .board-card::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 20px;
-            bottom: 20px;
-            width: 3px;
-            background: linear-gradient(180deg, #f5f8fc, #815019, #f5f8fc);
-            border-radius: 1px;
-            opacity: 0.9;
-        }
-
         /* Hover effect */
         .board-card:hover {
-            transform: translateY(-6px);
             box-shadow:
                 0 18px 40px rgba(0, 0, 0, 0.1),
                 0 6px 14px rgba(0, 0, 0, 0.06);
@@ -1037,7 +1015,6 @@
                 grid-template-columns: 1fr;
             }
         }
-        
     </style>
 
 

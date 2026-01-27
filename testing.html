@@ -2,141 +2,168 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>4 Card Carousel with Arrows</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-
-<!-- Font -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Education Blog</title>
 
 <style>
+:root {
+    --primary: #1d3b75;
+    --secondary: #2563eb;
+    --bg: #f8fafc;
+    --text: #0f172a;
+    --muted: #64748b;
+    --card: #ffffff;
+    --border: #e5e7eb;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
 }
 
 body {
-    background: #f4f6f9;
-    padding: 80px 0;
+    font-family: "Poppins", sans-serif;
+    background: var(--bg);
+    color: var(--text);
 }
 
-/* ===== CONTAINER ===== */
-.carousel-wrapper {
-    max-width: 1300px;
+/* ================= BLOG HERO ================= */
+.blog-hero {
+    padding: 80px 20px 60px;
+    text-align: center;
+}
+
+.blog-hero h1 {
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.blog-hero p {
+    max-width: 720px;
+    margin: 14px auto 0;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+/* ================= CONTAINER ================= */
+.blog-container {
+    max-width: 1200px;
     margin: auto;
-    position: relative;
-    padding: 0 60px;
+    padding: 0 20px 80px;
 }
 
-/* ===== SWIPER ===== */
-.swiper {
+/* ================= FEATURED BLOG ================= */
+.featured-blog {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 30px;
+    background: var(--card);
+    border-radius: 18px;
     overflow: hidden;
+    border: 1px solid var(--border);
+    margin-bottom: 60px;
 }
 
-/* ===== CARD ===== */
-.college-card {
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 28px rgba(0,0,0,0.08);
-    height: 100%;
-}
-
-.college-img {
+.featured-blog img {
     width: 100%;
-    height: 180px;
+    height: 100%;
     object-fit: cover;
 }
 
-.college-body {
-    padding: 16px;
+.featured-content {
+    padding: 40px;
 }
 
-.college-body h5 {
-    font-size: 18px;
+.blog-tag {
+    display: inline-block;
+    font-size: 12px;
     font-weight: 600;
-    margin-bottom: 6px;
+    color: var(--secondary);
+    margin-bottom: 12px;
 }
 
-.location {
-    font-size: 14px;
-    color: #666;
-    display: flex;
-    align-items: center;
-    gap: 6px;
+.featured-content h2 {
+    font-size: 26px;
+    line-height: 1.3;
     margin-bottom: 14px;
 }
 
-.location i {
-    color: #ff6a00;
+.featured-content p {
+    color: var(--muted);
+    font-size: 15px;
+    margin-bottom: 20px;
 }
 
-.action-row {
-    display: flex;
-    gap: 12px;
-}
-
-.btn-apply {
-    flex: 1;
-    background: #0a2d6b;
-    color: #fff;
-    border: none;
-    padding: 9px 0;
-    border-radius: 8px;
+.read-more {
+    font-size: 14px;
     font-weight: 600;
-    cursor: pointer;
+    color: var(--secondary);
+    text-decoration: none;
 }
 
-.btn-view {
-    background: transparent;
-    border: none;
-    color: #0a2d6b;
-    font-weight: 600;
-    cursor: pointer;
+/* ================= BLOG GRID ================= */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
 }
 
-/* ===== ARROWS ===== */
-.swiper-button-next,
-.swiper-button-prev {
-    width: 44px;
-    height: 44px;
-    background: #fff;
-    border-radius: 50%;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-    color: #0a2d6b;
+/* ================= BLOG CARD ================= */
+.blog-card {
+    background: var(--card);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: transform .25s ease, box-shadow .25s ease;
 }
 
-.swiper-button-next::after,
-.swiper-button-prev::after {
+.blog-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.blog-card-content {
+    padding: 20px;
+}
+
+.blog-card-content h3 {
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 10px;
 }
 
-.swiper-button-prev {
-    left: 0;
+.blog-card-content p {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 14px;
 }
 
-.swiper-button-next {
-    right: 0;
+.blog-meta {
+    font-size: 12px;
+    color: var(--muted);
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 992px) {
-    .carousel-wrapper {
-        padding: 0 40px;
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+    .featured-blog {
+        grid-template-columns: 1fr;
     }
-}
 
-@media (max-width: 768px) {
-    .carousel-wrapper {
-        padding: 0 20px;
+    .featured-content {
+        padding: 28px;
+    }
+
+    .blog-hero h1 {
+        font-size: 30px;
     }
 }
 </style>
@@ -144,217 +171,65 @@ body {
 
 <body>
 
-<div class="carousel-wrapper">
+<!-- HERO -->
+<section class="blog-hero">
+    <h1>Education Insights & Updates</h1>
+    <p>
+        Explore admission news, career guidance, entrance exams, and expert tips
+        to make confident education decisions.
+    </p>
+</section>
 
-    <!-- PREV / NEXT -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+<!-- BLOG CONTENT -->
+<div class="blog-container">
 
-    <!-- SWIPER -->
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-
-            <!-- CARD 1 -->
-            <div class="swiper-slide">
-                <div class="college-card">
-                    <img src="https://collegevidya.com/_next/image/?url=https%3A%2F%2Fd1aeya7jd2fyco.cloudfront.net%2Fslider%2FTop-Amity-Online-University.jpg&w=1920&q=75" class="college-img">
-                    <div class="college-body">
-                        <h5>St. Thomas College</h5>
-                        <p class="location">
-                            <i class="fa-solid fa-location-dot"></i>
-                            40 Feet Rd, Fayazabad
-                        </p>
-                        <div class="action-row">
-                            <button class="btn-apply">Apply Now</button>
-                            <button class="btn-view">View More</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CARD 2 -->
-            <div class="swiper-slide">
-                <div class="college-card">
-                    <img src="https://images.unsplash.com/photo-1607237138185-eedd9c632b0b" class="college-img">
-                    <div class="college-body">
-                        <h5>Oxford College</h5>
-                        <p class="location">
-                            <i class="fa-solid fa-location-dot"></i>
-                            Bengaluru
-                        </p>
-                        <div class="action-row">
-                            <button class="btn-apply">Apply Now</button>
-                            <button class="btn-view">View More</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CARD 3 -->
-            <div class="swiper-slide">
-                <div class="college-card">
-                    <img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238" class="college-img">
-                    <div class="college-body">
-                        <h5>Global University</h5>
-                        <p class="location">
-                            <i class="fa-solid fa-location-dot"></i>
-                            Noida
-                        </p>
-                        <div class="action-row">
-                            <button class="btn-apply">Apply Now</button>
-                            <button class="btn-view">View More</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CARD 4 -->
-            <div class="swiper-slide">
-                <div class="college-card">
-                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350" class="college-img">
-                    <div class="college-body">
-                        <h5>National Institute</h5>
-                        <p class="location">
-                            <i class="fa-solid fa-location-dot"></i>
-                            Delhi
-                        </p>
-                        <div class="action-row">
-                            <button class="btn-apply">Apply Now</button>
-                            <button class="btn-view">View More</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CARD 5 -->
-            <div class="swiper-slide">
-                <div class="college-card">
-                    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" class="college-img">
-                    <div class="college-body">
-                        <h5>City University</h5>
-                        <p class="location">
-                            <i class="fa-solid fa-location-dot"></i>
-                            Mumbai
-                        </p>
-                        <div class="action-row">
-                            <button class="btn-apply">Apply Now</button>
-                            <button class="btn-view">View More</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- CARD 5 -->
-            <div class="swiper-slide">
-                <div class="college-card">
-                    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" class="college-img">
-                    <div class="college-body">
-                        <h5>City University</h5>
-                        <p class="location">
-                            <i class="fa-solid fa-location-dot"></i>
-                            Mumbai
-                        </p>
-                        <div class="action-row">
-                            <button class="btn-apply">Apply Now</button>
-                            <button class="btn-view">View More</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- CARD 5 -->
-            <div class="swiper-slide">
-                <div class="college-card">
-                    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" class="college-img">
-                    <div class="college-body">
-                        <h5>City University</h5>
-                        <p class="location">
-                            <i class="fa-solid fa-location-dot"></i>
-                            Mumbai
-                        </p>
-                        <div class="action-row">
-                            <button class="btn-apply">Apply Now</button>
-                            <button class="btn-view">View More</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- CARD 5 -->
-            <div class="swiper-slide">
-                <div class="college-card">
-                    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" class="college-img">
-                    <div class="college-body">
-                        <h5>City University</h5>
-                        <p class="location">
-                            <i class="fa-solid fa-location-dot"></i>
-                            Mumbai
-                        </p>
-                        <div class="action-row">
-                            <button class="btn-apply">Apply Now</button>
-                            <button class="btn-view">View More</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- CARD 5 -->
-            <div class="swiper-slide">
-                <div class="college-card">
-                    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" class="college-img">
-                    <div class="college-body">
-                        <h5>City University</h5>
-                        <p class="location">
-                            <i class="fa-solid fa-location-dot"></i>
-                            Mumbai
-                        </p>
-                        <div class="action-row">
-                            <button class="btn-apply">Apply Now</button>
-                            <button class="btn-view">View More</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- CARD 5 -->
-            <div class="swiper-slide">
-                <div class="college-card">
-                    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" class="college-img">
-                    <div class="college-body">
-                        <h5>City University</h5>
-                        <p class="location">
-                            <i class="fa-solid fa-location-dot"></i>
-                            Mumbai
-                        </p>
-                        <div class="action-row">
-                            <button class="btn-apply">Apply Now</button>
-                            <button class="btn-view">View More</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- FEATURED BLOG -->
+    <div class="featured-blog">
+        <img src="https://picsum.photos/800/600?random=1" alt="">
+        <div class="featured-content">
+            <span class="blog-tag">Featured</span>
+            <h2>How to Choose the Right College After 12th in Kerala</h2>
+            <p>
+                Confused about colleges, courses, and career paths? This guide
+                walks you through everything you need to know before making
+                your decision.
+            </p>
+            <a href="#" class="read-more">Read Full Article →</a>
         </div>
     </div>
 
+    <!-- BLOG GRID -->
+    <div class="blog-grid">
+
+        <div class="blog-card">
+            <img src="https://picsum.photos/400/300?random=2">
+            <div class="blog-card-content">
+                <h3>Top Entrance Exams in Kerala You Should Know</h3>
+                <p>A quick overview of the most important exams for professional courses.</p>
+                <div class="blog-meta">Dec 10, 2025 • 4 min read</div>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="https://picsum.photos/400/300?random=3">
+            <div class="blog-card-content">
+                <h3>Career Options After Plus Two Science</h3>
+                <p>Medical, engineering, pure sciences, and emerging career paths.</p>
+                <div class="blog-meta">Dec 8, 2025 • 5 min read</div>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="https://picsum.photos/400/300?random=4">
+            <div class="blog-card-content">
+                <h3>Mistakes Students Make During Admission Process</h3>
+                <p>Avoid common pitfalls that can affect your college selection.</p>
+                <div class="blog-meta">Dec 5, 2025 • 3 min read</div>
+            </div>
+        </div>
+
+    </div>
 </div>
-
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-<script>
-new Swiper(".mySwiper", {
-    slidesPerView: 4,
-    spaceBetween: 20,
-    slidesPerGroup: 1,
-    loop: false,           // IMPORTANT: true carousel feel
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
-    },
-    speed: 600,
-    breakpoints: {
-        0:   { slidesPerView: 1 },
-        576: { slidesPerView: 2 },
-        768: { slidesPerView: 3 },
-        1200:{ slidesPerView: 4 }
-    }
-});
-</script>
 
 </body>
 </html>

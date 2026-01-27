@@ -107,44 +107,39 @@
     }
 
     .city-btn {
-        border: 1px solid blue;
-        padding: 5px 30px;
-
-    }
-
-    .city-btn {
         display: inline-block;
-        padding: 3px 36px;
-        font-size: 16px;
-        font-weight: 600;
-        color: #fff;
+        padding: 4px 22px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #ffffff;
         text-decoration: none;
-        border-radius: 10px;
+        border-radius: 6px;
         background: #0b2a66;
-        /* deep professional color */
+        border: 1px solid #0b2a66;
         position: relative;
         overflow: hidden;
-        transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
     }
 
+    /* subtle shine */
     .city-btn::after {
         content: '';
         position: absolute;
-        top: 0;
-        left: -50%;
-        width: 50%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.08);
-        transform: skewX(-25deg);
-        transition: all 0.5s ease;
+        inset: 0;
+        background: rgba(11, 42, 102, 0.06);
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
 
     .city-btn:hover {
-        background: linear-gradient(90deg, #0b2a66, #3370ea);
-        transform: translate(scale(1.4));
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+        background: #0b2a66;
         color: #ffffff;
+        text-decoration: underline;
+
+    }
+
+    .city-btn:hover::after {
+        opacity: 1;
     }
 
     h2 {
@@ -694,8 +689,6 @@
     <nav class="breadcrumb-wrap container" aria-label="Breadcrumb">
         <a href="#">Home</a>
         <span class="divider" aria-hidden="true">›</span>
-        <a href="#">Placement</a>
-        <span class="divider" aria-hidden="true">›</span>
         <span class="current">Privacy-Policy</span>
     </nav>
 
@@ -784,11 +777,11 @@
                     Privacy Policy.
                 </p>
 
-                <h3 class=" mb-4">Collection of Your Information</h3>
+                <h5 class=" mb-4">Collection of Your Information</h5>
                 <p>We may collect information about you in a variety of ways. The information we may collect on the Site
                     includes:</p>
 
-                <h3 class="mt-4">Personal Data</h3>
+                <h5 class="mt-4">Personal Data</h5>
                 <p>
                     Personally identifiable information, such as your name, email address, shipping address, and
                     telephone
@@ -802,7 +795,7 @@
                     However, if you refuse to do so, then you may be unable to use certain features of the Site.
                 </p>
 
-                <h3 class="mt-4">Derivative Data</h3>
+                <h5 class="mt-4">Derivative Data</h5>
                 <p>
                     Information our servers automatically collect when you access the Site, such as your IP address,
                     operating system,
@@ -810,7 +803,7 @@
                     Site.
                 </p>
 
-                <h3 class="mt-4">Financial Data</h3>
+                <h5 class="mt-4">Financial Data</h5>
                 <p>
                     Financial information, such as data related to your payment method (e.g. valid credit card number,
                     card
@@ -825,7 +818,7 @@
                     responses to your questions.
                 </p>
 
-                <h3 class="mt-4">Mobile Device Data</h3>
+                <h5 class="mt-4">Mobile Device Data</h5>
                 <p>
                     If you access the Site from a mobile device, we shall collect device information, such as your
                     mobile
@@ -833,11 +826,11 @@
                     ID, and manufacturer, along with information about the location of your device.
                 </p>
 
-                <h3 class="mt-5 mb-3">Disclosure of Your Information</h3>
+                <h5 class="mt-5 mb-3">Disclosure of Your Information</h5>
                 <p>In certain situations, we may share information we have collected about you. Your information may be
                     disclosed as follows:</p>
 
-                <h3 class="mt-4">By Law or to Protect Rights</h3>
+                <h5 class="mt-4">By Law or to Protect Rights</h5>
                 <p>
                     If we believe the release of data about you is necessary to respond to legal process, to protect the
                     rights, safety,
@@ -850,7 +843,7 @@
                     protection.
                 </p>
 
-                <h3 class="mt-4">Third-Party Service Providers</h3>
+                <h5 class="mt-4">Third-Party Service Providers</h5>
                 <p>
                     We may need to share your personal information and data with third parties that perform services for
                     us
@@ -860,7 +853,7 @@
                     customer service.
                 </p>
 
-                <h3 class="mt-4">Marketing Communications</h3>
+                <h5 class="mt-4">Marketing Communications</h5>
                 <p>
                     As permitted by law, with your consent, or with an opportunity for you to withdraw consent, we may
                     share
@@ -868,7 +861,7 @@
                     data or information with third parties for marketing purposes.
                 </p>
 
-                <h3 class="mt-4">Online Postings</h3>
+                <h5 class="mt-4">Online Postings</h5>
                 <p>
                     If you post comments, contributions, or any other content to the Site, your posts may be viewed by
                     all
@@ -876,7 +869,7 @@
                     the website and may be publicly distributed outside the Site in perpetuity.
                 </p>
 
-                <h3 class="mt-4">Affiliates</h3>
+                <h5 class="mt-4">Affiliates</h5>
                 <p>
                     We may share your data or information with our affiliates. In such a case, we will require those
                     affiliates to honor this
@@ -886,7 +879,7 @@
                     that are under our control or that share common control with us.
                 </p>
 
-                <h3 class="mt-4">Business Partners</h3>
+                <h5 class="mt-4">Business Partners</h5>
                 <p>
                     We may share your personal data or information with our business partners to offer you certain
                     services,
@@ -894,7 +887,7 @@
                     or promotions.
                 </p>
 
-                <h3 class="mt-4">Other Third Parties</h3>
+                <h5 class="mt-4">Other Third Parties</h5>
                 <p>
                     We may share your information with investors and advertisers to conduct general business analysis.
                     As
@@ -902,7 +895,7 @@
                     we may also share your information with such third parties for marketing purposes.
                 </p>
 
-                <h3 class="mt-4">Sale or Bankruptcy</h3>
+                <h5 class="mt-4">Sale or Bankruptcy</h5>
                 <p>
                     We may transfer your information to the successor entity in case we sell or reorganize all or a
                     portion
@@ -930,7 +923,7 @@
                     directly.
                 </p>
 
-                <h3 class=" mt-5 mb-3">Security of Your Information</h3>
+                <h5 class=" mt-5 mb-3">Security of Your Information</h5>
                 <p>
                     We use administrative, physical, and technical security measures to help protect your personal data
                     or

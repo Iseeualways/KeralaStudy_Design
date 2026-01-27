@@ -34,8 +34,8 @@
         position: relative;
         display: inline-block;
         padding: 10px 22px;
-        background: white !important;
-        color: #003479;
+        background: #003479 !important;
+        color: #ffffff;
         font-size: 16px;
         font-weight: 500;
         border-radius: 3px;
@@ -52,7 +52,7 @@
         content: "";
         position: absolute;
         inset: 0;
-        background: #003479;
+        background: #ffffff;
         border: 1px solid #003479 !important;
         transform: scaleY(0);
         transform-origin: top;
@@ -62,7 +62,7 @@
 
     /* Hover effect */
     .btn-blue:hover {
-        color: #ffffff;
+        color: #003479;
         border: 1px solid #003479 !important;
     }
 
@@ -103,48 +103,43 @@
     }
 
     .city-btn {
-        border: 1px solid blue;
-        padding: 5px 30px;
-
-    }
-
-    .city-btn {
         display: inline-block;
-        padding: 3px 36px;
-        font-size: 16px;
-        font-weight: 600;
-        color: #fff;
+        padding: 4px 22px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #ffffff;
         text-decoration: none;
-        border-radius: 10px;
+        border-radius: 6px;
         background: #0b2a66;
-        /* deep professional color */
+        border: 1px solid #0b2a66;
         position: relative;
         overflow: hidden;
-        transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
     }
 
+    /* subtle shine */
     .city-btn::after {
         content: '';
         position: absolute;
-        top: 0;
-        left: -50%;
-        width: 50%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.08);
-        transform: skewX(-25deg);
-        transition: all 0.5s ease;
+        inset: 0;
+        background: rgba(11, 42, 102, 0.06);
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
 
     .city-btn:hover {
-        background: linear-gradient(90deg, #0b2a66, #3370ea);
-        transform: translate(scale(1.4));
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+        background: #0b2a66;
         color: #ffffff;
+        text-decoration: underline;
+
+    }
+
+    .city-btn:hover::after {
+        opacity: 1;
     }
 
     h2 {
-        font-family: 'Poppins', sans-serif;
+
         font-size: 32px;
         font-weight: bold;
         color: black;
@@ -823,9 +818,9 @@
         <div class="logo"><img src="https://www.keralastudy.com/images/logo.png" class="w-100" alt=""></div>
         <div class="nav-links">
             <div class="nav-item">Top Colleges</div>
-          
-                <div class="nav-item">Top Courses</div>
-   
+
+            <div class="nav-item">Top Courses</div>
+
             <div class="nav-item">Entrance Exam</div>
             <div class="nav-item">Boards</div>
             <div class="nav-item">News</div>
@@ -1374,7 +1369,7 @@
         }
 
         .hero-left h1 {
-            font-size: 42px;
+            font-size: 38px;
             font-weight: 700;
             line-height: 1.3;
         }
@@ -1424,8 +1419,6 @@
     <nav class="breadcrumb-wrap container" aria-label="Breadcrumb">
         <a href="#">Home</a>
         <span class="divider" aria-hidden="true">›</span>
-        <a href="#">Placement</a>
-        <span class="divider" aria-hidden="true">›</span>
         <span class="current">Main College Page</span>
     </nav>
 
@@ -1474,9 +1467,24 @@
         }
     </style>
 
-    <h2 class="text-center text-primary-emphasis mt-5 fs-1 mb-5">Top Colleges in <span
-            style="color: #75a9c8;">Kerala</span>
-    </h2>
+
+    <div class="container text-center mb-5">
+        <h2 class="text-center text-primary-emphasis mt-5 fs-1 mb-5">Top Colleges in <span
+                style="color: #75a9c8;">Kerala</span>
+        </h2>
+        <p></p>
+        <p>Discover Kerala's finest educational institutions offering world-class academics, excellent faculty, and
+            modern infrastructure. From medical and engineering colleges to management and commerce programs, find your
+            perfect college match. Explore detailed information about admissions, placements, fees, and student reviews
+            to make an informed decision about your future.
+            Discover Kerala's finest educational institutions offering world-class academics, excellent faculty, and
+            modern infrastructure. From medical and engineering colleges to management and commerce programs, find your
+            perfect college match. Explore detailed information about admissions, placements, fees, and student reviews
+            to make an informed decision about your future.</p>
+
+        <button class="btn-blue px-2 py-1">Load More</button>
+    </div>
+
 
 
     <!-- ============================================================================FILTER COLLEGES -->
@@ -1540,7 +1548,7 @@
                             </div>
                         </div>
                         <div class="mb-4 filter-box">
-                            <h6 class="fw-bold text-primary"> University Type</h6>
+                            <h6 class="fw-bold text-primary">Ownership</h6>
                             <div class="border-line"></div>
                             <div class="position-relative mb-2">
                                 <i class="fa fa-search"></i>
@@ -1562,7 +1570,7 @@
                         </div>
 
                         <div class="mb-4 filter-box">
-                            <h6 class="fw-bold text-primary ">Program Type</h6>
+                            <h6 class="fw-bold text-primary ">Streams</h6>
                             <div class="border-line"></div>
                             <div class="position-relative mb-2">
                                 <i class="fa fa-search"></i>
@@ -1570,18 +1578,25 @@
                             </div>
                             <div class="filter-box">
                                 <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">Full-Time</label></div>
+                                        class="form-check-label">Medical</label></div>
                                 <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">Part-Time</label></div>
+                                        class="form-check-label">Dental</label></div>
                                 <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">Executive</label></div>
+                                        class="form-check-label">Ayurveda</label></div>
                                 <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">Online / Distance</label></div>
+                                        class="form-check-label">Naturopathy And Yogic Sciences</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
+                                        class="form-check-label">Unani</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
+                                        class="form-check-label">Siddha</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
+                                        class="form-check-label">Homoeopathy</label></div>
+
                             </div>
                         </div>
 
                         <div class="mb-4 filter-box">
-                            <h6 class="fw-bold text-primary mt-4"> Specialization</h6>
+                            <h6 class="fw-bold text-primary mt-4">Course Type</h6>
                             <div class="border-line"></div>
                             <div class="position-relative mb-2">
                                 <i class="fa fa-search"></i>
@@ -1590,25 +1605,20 @@
                             <div class="filter-box">
                                 <div class="filter-options">
                                     <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                            class="form-check-label">Marketing</label></div>
+                                            class="form-check-label">UG</label></div>
                                     <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                            class="form-check-label">Finance</label></div>
+                                            class="form-check-label">PG</label></div>
                                     <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                            class="form-check-label">HR</label></div>
+                                            class="form-check-label">Diploma</label></div>
                                     <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                            class="form-check-label">Business Analytics</label></div>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                            class="form-check-label">Operations</label></div>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                            class="form-check-label">International Business</label></div>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                            class="form-check-label">Healthcare</label></div>
+                                            class="form-check-label">Doctorate</label></div>
                                 </div>
+
                             </div>
                         </div>
 
                         <div class="mb-4 filter-box">
-                            <h6 class="fw-bold text-primary mt-4"> Exams Accepted</h6>
+                            <h6 class="fw-bold text-primary mt-4">Courses</h6>
                             <div class="border-line"></div>
                             <div class="position-relative mb-2">
                                 <i class="fa fa-search"></i>
@@ -1616,27 +1626,19 @@
                             </div>
                             <div class="filter-box">
                                 <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">CAT</label></div>
+                                        class="form-check-label">MBBS</label></div>
                                 <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">XAT</label></div>
+                                        class="form-check-label">BDS</label></div>
                                 <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">CMAT</label></div>
+                                        class="form-check-label">BAMS</label></div>
                                 <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">MAT</label></div>
+                                        class="form-check-label">ECE</label></div>
                                 <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">ATMA</label></div>
+                                        class="form-check-label">BHMS</label></div>
                                 <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">NMAT by GMAC</label></div>
+                                        class="form-check-label">D.Pharm</label></div>
                                 <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">SNAP</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">GMAT</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">KMAT</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">PGCET</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">CUET-PG</label></div>
+                                        class="form-check-label">BBA Regular</label></div>
                             </div>
                         </div>
 
@@ -1659,6 +1661,11 @@
                     </div>
 
                     <style>
+                        .filter-box h6 {
+                            font-size: 18px;
+                            font-weight: 600 !important;
+                        }
+
                         /* Layout */
                         .form-check {
                             display: flex;
@@ -1783,7 +1790,7 @@
                                     <h5>M.S Ramaiah Dental College (MSRDC)
                                     </h5>
 
-                                    <p class="mt-2 mb-3"> Electronic City, Bangalore, Approved by </p>
+                                    <p class="mt-2 mb-2"> MSR Nagar, MSRIT Post, Bangalore, Karnataka, India </p>
                                     <span> Est.
                                         Year <strong>2004</strong></span><br>
                                     <span>
@@ -1817,7 +1824,7 @@
                                     <h5>M.S Ramaiah Dental College (MSRDC)
                                     </h5>
 
-                                    <p class="mt-2 mb-3"> Electronic City, Bangalore, Approved by </p>
+                                    <p class="mt-2 mb-2"> MSR Nagar, MSRIT Post, Bangalore, Karnataka, India </p>
                                     <span> Est.
                                         Year <strong>2004</strong></span><br>
                                     <span>
@@ -1851,7 +1858,7 @@
                                     <h5>M.S Ramaiah Dental College (MSRDC)
                                     </h5>
 
-                                    <p class="mt-2 mb-3"> Electronic City, Bangalore, Approved by </p>
+                                    <p class="mt-2 mb-2"> MSR Nagar, MSRIT Post, Bangalore, Karnataka, India </p>
                                     <span> Est.
                                         Year <strong>2004</strong></span><br>
                                     <span>
@@ -1885,7 +1892,7 @@
                                     <h5>M.S Ramaiah Dental College (MSRDC)
                                     </h5>
 
-                                    <p class="mt-2 mb-3"> Electronic City, Bangalore, Approved by </p>
+                                    <p class="mt-2 mb-2"> MSR Nagar, MSRIT Post, Bangalore, Karnataka, India </p>
                                     <span> Est.
                                         Year <strong>2004</strong></span><br>
                                     <span>
@@ -1901,21 +1908,351 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Card 1 -->
+                        <div class="col-4">
+                            <div class="college-card">
+                                <div class="card-content">
+                                    <img src="https://collegevidya.com/_next/image/?url=https%3A%2F%2Fd1aeya7jd2fyco.cloudfront.net%2Fslider%2FTop-Amity-Online-University.jpg&w=1920&q=75"
+                                        alt="Amity University" class="main-img">
+                                    <img src="https://api.bangalorestudy.com:3000/college_logo/logo1693823278104.png"
+                                        alt="Logo" class="college-logo">
+                                    <span class="admission-tag">Admission Ongoing</span>
+                                    <!-- ⭐ Rating on image -->
+                                    <div class="rating-badge">
+                                        <i class="fa-solid fa-star"></i> 4.5
+                                    </div>
+                                </div>
+                                <div class="card-body py-3 px-3">
+                                    <h5>M.S Ramaiah Dental College (MSRDC)
+                                    </h5>
+
+                                    <p class="mt-2 mb-2"> MSR Nagar, MSRIT Post, Bangalore, Karnataka, India </p>
+                                    <span> Est.
+                                        Year <strong>2004</strong></span><br>
+                                    <span>
+                                        Ownership <strong>Private</strong>
+                                    </span>
+                                    <div class="card-actions">
+                                        <button class="btn btn-view">View More</button>
+                                        <button class="btn btn-brochure">Brochure</button>
+                                        <button class="btn btn-apply">Apply Now</button>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 1 -->
+                        <div class="col-4">
+                            <div class="college-card">
+                                <div class="card-content">
+                                    <img src="https://collegevidya.com/_next/image/?url=https%3A%2F%2Fd1aeya7jd2fyco.cloudfront.net%2Fslider%2FTop-Amity-Online-University.jpg&w=1920&q=75"
+                                        alt="Amity University" class="main-img">
+                                    <img src="https://api.bangalorestudy.com:3000/college_logo/logo1693823278104.png"
+                                        alt="Logo" class="college-logo">
+                                    <span class="admission-tag">Admission Ongoing</span>
+                                    <!-- ⭐ Rating on image -->
+                                    <div class="rating-badge">
+                                        <i class="fa-solid fa-star"></i> 4.5
+                                    </div>
+                                </div>
+                                <div class="card-body py-3 px-3">
+                                    <h5>M.S Ramaiah Dental College (MSRDC)
+                                    </h5>
+
+                                    <p class="mt-2 mb-2"> MSR Nagar, MSRIT Post, Bangalore, Karnataka, India </p>
+                                    <span> Est.
+                                        Year <strong>2004</strong></span><br>
+                                    <span>
+                                        Ownership <strong>Private</strong>
+                                    </span>
+                                    <div class="card-actions">
+                                        <button class="btn btn-view">View More</button>
+                                        <button class="btn btn-brochure">Brochure</button>
+                                        <button class="btn btn-apply">Apply Now</button>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 1 -->
+                        <div class="col-4">
+                            <div class="college-card">
+                                <div class="card-content">
+                                    <img src="https://collegevidya.com/_next/image/?url=https%3A%2F%2Fd1aeya7jd2fyco.cloudfront.net%2Fslider%2FTop-Amity-Online-University.jpg&w=1920&q=75"
+                                        alt="Amity University" class="main-img">
+                                    <img src="https://api.bangalorestudy.com:3000/college_logo/logo1693823278104.png"
+                                        alt="Logo" class="college-logo">
+                                    <span class="admission-tag">Admission Ongoing</span>
+                                    <!-- ⭐ Rating on image -->
+                                    <div class="rating-badge">
+                                        <i class="fa-solid fa-star"></i> 4.5
+                                    </div>
+                                </div>
+                                <div class="card-body py-3 px-3">
+                                    <h5>M.S Ramaiah Dental College (MSRDC)
+                                    </h5>
+
+                                    <p class="mt-2 mb-2"> MSR Nagar, MSRIT Post, Bangalore, Karnataka, India </p>
+                                    <span> Est.
+                                        Year <strong>2004</strong></span><br>
+                                    <span>
+                                        Ownership <strong>Private</strong>
+                                    </span>
+                                    <div class="card-actions">
+                                        <button class="btn btn-view">View More</button>
+                                        <button class="btn btn-brochure">Brochure</button>
+                                        <button class="btn btn-apply">Apply Now</button>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 1 -->
+                        <div class="col-4">
+                            <div class="college-card">
+                                <div class="card-content">
+                                    <img src="https://collegevidya.com/_next/image/?url=https%3A%2F%2Fd1aeya7jd2fyco.cloudfront.net%2Fslider%2FTop-Amity-Online-University.jpg&w=1920&q=75"
+                                        alt="Amity University" class="main-img">
+                                    <img src="https://api.bangalorestudy.com:3000/college_logo/logo1693823278104.png"
+                                        alt="Logo" class="college-logo">
+                                    <span class="admission-tag">Admission Ongoing</span>
+                                    <!-- ⭐ Rating on image -->
+                                    <div class="rating-badge">
+                                        <i class="fa-solid fa-star"></i> 4.5
+                                    </div>
+                                </div>
+                                <div class="card-body py-3 px-3">
+                                    <h5>M.S Ramaiah Dental College (MSRDC)
+                                    </h5>
+
+                                    <p class="mt-2 mb-2"> MSR Nagar, MSRIT Post, Bangalore, Karnataka, India </p>
+                                    <span> Est.
+                                        Year <strong>2004</strong></span><br>
+                                    <span>
+                                        Ownership <strong>Private</strong>
+                                    </span>
+                                    <div class="card-actions">
+                                        <button class="btn btn-view">View More</button>
+                                        <button class="btn btn-brochure">Brochure</button>
+                                        <button class="btn btn-apply">Apply Now</button>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 1 -->
+                        <div class="col-4">
+                            <div class="college-card">
+                                <div class="card-content">
+                                    <img src="https://collegevidya.com/_next/image/?url=https%3A%2F%2Fd1aeya7jd2fyco.cloudfront.net%2Fslider%2FTop-Amity-Online-University.jpg&w=1920&q=75"
+                                        alt="Amity University" class="main-img">
+                                    <img src="https://api.bangalorestudy.com:3000/college_logo/logo1693823278104.png"
+                                        alt="Logo" class="college-logo">
+                                    <span class="admission-tag">Admission Ongoing</span>
+                                    <!-- ⭐ Rating on image -->
+                                    <div class="rating-badge">
+                                        <i class="fa-solid fa-star"></i> 4.5
+                                    </div>
+                                </div>
+                                <div class="card-body py-3 px-3">
+                                    <h5>M.S Ramaiah Dental College (MSRDC)
+                                    </h5>
+
+                                    <p class="mt-2 mb-2"> MSR Nagar, MSRIT Post, Bangalore, Karnataka, India </p>
+                                    <span> Est.
+                                        Year <strong>2004</strong></span><br>
+                                    <span>
+                                        Ownership <strong>Private</strong>
+                                    </span>
+                                    <div class="card-actions">
+                                        <button class="btn btn-view">View More</button>
+                                        <button class="btn btn-brochure">Brochure</button>
+                                        <button class="btn btn-apply">Apply Now</button>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 1 -->
+                        <div class="col-4">
+                            <div class="college-card">
+                                <div class="card-content">
+                                    <img src="https://collegevidya.com/_next/image/?url=https%3A%2F%2Fd1aeya7jd2fyco.cloudfront.net%2Fslider%2FTop-Amity-Online-University.jpg&w=1920&q=75"
+                                        alt="Amity University" class="main-img">
+                                    <img src="https://api.bangalorestudy.com:3000/college_logo/logo1693823278104.png"
+                                        alt="Logo" class="college-logo">
+                                    <span class="admission-tag">Admission Ongoing</span>
+                                    <!-- ⭐ Rating on image -->
+                                    <div class="rating-badge">
+                                        <i class="fa-solid fa-star"></i> 4.5
+                                    </div>
+                                </div>
+                                <div class="card-body py-3 px-3">
+                                    <h5>M.S Ramaiah Dental College (MSRDC)
+                                    </h5>
+
+                                    <p class="mt-2 mb-2"> MSR Nagar, MSRIT Post, Bangalore, Karnataka, India </p>
+                                    <span> Est.
+                                        Year <strong>2004</strong></span><br>
+                                    <span>
+                                        Ownership <strong>Private</strong>
+                                    </span>
+                                    <div class="card-actions">
+                                        <button class="btn btn-view">View More</button>
+                                        <button class="btn btn-brochure">Brochure</button>
+                                        <button class="btn btn-apply">Apply Now</button>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 1 -->
+                        <div class="col-4">
+                            <div class="college-card">
+                                <div class="card-content">
+                                    <img src="https://collegevidya.com/_next/image/?url=https%3A%2F%2Fd1aeya7jd2fyco.cloudfront.net%2Fslider%2FTop-Amity-Online-University.jpg&w=1920&q=75"
+                                        alt="Amity University" class="main-img">
+                                    <img src="https://api.bangalorestudy.com:3000/college_logo/logo1693823278104.png"
+                                        alt="Logo" class="college-logo">
+                                    <span class="admission-tag">Admission Ongoing</span>
+                                    <!-- ⭐ Rating on image -->
+                                    <div class="rating-badge">
+                                        <i class="fa-solid fa-star"></i> 4.5
+                                    </div>
+                                </div>
+                                <div class="card-body py-3 px-3">
+                                    <h5>M.S Ramaiah Dental College (MSRDC)
+                                    </h5>
+
+                                    <p class="mt-2 mb-2"> MSR Nagar, MSRIT Post, Bangalore, Karnataka, India </p>
+                                    <span> Est.
+                                        Year <strong>2004</strong></span><br>
+                                    <span>
+                                        Ownership <strong>Private</strong>
+                                    </span>
+                                    <div class="card-actions">
+                                        <button class="btn btn-view">View More</button>
+                                        <button class="btn btn-brochure">Brochure</button>
+                                        <button class="btn btn-apply">Apply Now</button>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div><!-- Card 1 -->
+                        <div class="col-4">
+                            <div class="college-card">
+                                <div class="card-content">
+                                    <img src="https://collegevidya.com/_next/image/?url=https%3A%2F%2Fd1aeya7jd2fyco.cloudfront.net%2Fslider%2FTop-Amity-Online-University.jpg&w=1920&q=75"
+                                        alt="Amity University" class="main-img">
+                                    <img src="https://api.bangalorestudy.com:3000/college_logo/logo1693823278104.png"
+                                        alt="Logo" class="college-logo">
+                                    <span class="admission-tag">Admission Ongoing</span>
+                                    <!-- ⭐ Rating on image -->
+                                    <div class="rating-badge">
+                                        <i class="fa-solid fa-star"></i> 4.5
+                                    </div>
+                                </div>
+                                <div class="card-body py-3 px-3">
+                                    <h5>M.S Ramaiah Dental College (MSRDC)
+                                    </h5>
+
+                                    <p class="mt-2 mb-2"> MSR Nagar, MSRIT Post, Bangalore, Karnataka, India </p>
+                                    <span> Est.
+                                        Year <strong>2004</strong></span><br>
+                                    <span>
+                                        Ownership <strong>Private</strong>
+                                    </span>
+                                    <div class="card-actions">
+                                        <button class="btn btn-view">View More</button>
+                                        <button class="btn btn-brochure">Brochure</button>
+                                        <button class="btn btn-apply">Apply Now</button>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
 
 
                         <!-- LOAD MORE -->
                         <div class="text-center mb-4">
-                            <button class="btn-blue px-4">Load More</button>
+                            <button class="btn-blue px-2 py-1">Load More</button>
                         </div>
+
+                        <style>
+                            /* AD BOX */
+                            .ad-box {
+                                background: #ffffff;
+                                padding: 6px !important;
+                                border-radius: 14px;
+                                box-shadow: 0 10px 25px rgba(0, 71, 152, 0.211);
+                                transition: all 0.3s ease;
+                                margin-top: 20px;
+                            }
+
+                            .ad-box:hover {
+                                transform: translateY(-4px);
+                                box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+                            }
+
+                            .ad-box img {
+                                width: 357px !important;
+                                border-radius: 12px !important;
+                                object-fit: cover;
+                                border: 1px solid #e5e5e5;
+                            }
+
+                            .ad-box h5 {
+                                font-size: 28px;
+                            }
+
+                            .ad-box p {
+                                font-size: 16px;
+                            }
+
+                            .ad-box button {
+                                padding: 8px 22px;
+                                font-size: 18px;
+                                font-weight: 700;
+                                transition: all 0.3s ease;
+                            }
+
+                            .ad-box button:hover {
+                                transform: translateY(-1px);
+                                background: #222 !important;
+                            }
+
+                            /* MOBILE */
+                            @media (max-width: 576px) {
+                                .ad-box .d-flex {
+                                    flex-direction: column;
+                                    text-align: center;
+                                }
+
+                                .ad-box img {
+                                    width: 100% !important;
+                                }
+                            }
+                        </style>
 
                         <!-- AD BOX -->
                         <div class="ad-box mb-4">
                             <div class="d-flex align-items-center gap-3">
                                 <img src="https://api.learntechww.com/banners/logo1768024492467.jpg"
                                     style="width:300px; border-radius:8px;">
+
                                 <div>
                                     <h5 class="fw-bold mb-1">S-VYASA University, Bangalore</h5>
                                     <p class="text-muted small mb-2">Admissions Open 2025–26</p>
+
                                     <div class="d-flex gap-2">
                                         <button class="btn bg-dark rounded-5 text-white">Open</button>
                                     </div>
@@ -1923,98 +2260,51 @@
                             </div>
                         </div>
 
-                        <!-- PREDICTORS -->
-                        <div class="predict-box">
-                            <h5 class="fw-bold mb-3">College Predictors</h5>
-
-                            <div class="row text-center g-3">
-                                <div class="col">
-                                    <div class="predict-icon"><img
-                                            src="https://images.shiksha.ws/public/images/CollegeShorlist/default_logo.svg">
-                                    </div>JEE Main
-                                </div>
-                                <div class="col">
-                                    <div class="predict-icon"><img
-                                            src="https://images.shiksha.ws/public/images/CollegeShorlist/default_logo.svg">
-                                    </div>NEET UG
-                                </div>
-                                <div class="col">
-                                    <div class="predict-icon"><img
-                                            src="https://images.shiksha.ws/public/images/CollegeShorlist/default_logo.svg">
-                                    </div>CAT
-                                </div>
-                                <div class="col">
-                                    <div class="predict-icon"><img
-                                            src="https://images.shiksha.ws/public/images/CollegeShorlist/default_logo.svg">
-                                    </div>GATE
-                                </div>
-                                <div class="col">
-                                    <div class="predict-icon"><img
-                                            src="https://images.shiksha.ws/public/images/CollegeShorlist/default_logo.svg">
-                                    </div>CUET
-                                </div>
-                                <div class="col">
-                                    <div class="predict-icon"><img
-                                            src="https://images.shiksha.ws/public/images/CollegeShorlist/default_logo.svg">
-                                    </div>CLAT
-                                </div>
-                                <div class="col">
-                                    <div class="predict-icon"><img
-                                            src="https://images.shiksha.ws/public/images/CollegeShorlist/default_logo.svg">
-                                    </div>IPMAT
-                                </div>
-                            </div>
-
-                            <div class="text-center mt-3">
-                                <button class="btn btn-danger px-4">&lt; View All Predictors &gt;</button>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
     </section>
     <style>
-        
-/* ===== MOBILE FIX ===== */
-@media (max-width: 768px) {
+        /* ===== MOBILE FIX ===== */
+        @media (max-width: 768px) {
 
-  .col-4 {
-    width: 100%;
-  }
+            .col-4 {
+                width: 100%;
+            }
 
-  .main-img {
-    height: 150px;
-  }
+            .main-img {
+                height: 150px;
+            }
 
-  .college-logo {
-    width: 44px;
-    height: 44px;
-  }
+            .college-logo {
+                width: 44px;
+                height: 44px;
+            }
 
-  .card-body {
-    padding: 14px;
-  }
+            .card-body {
+                padding: 14px;
+            }
 
-  .card-body h5 {
-    font-size: 16px;
-  }
+            .card-body h5 {
+                font-size: 16px;
+            }
 
-  .card-body p {
-    font-size: 13px;
-    margin-bottom: 10px;
-  }
+            .card-body p {
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
 
-  /* STACK BUTTONS */
-  .card-actions {
-    flex-direction: column;
-  }
+            /* STACK BUTTONS */
+            .card-actions {
+                flex-direction: column;
+            }
 
-  .card-actions .btn {
-    width: 100%;
-    padding: 11px 0;
-    font-size: 14px;
-  }
-}
+            .card-actions .btn {
+                width: 100%;
+                padding: 11px 0;
+                font-size: 14px;
+            }
+        }
 
         .rating-badge {
             position: absolute;
@@ -2118,18 +2408,18 @@
         }
 
         .card-body h5 {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 600;
         }
 
         .card-body span {
-            font-size: 16px;
-            margin-left: 3px;
+            font-size: 15px;
+            margin-left: 0px;
             color: #666666;
         }
 
         .card-body p {
-            font-size: 18px;
+            font-size: 15px;
             font-weight: 400;
             color: #666666;
 
@@ -2282,33 +2572,10 @@
             }
         }
 
-        .ad-label {
-            top: 130px;
-            left: 200px;
-            background: rgba(0, 0, 0, 0.525);
-            font-size: 30px;
-            font-weight: 600;
-            padding: 4px 10px;
-            border-radius: 6px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
-            color: white !important;
-            opacity: 1;
-        }
 
-        .ad-bg {
-            background-color: #e0e5ea !important;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-
-        .ad-box {
-            border: 1px solid rgb(163, 163, 163);
-            border-radius: 10px;
-            height: 200px;
-        }
 
         .border-line {
-            border: 1px solid rgb(0, 94, 194);
+            border: 1px solid rgb(54, 6, 0);
             margin-bottom: 20px;
             margin-right: 10px !important;
         }
@@ -2355,10 +2622,10 @@
         }
 
         .filter-section {
-            background: #e9f4ff;
+            background: #75a9c839;
             border-radius: 10px;
             padding: 15px;
-            border: 2px solid rgba(0, 52, 83, 0.095);
+            border: 2px solid rgba(0, 52, 83, 0.128);
 
 
         }
@@ -2411,300 +2678,342 @@
     </style>
 
 
-    <section>
-        <div class="container py-5 text-center">
-            <h2>Start Your Future with <span style="color: #75a9c8;">Kerala’s Top Colleges</span></h2>
 
 
-            <!-- Carousel Wrapper -->
-            <div class="position-relative">
-                <!-- Prev Button -->
-                <button class="slick-prev-btn">&#10094;</button>
-                <!-- Next Button -->
-                <button class="slick-next-btn">&#10095;</button>
-
-                <!-- Carousel -->
-                <div class="college-carousel mx-5">
-                    <div class="college-swiper" data-city="Kollam">
-                        <a href="#">
-                            <div class="card-image"
-                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            </div>
-                            <div class="card-text">
-                                <h5>St. Thomas College</h5>
-                                <p class="location"><i class="fa-solid fa-location-dot" style="color: #ff4d00;"></i>40
-                                    Feet Rd, Fayazabad, Ilyas </p>
-                                <div class="card-actions">
-                                    <button class="btn-rect">Apply Now</button>
-                                    <button class="btn btn-viewmore">View More</button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="college-swiper" data-city="Kollam">
-                        <a href="#">
-                            <div class="card-image"
-                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            </div>
-                            <div class="card-text">
-                                <h5>St. Thomas College</h5>
-                                <p class="location"><i class="fa-solid fa-location-dot" style="color: #ff4d00;"></i> 40
-                                    Feet Rd, Fayazabad, Ilyas </p>
-                                <div class="card-actions">
-                                    <button class="btn-rect">Apply Now</button>
-                                    <button class="btn btn-viewmore">View More</button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="college-swiper" data-city="Kollam">
-                        <a href="#">
-                            <div class="card-image"
-                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            </div>
-                            <div class="card-text">
-                                <h5>St. Thomas College</h5>
-                                <p class="location"><i class="fa-solid fa-location-dot" style="color: #ff4d00;"></i>40
-                                    Feet Rd, Fayazabad, Ilyas </p>
-                                <div class="card-actions">
-                                    <button class="btn-rect">Apply Now</button>
-                                    <button class="btn btn-viewmore">View More</button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+    <!---------------------------------------------------------------- BOTTOM CONTACT FORM -->
 
 
-                    <div class="college-swiper" data-city="Kollam">
-                        <a href="#">
-                            <div class="card-image"
-                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            </div>
-                            <div class="card-text">
-                                <h5>St. Thomas College</h5>
-                                <p class="location"><i class="fa-solid fa-location-dot" style="color: #ff4d00;"></i> 40
-                                    Feet Rd, Fayazabad, Ilyas </p>
-                                <div class="card-actions">
-                                    <button class="btn-rect">Apply Now</button>
-                                    <button class="btn btn-viewmore">View More</button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+    <section class="lt-advisor-section">
+        <div class="lt-container">
+            <h2 class="lt-heading">Personalised Admission Support</h2>
+            <h3>Kerala’s Trusted Education Experts</h3>
+            <p class="lt-subtext">
+                Discover top colleges, explore courses, and get step-by-step guidance for secure admissions in Kerala.
+            </p>
 
-                    <div class="college-swiper" data-city="Kollam">
-                        <a href="#">
-                            <div class="card-image"
-                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            </div>
-                            <div class="card-text">
-                                <h5>St. Thomas College</h5>
-                                <p class="location"><i class="fa-solid fa-location-dot" style="color: #ff4d00;"></i> 40
-                                    Feet Rd, Fayazabad, Ilyas </p>
-                                <div class="card-actions">
-                                    <button class="btn-rect">Apply Now</button>
-                                    <button class="btn btn-viewmore">View More</button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+            <form class="lt-form">
+                <input type="text" class="lt-input" placeholder="Enter Name" name="name" required>
 
-                    <div class="college-swiper" data-city="Kollam">
-                        <a href="#">
-                            <div class="card-image"
-                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            </div>
-                            <div class="card-text">
-                                <h5>St. Thomas College</h5>
-                                <p class="location"><i class="fa-solid fa-location-dot" style="color: #ff4d00;"></i> 40
-                                    Feet Rd, Fayazabad, Ilyas </p>
-                                <div class="card-actions">
-                                    <button class="btn-rect">Apply Now</button>
-                                    <button class="btn btn-viewmore">View More</button>
-                                </div>
-                            </div>
-                        </a>
+                <div class="mb-3">
+                    <div class="phone-group">
+                        <div class="flag-box" role="button" tabindex="0" aria-haspopup="listbox">
+                            <img src="https://flagcdn.com/w40/in.png" alt="India Flag" class="flag-icon">
+                            <span class="country-code">+91</span>
+                            <span class="arrow"></span>
+                        </div>
+                        <input type="tel" class="phone-input form-control" placeholder="" required>
                     </div>
                 </div>
-            </div>
+
+
+
+                <input type="email" class="lt-input" placeholder="Enter Email" name="email" required>
+                <input type="email" class="lt-input" placeholder="Interested Course?" name="email" required>
+
+
+
+                <button type="submit" class="btn-8">Request for a Call Back</button>
+            </form>
+        </div>
     </section>
 
     <style>
-        .slick-prev-btn,
-        .slick-next-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 20;
-            background: #ffffff;
-            color: #0c2a45;
-            border: 1px solid rgb(255, 255, 255);
-            font-size: 26px;
-            width: 42px;
-            height: 42px;
-            border-radius: 20%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all .25s ease;
-        }
-
-        /* LEFT button */
-        .slick-prev-btn {
-            left: -20px;
-        }
-
-        /* RIGHT button */
-        .slick-next-btn {
-            right: -20px;
-        }
-
-
-
-        /* --------------------------------------------------------College Cards Carousal */
-
-        .college-swiper {
-            position: relative;
-            height: 350px;
-            width: 320px;
-            border-radius: 5px;
-            overflow: hidden;
-            background: #fff;
-            transition: all 0.4s ease;
-            margin: 6px;
-            border: 1px solid rgb(203, 203, 203);
-        }
-
-
-        .college-swiper a {
-            display: flex;
-            flex-direction: column;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .card-image {
-            height: 200px;
-            /* half the card */
-            background-size: cover;
-            background-position: center;
-            border-bottom: 1px solid rgba(0, 13, 157, 0.05);
-            transition: transform 0.6s ease;
-        }
-
-
-
-        .card-text {
-            padding: 18px;
-            align-items: start;
-        }
-
-        .card-text h5 {
-            font-size: 20px;
-            font-weight: 400;
-            margin: 0 0 6px 0;
-        }
-
-        .card-text .location {
-            font-size: 16px;
-            color: #777;
-            margin: 0 0 14px 0;
-        }
-
-        .card-actions {
-            display: flex;
-            justify-content: space-between;
-
-        }
-
-        .btn-rect {
-            padding: 10px 20px;
-            border-radius: 8px;
-            border: none;
-            background: #0b2a66;
-            /* deep professional blue */
+        .btn-8 {
+            background: #003a73;
             color: #ffffff;
-            font-weight: 500;
-            font-size: 14px;
+            font-weight: 700;
+            border: 2px solid #ffffff;
+            padding: 0.8rem 3rem;
             cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
-
-        }
-
-        .btn-rect:hover {
-            background: #f4f8ff;
-            border: 1px solid #0b2a66;
-            /* subtle hover color */
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
-            color: #0b2a66;
-        }
-
-        .btn-viewmore {
+            text-transform: uppercase;
             position: relative;
-            padding: 12px 28px;
-            font-size: 14px !important;
-            font-weight: 500;
-            color: #0b2a66;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            transition: all 0.4s ease;
-
+            overflow: hidden;
+            isolation: isolate;
+            transition: color .25s ease, transform .25s ease, box-shadow .25s ease;
         }
 
-        .btn-viewmore::after {
+        /* WHITE REVEAL LAYER */
+        .btn-8::before {
             content: "";
             position: absolute;
-            bottom: 6px;
-            left: 50%;
-            width: 0%;
-            height: 1.5px;
-            background: #0b2a66;
-            transition: all 0.4s ease;
-            transform: translateX(-50%);
+            inset: 0;
+            background: white;
+
+            --progress: 100%;
+            clip-path: polygon(0 calc(var(--progress) / 2),
+                    100% calc(var(--progress) / 2),
+                    100% calc(100% - var(--progress) / 2),
+                    0 calc(100% - var(--progress) / 2));
+
+            transition: clip-path .25s ease;
+            z-index: -1;
         }
 
-        .btn-viewmore:hover {
-            transform: translateY(-2px);
-            color: #0b2a66;
+        /* HOVER */
+        .btn-8:hover::before {
+            --progress: 0%;
         }
 
-        .btn-viewmore:hover::after {
-            width: 80%;
+        .btn-8:hover {
+            color: #003a73;
+            border: 2px solid #003a73;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
         }
 
-
-        .btn-round {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            border: none;
-            background: #ffffff;
-            color: #000000;
-            font-size: 0.9rem;
-            cursor: pointer;
+        /* --- Single-line phone field --- */
+        .phone-group {
             display: flex;
             align-items: center;
-            justify-content: center;
-            transition: 0.3s ease;
-            border: 1px solid black;
+            gap: 10px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 0px 12px;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
         }
 
-        .btn-round:hover {
-            background: #3388ff;
-            transform: rotate(90deg) scale(1.1);
+        .phone-group:focus-within {
+            border-color: #1f3c88;
+            box-shadow: 0 0 0 3px rgba(31, 60, 136, 0.15);
+        }
+
+        /* Flag + code section */
+        .flag-box {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        /* Flag image */
+        .flag-icon {
+            width: 24px;
+            height: 16px;
+            border-radius: 2px;
+            object-fit: cover;
+        }
+
+        /* Country code */
+        .country-code {
+            font-size: 13px;
+            font-weight: 600;
+            color: #1f3c88;
+            white-space: nowrap;
+        }
+
+        /* Dropdown arrow */
+        .arrow {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 6px solid #666;
+            opacity: 0.7;
+        }
+
+        /* Input field */
+        .phone-input {
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+            padding: 0;
+            font-size: 15px;
+            color: #222;
+            flex: 1;
+            background: transparent;
+        }
+
+        .phone-input::placeholder {
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .phone-group {
+                gap: 6px;
+                padding: 6px 8px;
+            }
+
+            .flag-icon {
+                width: 20px;
+                height: 14px;
+            }
+
+            .country-code {
+                font-size: 13px;
+            }
+        }
+
+        /* Section styling */
+        .lt-advisor-section {
+            background-color: #e4e8ff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .lt-container {
+            max-width: 120%;
+            margin: 0 auto;
+        }
+
+        .lt-heading {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1d3b75;
+            margin-bottom: 10px;
+        }
+
+        .lt-subtext {
+            font-size: 16px;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* Form Styling */
+        .lt-form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .lt-input,
+        .phone-group {
+            height: 38px;
+            width: 320px;
+            box-sizing: border-box;
+        }
+
+        .lt-input {
+            padding: 0 15px;
+            font-size: 15px;
+            border-radius: 8px;
+        }
+
+        .phone-group {
+            padding: 0 12px;
+        }
+
+        .phone-input {
+            height: 100%;
+            font-size: 15px;
+        }
+
+        .flag-box {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-7 {
+            height: 48px;
+            padding: 0 28px;
+            font-size: 15px;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+
+            .lt-input,
+            .phone-group,
+            .btn-7 {
+                width: 100%;
+            }
+        }
+
+
+        .lt-input {
+            padding: 2px 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            width: 330px;
+            background-color: #fff;
+            transition: border-color 0.3s;
+        }
+
+        .lt-input:focus {
+            outline: none;
+            border-color: #1d3b75;
+        }
+
+        .lt-phone-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 8px 12px;
+            width: 240px;
+            transition: all 0.3s ease;
+        }
+
+        .lt-phone-group:hover {
+            border-color: #007bff;
+            box-shadow: 0 0 6px rgba(0, 123, 255, 0.2);
+        }
+
+        .lt-flag {
+            width: 20px;
+            height: 14px;
+            border-radius: 2px;
+            object-fit: cover;
+        }
+
+        .lt-country-code {
+            font-size: 15px;
+            color: #333;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .lt-phone-input {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 15px;
+            color: #222;
+            padding: 0;
+        }
+
+        .lt-phone-input::placeholder {
+            color: #999;
+        }
+
+        /* Button styling */
+        .lt-submit-btn {
+            padding: 12px 25px;
+            background-color: #264e9b;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .lt-submit-btn:hover {
+            background-color: #1b3d80;
+        }
+
+        /* Responsive Tweaks */
+        @media (max-width: 768px) {
+            .lt-form {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .lt-input,
+            .lt-phone-group {
+                width: 90%;
+            }
         }
     </style>
-
-
-
-
-
-
 
 
 

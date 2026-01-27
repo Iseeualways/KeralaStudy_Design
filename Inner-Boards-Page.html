@@ -22,7 +22,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="navbar.css">
 
 
@@ -30,6 +29,46 @@
 
 </head>
 <style>
+    .btn-blue {
+        position: relative;
+        display: inline-block;
+        padding: 10px 22px;
+        background: #003479 !important;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 3px;
+        border: 1.2px solid #003479;
+        text-decoration: none;
+        overflow: hidden;
+        cursor: pointer;
+        transition: color 0.35s ease;
+        z-index: 1;
+    }
+
+    /* Fill layer */
+    .btn-blue::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: #ffffff;
+        border: 1px solid #003479 !important;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.35s ease;
+        z-index: -1;
+    }
+
+    /* Hover effect */
+    .btn-blue:hover {
+        color: #003479;
+        border: 1px solid #003479 !important;
+    }
+
+    .btn-blue:hover::before {
+        transform: scaleY(1);
+    }
+
     h4 {
         font-weight: 700;
         color: #001a4d;
@@ -73,44 +112,39 @@
     }
 
     .city-btn {
-        border: 1px solid blue;
-        padding: 5px 30px;
-
-    }
-
-    .city-btn {
         display: inline-block;
-        padding: 3px 36px;
-        font-size: 16px;
-        font-weight: 600;
-        color: #fff;
+        padding: 4px 22px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #ffffff;
         text-decoration: none;
-        border-radius: 10px;
+        border-radius: 6px;
         background: #0b2a66;
-        /* deep professional color */
+        border: 1px solid #0b2a66;
         position: relative;
         overflow: hidden;
-        transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
     }
 
+    /* subtle shine */
     .city-btn::after {
         content: '';
         position: absolute;
-        top: 0;
-        left: -50%;
-        width: 50%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.08);
-        transform: skewX(-25deg);
-        transition: all 0.5s ease;
+        inset: 0;
+        background: rgba(11, 42, 102, 0.06);
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
 
     .city-btn:hover {
-        background: linear-gradient(90deg, #0b2a66, #3370ea);
-        transform: translate(scale(1.4));
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+        background: #0b2a66;
         color: #ffffff;
+        text-decoration: underline;
+
+    }
+
+    .city-btn:hover::after {
+        opacity: 1;
     }
 
     h2 {
@@ -1281,8 +1315,7 @@
                     </ul>
                 </div>
             </div>
-            <button class="btn-7 adm-btn"
-                style="padding: 4px !important; padding-inline: 30px !important; border-radius: 3px; font-weight: 400;">Admissions
+            <button class="city-btn">Admissions
                 2025</button>
         </div>
     </div>
@@ -1309,24 +1342,24 @@
 
 
     <!-- ====================================================================================banner -->
-   
+
 
 
 
     <style>
         .cbse-banner {
             position: relative;
-            background: url("40123918_8796857.jpg") center/cover no-repeat;
             padding: 50px 20px 40px;
             color: #fff;
-            font-family: "Segoe UI", sans-serif;
+
         }
 
         .cbse-banner::before {
             content: "";
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.683);
+            background: #00226B;
+            background: linear-gradient(164deg, rgba(0, 34, 107, 1) 0%, rgba(117, 169, 200, 1) 100%);
         }
 
         .cbse-container {
@@ -1458,14 +1491,14 @@
 
     </section>
 
-    
+
     <!-- BREADCRUMB -->
     <nav class="breadcrumb-wrap container" aria-label="Breadcrumb">
         <a href="#">Home</a>
         <span class="divider" aria-hidden="true">›</span>
         <a href="#">Board</a>
         <span class="divider" aria-hidden="true">›</span>
-        <span class="current">Inner-Boards-Page</span>
+        <span class="current">Inner Boards</span>
     </nav>
 
     <style>
@@ -1515,7 +1548,7 @@
 
 
 
-    
+
 
 
 
@@ -1537,21 +1570,45 @@
 
     <style>
         .city-filters .filter-btn {
-            background: #f0f6feeb;
-            border: 1px solid #001b544e;
-            padding: 8px 18px;
-            margin: 5px;
-            border-radius: 25px;
+            background: linear-gradient(135deg, #f5f9ff, #eaf1ff);
+            border: 1px solid rgba(0, 27, 84, 0.169);
+            padding: 7px 14px;
+            margin: 6px;
+            border-radius: 12px;
             cursor: pointer;
-            color: #000000;
-            transition: all 0.3s ease;
+            color: #0b1f44d4;
+            font-size: 16px;
+            font-weight: 400;
+
+            transition:
+                background 0.35s ease,
+                color 0.35s ease,
+                transform 0.25s ease,
+                box-shadow 0.35s ease,
+                border-color 0.35s ease;
         }
 
-        .city-filters .filter-btn.active,
+        /* Hover */
         .city-filters .filter-btn:hover {
-            background: #002b58;
-            color: #fbfbfb;
+            background: #003479;
+            color: #ffffff;
             border-color: #002b58;
+
+
+        }
+
+        /* Active */
+        .city-filters .filter-btn.active {
+            background: #003479;
+            color: #ffffff;
+            border-color: #002b58;
+            font-weight: 700;
+
+        }
+
+        /* Optional: ultra-smooth tap feel */
+        .city-filters .filter-btn:active {
+            transform: scale(1);
         }
     </style>
 
@@ -1585,7 +1642,7 @@
                     to offer guest lectures, workshops, and seminars.
                 </p>
             </div>
-            <div class="col-lg-4 col-auto bg-darks p-4">
+            <div class="col-lg-4 col-auto bg-darks px-4">
                 <div class="card border-0 p-4 rounded-3 contact-card mb-5">
                     <h4 class="fw-bold text-center mb-3">Contact Us</h4>
                     <form>
@@ -1620,19 +1677,18 @@
                 </div>
             </div>
         </div>
-
     </div>
     <style>
         .bg-darks {
-            background-color: #d4e3f9 !important;
+            background-color: #eaeaea !important;
             border: 1px solid rgba(0, 98, 255, 0.192) !important;
+              border-radius: 8px;
         }
 
         .bg-darks input,
         .bg-darks textarea {
             border-radius: 8px;
         }
-        
     </style>
 
 
@@ -2063,282 +2119,227 @@
 
 
 
-    <section>
-        <div class="container-fluid px-5 py-5 text-center">
-            <h2>Start Your Future with <span style="color: #75a9c8;">Kerala’s Top Colleges</span></h2>
 
+<style>
+    /* ================= WRAPPER ================= */
+.college-slider-wrapper {
+    max-width: 1600px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 0 17px;
+}
 
-            <!-- Carousel Wrapper -->
-            <div class="position-relative">
-                <!-- Prev Button -->
-                <button class="slick-prev-btn">&#10094;</button>
-                <!-- Next Button -->
-                <button class="slick-next-btn">&#10095;</button>
+/* ================= NAV BUTTONS ================= */
+.slider-nav-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: none;
+    background: #ffffff;
+    font-size: 18px;
+    cursor: pointer;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-                <!-- Carousel -->
-                <div class="college-carousel mx-5">
-                    <div class="college-swiper" data-city="Kollam">
-                        <a href="#">
-                            <div class="card-image"
-                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            </div>
-                            <div class="card-text">
-                                <h5>St. Thomas College</h5>
-                                <p class="location"><i class="fa-solid fa-location-dot" style="color: #ff4d00;"></i>40
-                                    Feet Rd, Fayazabad, Ilyas </p>
-                                <div class="card-actions">
-                                    <button class="btn-rect">Apply Now</button>
-                                    <button class="btn btn-viewmore">View More</button>
-                                </div>
-                            </div>
-                        </a>
+/* ================= CAROUSEL ================= */
+.college-slider {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    flex: 1;
+    padding-bottom: 10px;
+    justify-content: center;
+}
+
+.college-slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* ================= CARD ================= */
+.college-item {
+    flex: 0 0 320px;
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #dcdcdc;
+    transition: 0.3s ease;
+}
+
+.college-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* IMAGE */
+.college-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* CONTENT */
+.college-info {
+    padding: 18px 18px 15px;
+}
+
+.college-info h5 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 6px;
+}
+
+.college-location {
+    font-size: 16px;
+    color: #777;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+/* BUTTON ROW */
+.college-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* BUTTONS */
+.btn-apply-now {
+    padding: 8px 14px;
+    background: #0b2a66;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-view-more {
+    padding: 8px 14px;
+    background: transparent;
+    border: 1px solid #0b2a66;
+    color: #0b2a66;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .college-slider-wrapper {
+        padding: 0 20px;
+    }
+}
+
+</style>
+<section>
+    <h2 class="mb-4 text-center">
+        Start Your Future with <span style="color: #75a9c8;">Kerala’s Top Colleges</span>
+    </h2>
+
+    <div class="college-slider-wrapper">
+
+        <!-- PREV -->
+        <button class="slider-nav-btn prev-btn">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <!-- CARDS -->
+        <div class="college-slider">
+
+            <div class="college-item">
+                <a href="#">
+                    <div class="college-image"
+                        style="background-image:url('https://api.learntechww.com/college_banner_image/logo1747817850961.webp')">
                     </div>
-
-                    <div class="college-swiper" data-city="Kollam">
-                        <a href="#">
-                            <div class="card-image"
-                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            </div>
-                            <div class="card-text">
-                                <h5>St. Thomas College</h5>
-                                <p class="location"><i class="fa-solid fa-location-dot" style="color: #ff4d00;"></i> 40
-                                    Feet Rd, Fayazabad, Ilyas </p>
-                                <div class="card-actions">
-                                    <button class="btn-rect">Apply Now</button>
-                                    <button class="btn btn-viewmore">View More</button>
-                                </div>
-                            </div>
-                        </a>
+                    <div class="college-info">
+                        <h5>St. Thomas College</h5>
+                        <p class="college-location">
+                            <i class="fa-solid fa-location-dot" style="color:#ff4d00"></i>
+                            40 Feet Rd, Fayazabad
+                        </p>
+                        <div class="college-actions">
+                            <button class="btn-apply-now">Apply Now</button>
+                            <button class="btn-view-more">View More</button>
+                        </div>
                     </div>
-                    <div class="college-swiper" data-city="Kollam">
-                        <a href="#">
-                            <div class="card-image"
-                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            </div>
-                            <div class="card-text">
-                                <h5>St. Thomas College</h5>
-                                <p class="location"><i class="fa-solid fa-location-dot" style="color: #ff4d00;"></i>40
-                                    Feet Rd, Fayazabad, Ilyas </p>
-                                <div class="card-actions">
-                                    <button class="btn-rect">Apply Now</button>
-                                    <button class="btn btn-viewmore">View More</button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-
-                    <div class="college-swiper" data-city="Kollam">
-                        <a href="#">
-                            <div class="card-image"
-                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            </div>
-                            <div class="card-text">
-                                <h5>St. Thomas College</h5>
-                                <p class="location"><i class="fa-solid fa-location-dot" style="color: #ff4d00;"></i> 40
-                                    Feet Rd, Fayazabad, Ilyas </p>
-                                <div class="card-actions">
-                                    <button class="btn-rect">Apply Now</button>
-                                    <button class="btn btn-viewmore">View More</button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-
-                </div>
+                </a>
             </div>
-    </section>
 
-    <style>
-        .slick-prev-btn,
-        .slick-next-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 20;
-            background: #ffffff;
-            color: #0c2a45;
-            border: 1px solid rgb(255, 255, 255);
-            font-size: 26px;
-            width: 42px;
-            height: 42px;
-            border-radius: 20%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all .25s ease;
-        }
+            <div class="college-item">
+                <a href="#">
+                    <div class="college-image"
+                        style="background-image:url('https://api.learntechww.com/college_banner_image/logo1747820987012.webp')">
+                    </div>
+                    <div class="college-info">
+                        <h5>St. Thomas College</h5>
+                        <p class="college-location">
+                            <i class="fa-solid fa-location-dot" style="color:#ff4d00"></i>
+                            40 Feet Rd, Fayazabad
+                        </p>
+                        <div class="college-actions">
+                            <button class="btn-apply-now">Apply Now</button>
+                            <button class="btn-view-more">View More</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-        /* LEFT button */
-        .slick-prev-btn {
-            left: -20px;
-        }
+            <div class="college-item">
+                <a href="#">
+                    <div class="college-image"
+                        style="background-image:url('https://api.learntechww.com/college_banner_image/logo1747822119895.webp')">
+                    </div>
+                    <div class="college-info">
+                        <h5>St. Thomas College</h5>
+                        <p class="college-location">
+                            <i class="fa-solid fa-location-dot" style="color:#ff4d00"></i>
+                            40 Feet Rd, Fayazabad
+                        </p>
+                        <div class="college-actions">
+                            <button class="btn-apply-now">Apply Now</button>
+                            <button class="btn-view-more">View More</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-        /* RIGHT button */
-        .slick-next-btn {
-            right: -20px;
-        }
+            <div class="college-item">
+                <a href="#">
+                    <div class="college-image"
+                        style="background-image:url('https://api.learntechww.com/college_banner_image/logo1747822510409.webp')">
+                    </div>
+                    <div class="college-info">
+                        <h5>St. Thomas College</h5>
+                        <p class="college-location">
+                            <i class="fa-solid fa-location-dot" style="color:#ff4d00"></i>
+                            40 Feet Rd, Fayazabad
+                        </p>
+                        <div class="college-actions">
+                            <button class="btn-apply-now">Apply Now</button>
+                            <button class="btn-view-more">View More</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
+        </div>
 
+        <!-- NEXT -->
+        <button class="slider-nav-btn next-btn">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
 
-        /* --------------------------------------------------------College Cards Carousal */
-        .college-carousel {
-            display: flex;
-            gap: 16px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            padding-bottom: 10px;
-
-        }
-
-        /* Hide scrollbar (optional) */
-        .college-carousel::-webkit-scrollbar {
-            display: none;
-        }
-
-        .college-carousel {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        .college-swiper {
-            position: relative;
-            height: 350px;
-            width: 320px;
-            border-radius: 5px;
-            overflow: hidden;
-            background: #fff;
-            transition: all 0.4s ease;
-            margin: 6px;
-            border: 1px solid rgb(203, 203, 203);
-        }
-
-
-        .college-swiper a {
-            display: flex;
-            flex-direction: column;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .card-image {
-            height: 200px;
-            /* half the card */
-            background-size: cover;
-            background-position: center;
-            border-bottom: 1px solid rgba(0, 13, 157, 0.05);
-            transition: transform 0.6s ease;
-        }
-
-
-
-        .card-text {
-            padding: 18px;
-            align-items: start;
-        }
-
-        .card-text h5 {
-            font-size: 20px;
-            font-weight: 400;
-            margin: 0 0 6px 0;
-        }
-
-        .card-text .location {
-            font-size: 16px;
-            color: #777;
-            margin: 0 0 14px 0;
-        }
-
-        .card-actions {
-            display: flex;
-            justify-content: space-between;
-
-        }
-
-        .btn-rect {
-            padding: 5px 20px;
-            border-radius: 8px;
-            border: none;
-            background: #0b2a66;
-            /* deep professional blue */
-            color: #ffffff;
-            font-weight: 500;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
-
-        }
-
-        .btn-rect:hover {
-            background: #f4f8ff;
-            border: 1px solid #0b2a66;
-            /* subtle hover color */
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
-            color: #0b2a66;
-        }
-
-        .btn-viewmore {
-            position: relative;
-            padding: 12px 28px;
-            font-size: 15px;
-            font-weight: 500;
-            color: #0b2a66;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            transition: all 0.4s ease;
-
-        }
-
-        .btn-viewmore::after {
-            content: "";
-            position: absolute;
-            bottom: 6px;
-            left: 50%;
-            width: 0%;
-            height: 1.5px;
-            background: #0b2a66;
-            transition: all 0.4s ease;
-            transform: translateX(-50%);
-        }
-
-        .btn-viewmore:hover {
-            transform: translateY(-2px);
-            color: #0b2a66;
-        }
-
-        .btn-viewmore:hover::after {
-            width: 80%;
-        }
-
-
-        .btn-round {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            border: none;
-            background: #ffffff;
-            color: #000000;
-            font-size: 0.9rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.3s ease;
-            border: 1px solid black;
-        }
-
-        .btn-round:hover {
-            background: #3388ff;
-            transform: rotate(90deg) scale(1.1);
-        }
-    </style>
-
-
+    </div>
+</section>
 
 
 

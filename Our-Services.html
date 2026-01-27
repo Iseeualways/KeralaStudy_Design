@@ -107,49 +107,43 @@
         color: red;
     }
 
-    .city-btn {
-        border: 1px solid blue;
-        padding: 5px 30px;
-
-    }
-
-    .city-btn {
+   .city-btn {
         display: inline-block;
-        padding: 3px 36px;
-        font-size: 16px;
-        font-weight: 600;
-        color: #fff;
+        padding: 4px 22px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #ffffff;
         text-decoration: none;
-        border-radius: 10px;
+        border-radius: 6px;
         background: #0b2a66;
-        /* deep professional color */
+        border: 1px solid #0b2a66;
         position: relative;
         overflow: hidden;
-        transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
     }
 
+    /* subtle shine */
     .city-btn::after {
         content: '';
         position: absolute;
-        top: 0;
-        left: -50%;
-        width: 50%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.08);
-        transform: skewX(-25deg);
-        transition: all 0.5s ease;
+        inset: 0;
+        background: rgba(11, 42, 102, 0.06);
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
 
     .city-btn:hover {
-        background: linear-gradient(90deg, #0b2a66, #3370ea);
-        transform: translate(scale(1.4));
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+        background: #0b2a66;
         color: #ffffff;
+        text-decoration: underline;
+
     }
 
+    .city-btn:hover::after {
+        opacity: 1;
+    }
     h2 {
-        font-family: 'Poppins', sans-serif;
+       
         font-size: 32px;
         font-weight: bold;
         color: black;
@@ -559,7 +553,7 @@
             <div class="row">
                 <div class="col-lg-12 reveal text-start">
                     <h1 style="color: #ffffff; font-weight: 400 !important;">
-                        <span style="color: #003264;">O</span>ur <span style="color: #003264;">S</span>ervices
+                        <span style="color: #003264;font-weight: 600;">O</span>ur <span style="color: #003264; font-weight: 600;">S</span>ervices
                     </h1>
                     <p class="mt-4 text-start" style="color: #ffffff;">
                         We partner with students, parents, and institutions to deliver
@@ -611,8 +605,6 @@
      <!-- BREADCRUMB -->
     <nav class="breadcrumb-wrap container" aria-label="Breadcrumb">
         <a href="#">Home</a>
-        <span class="divider" aria-hidden="true">›</span>
-        <a href="#">Placement</a>
         <span class="divider" aria-hidden="true">›</span>
         <span class="current">Our Services</span>
     </nav>
@@ -754,8 +746,7 @@
 
         <div class="container">
             <div class="section-title">
-                <h2 class="fs-1"><span style="color: #75a9c8;">W</span>HAT <span style="color: #75a9c8;">W</span>E <span
-                        style="color: #75a9c8;">P</span>ROVIDE</h2>
+                <h2 class="fs-1">WHAT WE PROVIDE</h2>
                 <p>Professional support designed to guide you at every step.</p>
             </div>
 
@@ -934,6 +925,346 @@
             </div>
         </div>
     </section>
+
+
+
+    
+    
+<!---------------------------------------------------------------- BOTTOM CONTACT FORM -->
+
+
+    <section class="lt-advisor-section">
+        <div class="lt-container">
+            <h2 class="lt-heading">Personalised Admission Support</h2>
+            <h3>Kerala’s Trusted Education Experts</h3>
+            <p class="lt-subtext">
+                Discover top colleges, explore courses, and get step-by-step guidance for secure admissions in Kerala.
+            </p>
+
+            <form class="lt-form">
+                <input type="text" class="lt-input" placeholder="Enter Name" name="name" required>
+
+                <div class="mb-3">
+                    <div class="phone-group">
+                        <div class="flag-box" role="button" tabindex="0" aria-haspopup="listbox">
+                            <img src="https://flagcdn.com/w40/in.png" alt="India Flag" class="flag-icon">
+                            <span class="country-code">+91</span>
+                            <span class="arrow"></span>
+                        </div>
+                        <input type="tel" class="phone-input form-control" placeholder="" required>
+                    </div>
+                </div>
+
+
+
+                <input type="email" class="lt-input" placeholder="Enter Email" name="email" required>
+                <input type="email" class="lt-input" placeholder="Interested Course?" name="email" required>
+
+
+
+                <button type="submit" class="btn-8">Request for a Call Back</button>
+            </form>
+        </div>
+    </section>
+
+    <style>
+          .btn-8 {
+        background: #003a73;
+        color: #ffffff;
+        font-weight: 700;
+        border: 2px solid #ffffff;
+        padding: 0.8rem 3rem;
+        cursor: pointer;
+        text-transform: uppercase;
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        transition: color .25s ease, transform .25s ease, box-shadow .25s ease;
+    }
+
+    /* WHITE REVEAL LAYER */
+    .btn-8::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: white;
+
+        --progress: 100%;
+        clip-path: polygon(0 calc(var(--progress) / 2),
+                100% calc(var(--progress) / 2),
+                100% calc(100% - var(--progress) / 2),
+                0 calc(100% - var(--progress) / 2));
+
+        transition: clip-path .25s ease;
+        z-index: -1;
+    }
+
+    /* HOVER */
+    .btn-8:hover::before {
+        --progress: 0%;
+    }
+
+    .btn-8:hover {
+        color: #003a73;
+        border: 2px solid #003a73;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
+    }
+        /* --- Single-line phone field --- */
+        .phone-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 0px 12px;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .phone-group:focus-within {
+            border-color: #1f3c88;
+            box-shadow: 0 0 0 3px rgba(31, 60, 136, 0.15);
+        }
+
+        /* Flag + code section */
+        .flag-box {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        /* Flag image */
+        .flag-icon {
+            width: 24px;
+            height: 16px;
+            border-radius: 2px;
+            object-fit: cover;
+        }
+
+        /* Country code */
+        .country-code {
+            font-size: 13px;
+            font-weight: 600;
+            color: #1f3c88;
+            white-space: nowrap;
+        }
+
+        /* Dropdown arrow */
+        .arrow {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 6px solid #666;
+            opacity: 0.7;
+        }
+
+        /* Input field */
+        .phone-input {
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+            padding: 0;
+            font-size: 15px;
+            color: #222;
+            flex: 1;
+            background: transparent;
+        }
+
+        .phone-input::placeholder {
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .phone-group {
+                gap: 6px;
+                padding: 6px 8px;
+            }
+
+            .flag-icon {
+                width: 20px;
+                height: 14px;
+            }
+
+            .country-code {
+                font-size: 13px;
+            }
+        }
+
+        /* Section styling */
+        .lt-advisor-section {
+            background-color: #e4e8ff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .lt-container {
+            max-width: 120%;
+            margin: 0 auto;
+        }
+
+        .lt-heading {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1d3b75;
+            margin-bottom: 10px;
+        }
+
+        .lt-subtext {
+            font-size: 16px;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* Form Styling */
+        .lt-form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .lt-input,
+        .phone-group {
+            height: 38px;
+            width: 320px;
+            box-sizing: border-box;
+        }
+
+        .lt-input {
+            padding: 0 15px;
+            font-size: 15px;
+            border-radius: 8px;
+        }
+
+        .phone-group {
+            padding: 0 12px;
+        }
+
+        .phone-input {
+            height: 100%;
+            font-size: 15px;
+        }
+
+        .flag-box {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-7 {
+            height: 48px;
+            padding: 0 28px;
+            font-size: 15px;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+
+            .lt-input,
+            .phone-group,
+            .btn-7 {
+                width: 100%;
+            }
+        }
+
+
+        .lt-input {
+            padding: 2px 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            width: 330px;
+            background-color: #fff;
+            transition: border-color 0.3s;
+        }
+
+        .lt-input:focus {
+            outline: none;
+            border-color: #1d3b75;
+        }
+
+        .lt-phone-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 8px 12px;
+            width: 240px;
+            transition: all 0.3s ease;
+        }
+
+        .lt-phone-group:hover {
+            border-color: #007bff;
+            box-shadow: 0 0 6px rgba(0, 123, 255, 0.2);
+        }
+
+        .lt-flag {
+            width: 20px;
+            height: 14px;
+            border-radius: 2px;
+            object-fit: cover;
+        }
+
+        .lt-country-code {
+            font-size: 15px;
+            color: #333;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .lt-phone-input {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 15px;
+            color: #222;
+            padding: 0;
+        }
+
+        .lt-phone-input::placeholder {
+            color: #999;
+        }
+
+        /* Button styling */
+        .lt-submit-btn {
+            padding: 12px 25px;
+            background-color: #264e9b;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .lt-submit-btn:hover {
+            background-color: #1b3d80;
+        }
+
+        /* Responsive Tweaks */
+        @media (max-width: 768px) {
+            .lt-form {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .lt-input,
+            .lt-phone-group {
+                width: 90%;
+            }
+        }
+    </style>
+
+
 
 
     <!-- Footer -->

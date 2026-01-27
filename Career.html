@@ -106,46 +106,42 @@
         color: red;
     }
 
-    .city-btn {
-        border: 1px solid blue;
-        padding: 5px 30px;
-
-    }
-
-    .city-btn {
+   .city-btn {
         display: inline-block;
-        padding: 3px 36px;
-        font-size: 16px;
-        font-weight: 600;
-        color: #fff;
+        padding: 4px 22px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #ffffff;
         text-decoration: none;
-        border-radius: 10px;
+        border-radius: 6px;
         background: #0b2a66;
-        /* deep professional color */
+        border: 1px solid #0b2a66;
         position: relative;
         overflow: hidden;
-        transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
     }
 
+    /* subtle shine */
     .city-btn::after {
         content: '';
         position: absolute;
-        top: 0;
-        left: -50%;
-        width: 50%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.08);
-        transform: skewX(-25deg);
-        transition: all 0.5s ease;
+        inset: 0;
+        background: rgba(11, 42, 102, 0.06);
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
 
     .city-btn:hover {
-        background: linear-gradient(90deg, #0b2a66, #3370ea);
-        transform: translate(scale(1.4));
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+        background: #0b2a66;
         color: #ffffff;
+        text-decoration: underline;
+
     }
+
+    .city-btn:hover::after {
+        opacity: 1;
+    }
+
 
     h2 {
         font-family: 'Poppins', sans-serif;
@@ -167,7 +163,7 @@
         <div class="logo"><img src="https://www.keralastudy.com/images/logo.png" class="w-100" alt=""></div>
         <div class="nav-links">
             <div class="nav-item">Top Colleges</div>
-                <div class="nav-item">Top Courses</div>
+            <div class="nav-item">Top Courses</div>
             <div class="nav-item">Entrance Exam</div>
             <div class="nav-item">Boards</div>
             <div class="nav-item">News</div>
@@ -568,7 +564,7 @@
     <style>
         .hero {
             position: relative;
-            padding: 120px 0;
+            padding: 80px 0;
             background: url("chess-colleagues-corporate-team-solution-group-concept_11zon.jpg") center center / cover no-repeat;
             overflow: hidden;
         }
@@ -609,8 +605,6 @@
     <!-- BREADCRUMB -->
     <nav class="breadcrumb-wrap container" aria-label="Breadcrumb">
         <a href="#">Home</a>
-        <span class="divider" aria-hidden="true">›</span>
-        <a href="#">Placement</a>
         <span class="divider" aria-hidden="true">›</span>
         <span class="current">Career</span>
     </nav>
@@ -873,15 +867,15 @@
             overflow: hidden;
             transition: max-height 0.3s ease, padding 0.3s ease;
             font-size: 14px;
-            color: #555;
-            background-color: #f9f9f9;
+            color: #000000;
+            background-color: #f4f4f4;
             padding: 0 10px;
 
         }
 
         .job-faq.open {
             padding: 10px;
-            max-height: 200px;
+            max-height: 1700px;
             /* adjust as needed */
         }
 
@@ -920,8 +914,10 @@
     <h2 class="text-center fs-1 mb-5" style="color: #003264; font-weight: 600 !important;">
         Current <span style="color: #00326491;">Openings</span>
     </h2>
-    <section class="open-roles-section">
 
+
+
+    <section class="open-roles-section">
         <div class="open-roles-left">
             <h2>Contact Career Representative</h2>
 
@@ -930,8 +926,7 @@
             </p>
 
             <div class="contact-email">
-                <a href="mailto:example@gmail.com">example@gmail.com</a><br>
-                <a href="mailto:example@gmail.com">example@gmail.com</a>
+                <a href="mailto:example@gmail.com">info@keralastudy.com</a><br>
             </div>
 
             <div class="contact-phones">
@@ -939,31 +934,42 @@
                 <div class="phone-group">
                     <i class="fa-solid fa-phone"></i>
                     <div class="phone-numbers">
-                        <a href="tel:+919655856423">+91 9655856423</a>
-                        <a href="tel:+919655856423">+91 9655856423</a>
+                        <a href="tel:+919606833296">+91 9606833296</a>
+                        <a href="tel:+919090165050">+91 9090165050</a>
                     </div>
                 </div>
 
                 <div class="phone-group">
                     <i class="fa-solid fa-phone"></i>
                     <div class="phone-numbers">
-                        <a href="tel:+919655856423">+91 9655856423</a>
-                        <a href="tel:+919655856423">+91 9655856423</a>
+                        <a href="tel:+919606833296">+91 9606833296</a>
+                        <a href="tel:+919090165050">+91 9090165050</a>
                     </div>
                 </div>
 
             </div>
         </div>
 
+
+
+
         <style>
             .open-roles-left {
+                background-color: #e6eaee;
+                border-radius: 20px;
+                padding: 20px;
                 max-width: 420px;
                 color: #0a2540;
-                font-family: Arial, sans-serif;
+
+            }
+
+            .open-roles-left {
+                flex: 1 1 300px;
             }
 
             .open-roles-left h2 {
                 font-size: 26px;
+                color: #001a4f;
                 font-weight: 700;
                 margin-bottom: 12px;
             }
@@ -983,7 +989,7 @@
                 display: block;
                 color: #ff7300;
                 text-decoration: none;
-                font-size: 15px;
+                font-size: 20px;
                 line-height: 1.6;
             }
 
@@ -1004,7 +1010,7 @@
             }
 
             .phone-group i {
-                color: #2563eb;
+                color: #ff0000;
                 font-size: 26px;
                 margin-top: 4px;
             }
@@ -1013,7 +1019,7 @@
                 display: block;
                 color: #0a2540;
                 text-decoration: none;
-                font-size: 15px;
+                font-size: 18px;
                 line-height: 1.6;
             }
 
@@ -1046,9 +1052,70 @@
                     </div>
                 </div>
                 <div class="job-faq">
-                    The Senior Inventory Specialist is responsible for managing inventory levels, coordinating with
-                    suppliers, and ensuring accurate stock records.
+
+                    <h4>About Learntech Edu Solutions Pvt. Ltd.</h4>
+                    <p>
+                        Learntech Edu Solutions Pvt. Ltd. is a leading educational service provider in India
+                        with over 30 years of experience in offering admission and career guidance.
+                        Headquartered in Bangalore, the company also operates internationally with branches
+                        in the UAE and Bahrain. Learntech is committed to helping students achieve their
+                        academic and career goals through expert support and personalized solutions.
+                    </p>
+
+                    <h4>Responsibilities</h4>
+                    <ul>
+                        <li>Writing meaningful and engaging content in English</li>
+                        <li>Using keyword analysis and SEO techniques to create content</li>
+                        <li>Optimize SEO meta tags using competitor research</li>
+                        <li>Create compelling headlines and copy for target audiences</li>
+                        <li>Research and create valuable content for web pages and blogs</li>
+                        <li>Write off-page blogs for backlinks</li>
+                        <li>Proofread content for errors and inconsistencies</li>
+                        <li>Conduct research to collect factual information</li>
+                        <li>Collaborate with team members to improve website content</li>
+                        <li>Track website performance and SEO metrics</li>
+                        <li>Work on social media content and strategies</li>
+                        <li>Update content based on SEO guidelines to improve SERP ranking</li>
+                        <li>Coordinate with designers for social media creatives</li>
+                    </ul>
+
+                    <h4>Requirements</h4>
+                    <ul>
+                        <li>0–2 years of experience</li>
+                        <li>Proficiency in written and spoken English</li>
+                        <li>Excellent writing and editing skills</li>
+                        <li>Strong research and attention to detail</li>
+                        <li>Good time management skills</li>
+                        <li>Ability to work independently</li>
+                        <li>Strong interpersonal and communication skills</li>
+                    </ul>
+
                 </div>
+                <style>
+                    .job-faq h4 {
+                        margin-top: 20px;
+                        margin-bottom: 10px;
+                        font-size: 18px;
+                        font-weight: 600;
+                    }
+
+                    .job-faq p {
+                        font-size: 15px;
+                        line-height: 1.6;
+                        color: #444;
+                    }
+
+                    .job-faq ul {
+                        padding-left: 18px;
+                    }
+
+                    .job-faq ul li {
+                        font-size: 15px;
+                        line-height: 1.6;
+                        margin-bottom: 6px;
+                        color: #444;
+                    }
+                </style>
             </div>
 
             <!-- Job 2 -->
@@ -1139,15 +1206,48 @@
                     <input type="date">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group input-arrow">
                     <label>Position Applied</label>
                     <input type="text" placeholder="e.g. SEO Analyst">
+                    <span class="dropdown-arrow"></span>
                 </div>
+                <style>
+                    .input-arrow {
+                        position: relative;
+                    }
 
-                <div class="form-group">
+                    .input-arrow input {
+                        width: 100%;
+                        padding: 12px 42px 12px 12px;
+                        /* space for arrow */
+                    }
+
+                    .dropdown-arrow {
+                        position: absolute;
+                        right: 14px;
+                        top: 70%;
+                        transform: translateY(-50%);
+                        width: 0;
+                        height: 0;
+                        pointer-events: none;
+
+                        border-left: 6px solid transparent;
+                        border-right: 6px solid transparent;
+                        border-top: 6px solid #666;
+                    }
+
+                    /* Optional focus animation */
+                    .input-arrow input:focus~.dropdown-arrow {
+                        border-top-color: #000;
+                    }
+                </style>
+
+                <div class="form-group input-arrow">
                     <label>Job Location</label>
                     <input type="text" placeholder="Preferred job location">
+                    <span class="dropdown-arrow"></span>
                 </div>
+
 
                 <div class="form-group">
                     <label>Current Location</label>
@@ -1231,6 +1331,7 @@
         }
 
         .phone-input {
+            width: 100%;
             display: flex;
             align-items: center;
         }
@@ -1298,6 +1399,22 @@
             }
         }
     </style>
+
+
+    <section>
+        <div class="container text-center mb-5 ">
+            <h2></h2>
+             <h2 class="text-center fs-2 mb-2" style="color: #003264; font-weight: 600 !important;">
+       Disclaimer 
+    </h2>
+            <p>The current design is a placeholder until final graphics are ready" or "He served as a placeholder until
+                a permanent replacement was found," showing roles, temporary data, or design elements. They guide
+                users/editors on what to add, from names and dates to complex data or even people in a job. The current
+                design is a placeholder until final graphics are ready" or "He served as a placeholder until a permanent
+                replacement was found," showing roles, temporary data, or design elements. They guide users/editors on
+                what to add, from names and dates to complex data or even people in a job. </p>
+        </div>
+    </section>
 
 
 
