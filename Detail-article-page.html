@@ -31,54 +31,7 @@
 
 </head>
 <style>
-    .btn-blue {
-        position: relative;
-        padding: 6px 22px;
-        background: #003479;
-        color: #ffffff;
-        font-size: 16px;
-        font-weight: 600;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        transition:
-            background 0.25s ease,
-            transform 0.2s ease,
-            box-shadow 0.3s ease;
-        box-shadow: 0 4px 14px rgba(26, 115, 232, 0.25);
-    }
-
-    /* Smooth professional hover */
-    .btn-blue:hover {
-        background: #1666cc;
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(26, 115, 232, 0.35);
-        color: white;
-    }
-
-    /* Pressed effect */
-    .btn-blue:active {
-        transform: translateY(1px);
-        box-shadow: 0 2px 8px rgba(26, 115, 232, 0.25);
-    }
-
-    /* Optional subtle underline slide */
-    .btn-blue::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        bottom: 8px;
-        width: 0;
-        height: 1px;
-        background: rgba(255, 255, 255, 0.8);
-        transition: width 0.25s ease, left 0.25s ease;
-    }
-
-    .btn-blue:hover::after {
-        width: 60%;
-        left: 20%;
-    }
-
+   
 
 
     /* ---------- RESET ---------- */
@@ -862,6 +815,43 @@
                             transform: rotate(45deg);
                         }
                     </style>
+
+                    <div class="left-social top-social mb-4">
+                        <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="icon"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="icon"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                    <style>
+                         .top-social {
+            position: sticky;
+            top: 80px;
+            display: flex;
+            flex-direction: row;
+            gap: 14px;
+        }
+
+        .left-social .icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 15%;
+            background: #e2f0ff;
+            border: 1px solid #e5e7eb;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #001d5b;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .left-social .icon:hover {
+            background: #001d5b;
+            color: #ffffff;
+        }
+                    </style>
                 </div>
             </div>
 
@@ -896,7 +886,7 @@
                                     class="text-primary text-decoration-none">Terms & Conditions</a>
                             </label>
                         </div>
-                        <button type="submit" class=" btn-blue w-100 py-2 fw-semibold">Submit</button>
+                        <button type="submit" class="btn-blue w-100 py-2 fw-semibold">Submit</button>
                     </form>
                 </div>
                 <style>
@@ -1077,30 +1067,6 @@
             top: 120px;
         }
 
-        /* LEFT STICKY */
-        .left-social {
-            position: sticky;
-            top: 120px;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .left-social .icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 30%;
-            background: #e2f0ff;
-            border: 2px solid rgba(0, 52, 84, 0.068);
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            text-decoration: none;
-            color: #000000;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
-        }
 
 
         /* ARTICLE */
